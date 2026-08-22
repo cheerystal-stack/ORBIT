@@ -253,3 +253,31 @@ dialog[open]{display:block}
 
 /* v0.15 RELATIONSHIP BASE */
 .relationship-base-card{border-color:rgba(232,201,140,.34);background:radial-gradient(circle at 88% 15%,rgba(185,167,255,.14),transparent 34%),linear-gradient(145deg,rgba(31,30,70,.76),rgba(9,14,34,.82))}.rb-open{width:100%;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;text-align:left;border:0;background:transparent;color:inherit;padding:0}.rb-open h2{font-family:Georgia,serif;font-size:26px;font-weight:500;margin:5px 0 7px;color:var(--gold2)}.rb-open p{margin:0 0 10px;color:#d8d2e2;font-size:.83rem;line-height:1.55}.rb-arrow{font-size:32px;color:var(--gold);opacity:.75}.rb-verdict{margin:12px 0 18px;padding:15px;border-radius:16px;border:1px solid rgba(232,201,140,.27);background:linear-gradient(135deg,rgba(232,201,140,.08),rgba(118,87,218,.08))}.rb-verdict strong{display:block;color:var(--gold2);font-family:Georgia,serif;font-size:19px;line-height:1.5}.rb-verdict p{color:#ddd7e6;line-height:1.75;font-size:.82rem}.rb-verdict small{display:block;color:#a49dac;line-height:1.6}.rb-section{margin:18px 0}.rb-note{color:#8f899d;font-size:.7rem;line-height:1.55}.rb-aspects{display:grid;gap:6px;margin-top:9px}.rb-aspect{display:grid;grid-template-columns:1fr 24px 1fr auto;gap:6px;align-items:center;padding:9px 10px;border-radius:11px;border:1px solid rgba(255,255,255,.07);background:rgba(7,12,30,.38);font-size:.72rem}.rb-aspect b{text-align:center;color:var(--gold);font-size:.9rem}.rb-aspect small{color:#928b9e;font-size:.6rem;white-space:nowrap}.rb-aspect.reference{opacity:.48;border-style:dashed}.rb-signal{margin-top:8px;padding:11px 12px;border-radius:12px;border:1px solid rgba(232,201,140,.14);background:rgba(7,12,30,.38)}.rb-signal b{color:#ead9b0;font-size:.76rem}.rb-signal p{margin:5px 0 0;color:#aaa4b6;font-size:.7rem;line-height:1.55}@media(max-width:480px){.rb-aspect{grid-template-columns:1fr 20px 1fr}.rb-aspect small{grid-column:1/-1;text-align:right}.rb-open h2{font-size:23px}}
+
+/* v0.16 — quiet cosmic cover */
+.cosmic-atmosphere{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.app-shell,main,header,nav,.bottom-nav{position:relative;z-index:1}
+.milky-way{position:absolute;width:155vw;height:34vh;left:-28vw;top:7vh;transform:rotate(-17deg);opacity:.32;filter:blur(19px);
+background:radial-gradient(ellipse at 32% 48%,rgba(233,190,224,.16) 0 7%,transparent 28%),
+radial-gradient(ellipse at 52% 54%,rgba(168,183,236,.17) 0 8%,transparent 30%),
+radial-gradient(ellipse at 69% 44%,rgba(222,173,211,.11) 0 6%,transparent 27%),
+linear-gradient(90deg,transparent 3%,rgba(210,205,236,.03) 20%,rgba(230,212,238,.10) 48%,rgba(178,194,235,.07) 72%,transparent 97%)}
+.milky-way:after{content:"";position:absolute;inset:25% 7%;opacity:.5;background-image:
+radial-gradient(circle,rgba(255,255,255,.45) 0 1px,transparent 1.3px),
+radial-gradient(circle,rgba(245,211,234,.32) 0 1px,transparent 1.2px);background-size:31px 29px,47px 41px;background-position:7px 9px,23px 5px}
+.chromatic-star{position:absolute;width:2px;height:2px;border-radius:50%;opacity:.75;animation:orbitTwinkle 6.8s ease-in-out infinite}
+.chromatic-star.pink{background:#f3b7d7;box-shadow:0 0 7px 2px rgba(243,183,215,.30)}
+.chromatic-star.blue{background:#c9dcff;box-shadow:0 0 7px 2px rgba(201,220,255,.25)}
+.chromatic-star.gold{background:#f1ddb1;box-shadow:0 0 7px 2px rgba(241,221,177,.22)}
+.cs1{top:11%;left:18%;animation-delay:-1.4s}.cs2{top:28%;right:14%;animation-delay:-4.1s}
+.cs3{top:18%;right:28%;animation-delay:-2.7s}.cs4{top:37%;left:11%;animation-delay:-5.2s}.cs5{top:8%;right:8%;animation-delay:-.6s}
+@keyframes orbitTwinkle{0%,100%{opacity:.42;transform:scale(.85)}50%{opacity:.9;transform:scale(1.18)}}
+@media(prefers-reduced-motion:reduce){.chromatic-star{animation:none}}
+.orbit-cover-message{text-align:center;padding:12px 8px 18px}
+.orbit-cover-kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72;margin-bottom:12px}
+.orbit-cover-title{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(25px,7vw,34px);line-height:1.28;letter-spacing:.04em;margin:0 auto 8px;max-width:12em}
+.orbit-cover-subtitle{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:12px;letter-spacing:.08em;opacity:.68}
+.orbit-cover-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:15px}
+.orbit-synthesis-details{margin-top:8px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
+.orbit-synthesis-details summary{cursor:pointer;text-align:center;font-size:9px;letter-spacing:.18em;opacity:.55;list-style:none}
+.orbit-synthesis-details summary::-webkit-details-marker{display:none}.orbit-synthesis-original{margin-top:14px}

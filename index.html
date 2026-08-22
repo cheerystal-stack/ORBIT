@@ -9,9 +9,15 @@
   <title>ORBIT</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" sizes="180x180" href="orbit-icon-180.png" />
-  <link rel="stylesheet" href="style.css?v=0.15.2" />
+  <link rel="stylesheet" href="style.css?v=0.16.0" />
 </head>
 <body>
+<div class="cosmic-atmosphere" aria-hidden="true">
+ <span class="milky-way"></span>
+ <i class="chromatic-star pink cs1"></i><i class="chromatic-star pink cs2"></i>
+ <i class="chromatic-star blue cs3"></i><i class="chromatic-star gold cs4"></i>
+ <i class="chromatic-star blue cs5"></i>
+</div>
   <div class="stars stars-a"></div>
   <div class="stars stars-b"></div>
   <div class="nebula nebula-a"></div>
@@ -124,6 +130,6 @@
   <input id="sizhuImportFile" type="file" accept=".json,application/json" hidden>
   <template id="emptyTpl"><div class="empty">まだ記録がありません ✦</div></template>
 
-  <script src="app.js?v=0.15.2"></script>
+  <script src="app.js?v=0.16.0"></script>
 </body>
 </html>

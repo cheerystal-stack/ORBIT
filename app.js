@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.15.2';
+const APP_VERSION='0.16.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -830,3 +830,26 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
 renderAll();
 loadFourPillarsMaster();
 loadWesternMaster();
+// v0.16 — turn the existing HOME synthesis into a quiet monthly cover.
+// All astrology words are reused from the app's current rendered data.
+function applyOrbitCover(){
+ const card=document.querySelector('#monthSynthesis,.month-synthesis,.synthesis-card');
+ if(!card||card.dataset.coverApplied==='1')return;
+ const raw=(card.innerText||'').trim(); if(!raw)return;
+ const pills=[...card.querySelectorAll('.pill,.tag,.chip,.badge')].map(x=>(x.textContent||'').trim()).filter(Boolean);
+ const lines=raw.split('\n').map(x=>x.trim()).filter(Boolean).filter(x=>!/ORBIT SYNTHESIS|計算済み|ルールベース|観測要約/i.test(x));
+ const theme=pills[0]||lines.find(x=>x.length<=22)||lines[0]||'今月の軌道';
+ const tags=[...new Set(pills)].slice(0,4);
+ const cover=document.createElement('section'); cover.className='orbit-cover-message';
+ cover.innerHTML=`<div class="orbit-cover-kicker">MESSAGE FROM THE ORBIT</div>
+ <h2 class="orbit-cover-title">${theme}</h2>
+ <div class="orbit-cover-subtitle">Observe the pattern · Follow the timing</div>
+ ${tags.length?`<div class="orbit-cover-tags">${tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>`:''}`;
+ const details=document.createElement('details'); details.className='orbit-synthesis-details';
+ details.innerHTML='<summary>ORBIT SYNTHESIS</summary>';
+ const original=document.createElement('div'); original.className='orbit-synthesis-original';
+ while(card.firstChild)original.appendChild(card.firstChild);
+ details.appendChild(original); card.appendChild(cover); card.appendChild(details); card.dataset.coverApplied='1';
+}
+const coverObserver=new MutationObserver(applyOrbitCover);
+document.addEventListener('DOMContentLoaded',()=>{applyOrbitCover();coverObserver.observe(document.body,{childList:true,subtree:true})});
