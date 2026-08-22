@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.16.0';
+const APP_VERSION='0.16.1';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -542,10 +542,57 @@ function orbitThisMonthModel(period){
   const crossLine=cross?`${crossTypes.length?crossTypes.join('・'):'共通支関係なし'}${cross.chiaki_major_transition||cross.naoya_major_transition?' / 大運切替あり':''}`:'CROSSデータ読込待ち';
   return {western:w,fourPillars:fp,cross,overlap,top,summary,fpLine,wLine,crossLine};
 }
+
+function orbitCoverCopy(m){
+  const primary=m.overlap?.[0]?.key||m.top?.[0]?.key||'';
+  const secondary=m.overlap?.[1]?.key||m.top?.[1]?.key||'';
+  const copy={
+    CHANGE:['変化の先に、新しい流れがひらく。','Transformation · Renewal'],
+    VALUES:['大切にしたいものが、輪郭を帯びてくる。','Value · Affection'],
+    CONNECTION:['結びつきの意味を、静かに見つめる。','Connection · Integration'],
+    TRANSFORMATION:['深いところから、景色が変わりはじめる。','Transformation · Depth'],
+    EXPANSION:['可能性のほうへ、少し視界がひらく。','Expansion · Possibility'],
+    RESPONSIBILITY:['形にするための、静かな整え。','Responsibility · Structure'],
+    SENSITIVITY:['感じ取るものを、急いで言葉にしなくていい。','Sensitivity · Ideal'],
+    EMOTION:['心が動く方向を、そっと確かめる。','Emotion · Security'],
+    COMMUNICATION:['言葉の向こうにあるものを、丁寧に拾う。','Communication · Thought'],
+    SELF:['自分の軸を、もう一度たしかめる。','Self · Direction'],
+    ACTION:['動きたい気持ちに、まっすぐ光を当てる。','Action · Desire'],
+    LEARNING:['答えを急がず、意味を育てていく。','Reflection · Learning'],
+    EXPRESSION:['内側にあるものを、外の世界へ。','Expression · Creation']
+  };
+  const base=copy[primary]||['今月の流れを、静かに観測する。','Observe · Understand · Align'];
+  return {title:base[0],subtitle:base[1],keys:[primary,secondary].filter(Boolean)};
+}
+
 function renderThisMonthV2(){
-  const host=$('#thisMonthV2');if(!host)return;const m=orbitThisMonthModel(data.month.period);
-  const tags=(m.overlap.length?m.overlap:m.top.slice(0,3)).map(x=>`<span class="chip">${esc(x.label)}</span>`).join('');
-  host.innerHTML=`<div class="tm-synthesis"><span>✦ ORBIT SYNTHESIS</span><p>${esc(m.summary)}</p><div class="chips">${tags}</div><small>計算済みマスターをルールベースで整理した観測要約です。</small></div><div class="tm-systems"><div class="tm-system"><small>FOUR PILLARS</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div><div class="tm-system"><small>WESTERN</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div><div class="tm-system"><small>CROSS SIGNAL</small><strong>${esc(m.crossLine)}</strong><span>機械的トリガー。関係性の意味は自動付与しません。</span></div></div><div class="tm-overlap"><small>OVERLAP · EAST × WEST</small><div class="chips">${m.overlap.length?m.overlap.map(x=>`<span class="chip overlap-hit">${esc(x.label)}</span>`).join(''):'<span class="tm-none">今月は共通分類なし</span>'}</div></div>`;
+  const host=$('#thisMonthV2');if(!host)return;
+  const m=orbitThisMonthModel(data.month.period);
+  const cover=orbitCoverCopy(m);
+  const coverTags=(m.overlap.length?m.overlap:m.top.slice(0,4)).slice(0,4)
+    .map(x=>`<span class="chip">${esc(x.label)}</span>`).join('');
+  const overlapTags=m.overlap.length
+    ?m.overlap.map(x=>`<span class="chip overlap-hit">${esc(x.label)}</span>`).join('')
+    :'<span class="tm-none">今月は共通分類なし</span>';
+
+  host.innerHTML=`
+    <section class="tm-cover">
+      <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
+      <h3>${esc(cover.title)}</h3>
+      <em>${esc(cover.subtitle)}</em>
+      <div class="chips tm-cover-tags">${coverTags}</div>
+      <details class="tm-cover-details">
+        <summary>WHY THIS MESSAGE</summary>
+        <p>${esc(m.summary)}</p>
+        <small>四柱推命とWesternの計算済みマスターから、同じ月の観測テーマを整理しています。</small>
+      </details>
+    </section>
+    <div class="tm-systems">
+      <div class="tm-system"><small>FOUR PILLARS</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div>
+      <div class="tm-system"><small>WESTERN</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div>
+      <div class="tm-system"><small>CROSS SIGNAL</small><strong>${esc(m.crossLine)}</strong><span>機械的トリガー。関係性の意味は自動付与しません。</span></div>
+    </div>
+    <div class="tm-overlap"><small>OVERLAP · EAST × WEST</small><div class="chips">${overlapTags}</div></div>`;
 }
 
 function relationshipAspectHTML(x){
@@ -830,26 +877,3 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
 renderAll();
 loadFourPillarsMaster();
 loadWesternMaster();
-// v0.16 — turn the existing HOME synthesis into a quiet monthly cover.
-// All astrology words are reused from the app's current rendered data.
-function applyOrbitCover(){
- const card=document.querySelector('#monthSynthesis,.month-synthesis,.synthesis-card');
- if(!card||card.dataset.coverApplied==='1')return;
- const raw=(card.innerText||'').trim(); if(!raw)return;
- const pills=[...card.querySelectorAll('.pill,.tag,.chip,.badge')].map(x=>(x.textContent||'').trim()).filter(Boolean);
- const lines=raw.split('\n').map(x=>x.trim()).filter(Boolean).filter(x=>!/ORBIT SYNTHESIS|計算済み|ルールベース|観測要約/i.test(x));
- const theme=pills[0]||lines.find(x=>x.length<=22)||lines[0]||'今月の軌道';
- const tags=[...new Set(pills)].slice(0,4);
- const cover=document.createElement('section'); cover.className='orbit-cover-message';
- cover.innerHTML=`<div class="orbit-cover-kicker">MESSAGE FROM THE ORBIT</div>
- <h2 class="orbit-cover-title">${theme}</h2>
- <div class="orbit-cover-subtitle">Observe the pattern · Follow the timing</div>
- ${tags.length?`<div class="orbit-cover-tags">${tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>`:''}`;
- const details=document.createElement('details'); details.className='orbit-synthesis-details';
- details.innerHTML='<summary>ORBIT SYNTHESIS</summary>';
- const original=document.createElement('div'); original.className='orbit-synthesis-original';
- while(card.firstChild)original.appendChild(card.firstChild);
- details.appendChild(original); card.appendChild(cover); card.appendChild(details); card.dataset.coverApplied='1';
-}
-const coverObserver=new MutationObserver(applyOrbitCover);
-document.addEventListener('DOMContentLoaded',()=>{applyOrbitCover();coverObserver.observe(document.body,{childList:true,subtree:true})});

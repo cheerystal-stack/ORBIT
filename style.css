@@ -281,3 +281,48 @@ radial-gradient(circle,rgba(245,211,234,.32) 0 1px,transparent 1.2px);background
 .orbit-synthesis-details{margin-top:8px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
 .orbit-synthesis-details summary{cursor:pointer;text-align:center;font-size:9px;letter-spacing:.18em;opacity:.55;list-style:none}
 .orbit-synthesis-details summary::-webkit-details-marker{display:none}.orbit-synthesis-original{margin-top:14px}
+
+/* v0.16.1 — HOME cover hotfix */
+.tm-cover{
+  position:relative;
+  text-align:center;
+  padding:24px 18px 20px;
+  margin:4px 0 18px;
+  border:1px solid rgba(226,205,166,.22);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(227,183,215,.10),transparent 38%),
+    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  overflow:hidden;
+}
+.tm-cover::before{
+  content:"";
+  position:absolute;
+  width:190px;height:190px;
+  top:-125px;right:-70px;
+  border:1px solid rgba(225,206,171,.14);
+  border-radius:50%;
+  transform:rotate(-18deg);
+}
+.tm-cover-kicker{display:block;font-size:10px;letter-spacing:.20em;color:var(--gold,#d7bd86);margin-bottom:16px}
+.tm-cover h3{
+  position:relative;
+  margin:0 auto 9px;
+  max-width:12em;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(27px,7.4vw,36px);
+  line-height:1.35;
+  letter-spacing:.035em;
+  font-weight:400;
+}
+.tm-cover em{display:block;font-family:Georgia,"Times New Roman",serif;font-size:12px;letter-spacing:.08em;opacity:.64}
+.tm-cover-tags{justify-content:center;margin-top:17px}
+.tm-cover-details{margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07)}
+.tm-cover-details summary{list-style:none;cursor:pointer;font-size:9px;letter-spacing:.18em;opacity:.52}
+.tm-cover-details summary::-webkit-details-marker{display:none}
+.tm-cover-details p{font-size:13px;line-height:1.9;text-align:left;margin:14px 0 4px;opacity:.78}
+.tm-cover-details small{display:block;text-align:left;line-height:1.7;opacity:.46}
+
+/* Milky Way: still subtle, but now visibly present */
+.milky-way{opacity:.48!important;filter:blur(14px)!important;top:4vh!important;height:42vh!important}
+.milky-way::after{opacity:.72!important}
