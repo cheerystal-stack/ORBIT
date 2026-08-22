@@ -256,7 +256,7 @@ dialog[open]{display:block}
 
 /* v0.16 — quiet cosmic cover */
 .cosmic-atmosphere{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-.app-shell,main,header,nav,.bottom-nav{position:relative;z-index:1}
+.app-shell,main,header{position:relative;z-index:1}
 .milky-way{position:absolute;width:155vw;height:34vh;left:-28vw;top:7vh;transform:rotate(-17deg);opacity:.32;filter:blur(19px);
 background:radial-gradient(ellipse at 32% 48%,rgba(233,190,224,.16) 0 7%,transparent 28%),
 radial-gradient(ellipse at 52% 54%,rgba(168,183,236,.17) 0 8%,transparent 30%),
@@ -428,4 +428,13 @@ radial-gradient(circle,rgba(245,211,234,.32) 0 1px,transparent 1.2px);background
   .tm-cover{padding:20px 14px 16px}
   .tm-cover-title-en{font-size:clamp(22px,6.2vw,28px)!important}
   .tm-cover-message-ja{font-size:.74rem}
+}
+
+/* v0.17.1 — bottom navigation hotfix */
+.bottom-nav{
+  position:fixed!important;
+  z-index:20!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  bottom:calc(env(safe-area-inset-bottom) + 10px)!important;
 }
