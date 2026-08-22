@@ -466,3 +466,10 @@ body::after {
   position: relative;
   z-index: 1;
 }
+/* Mobile: show more of the cosmic artwork */
+@media (max-width: 600px) {
+  body::after {
+    background-size: auto 75vh;
+    background-position: center top;
+  }
+}
