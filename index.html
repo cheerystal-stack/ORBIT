@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090f23" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>ORBIT</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="orbit-icon-180.png" />
+  <link rel="stylesheet" href="style.css?v=0.15.2" />
+</head>
+<body>
+  <div class="stars stars-a"></div>
+  <div class="stars stars-b"></div>
+  <div class="nebula nebula-a"></div>
+  <div class="nebula nebula-b"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <div class="orbit-mark" aria-hidden="true">
+        <span class="orbit orbit-1"></span><span class="orbit orbit-2"></span><span class="planet p1"></span><span class="planet p2"></span><span class="core"></span>
+      </div>
+      <p class="eyebrow">PERSONAL ASTROLOGY OBSERVATORY</p>
+      <h1>ORBIT</h1>
+      <p class="tagline">Observe · Understand · Align</p>
+    </header>
+
+    <section id="view-home" class="view active" data-view="home">
+      <section class="glass-card flow-card">
+        <div class="section-head"><div><span class="kicker">THIS MONTH</span><h2 id="monthTitle">2026 AUG</h2></div><button class="icon-btn" data-action="edit-month" aria-label="今月の流れを編集">✦</button></div>
+        <p class="tm-intro">四柱推命とWestern Engineを同じ月で重ねて観測します。</p>
+        <div id="thisMonthV2"><div class="western-state">BUILDING MONTHLY OBSERVATION…</div></div>
+      </section>
+
+      <section id="relationshipBase" class="glass-card relationship-base-card"></section>
+
+      <section class="glass-card western-card">
+        <div class="section-head"><div><span class="kicker">WESTERN ENGINE</span><h2>Monthly Snapshot</h2></div><span class="spark">☉</span></div>
+        <p class="guide-intro">選択中の月を、プログレスと長期トランジットから自動観測します。</p>
+        <div id="westernSnapshot"><div class="western-state">LOADING WESTERN MASTER…</div></div>
+      </section>
+
+      <section class="glass-card guide-card">
+        <div class="section-head"><div><span class="kicker">OBSERVATION GUIDE</span><h2>MONTHLY CHECK</h2></div><span id="monthlyProgress" class="progress-pill">0 / 6</span></div>
+        <div class="month-switcher"><button type="button" data-month-shift="-1">‹</button><button type="button" class="month-current" id="guideMonthLabel" data-action="choose-month">2026 AUG</button><button type="button" data-month-shift="1">›</button></div>
+        <p class="guide-intro">見たい月へ移動して、観測を先取りできます ✦</p>
+        <div id="monthlyChecks" class="check-list"></div>
+      </section>
+
+      <section class="glass-card">
+        <div class="section-head"><div><span class="kicker">CURRENT CYCLE</span><h2>今の運気</h2></div><span class="spark">✧</span></div>
+        <div id="cycleRows" class="cycle-list"></div>
+      </section>
+
+      <section class="glass-card">
+        <div class="section-head"><div><span class="kicker">RECENT OBSERVATIONS</span><h2>最近の観測</h2></div><button class="text-btn" data-go="readings">ALL</button></div>
+        <div id="recentReadings" class="list"></div>
+      </section>
+
+      <section class="glass-card focus-card">
+        <div class="section-head"><div><span class="kicker">CURRENT FOCUS</span><h2 id="focusName">N</h2></div><button class="text-btn" data-go="people">PEOPLE</button></div>
+        <div class="focus-body">
+          <div class="planet-avatar" aria-hidden="true"><span></span></div>
+          <div class="focus-info">
+            <div><small>Birth time</small><strong id="focusBirthTime">UNKNOWN</strong></div>
+            <div><small>Hypothesis</small><strong id="focusHypothesis">06:00</strong></div>
+            <div><small>Theme</small><strong id="focusTheme">REBUILDING</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="featuredProject" class="project-hero"></section>
+
+      <section class="glass-card">
+        <div class="section-head"><div><span class="kicker">TIMELINE</span><h2>これからの軌道</h2></div><button class="text-btn" data-go="timeline">OPEN</button></div>
+        <div id="timelinePreview" class="timeline"></div>
+      </section>
+    </section>
+
+    <section id="view-people" class="view" data-view="people">
+      <div class="page-title"><div><span class="kicker">PEOPLE</span><h2>観測する人</h2></div><button class="primary-btn" data-action="add-person">＋ ADD</button></div>
+      <div id="peopleGrid" class="people-grid"></div>
+    </section>
+
+    <section id="view-readings" class="view" data-view="readings">
+      <div class="page-title"><div><span class="kicker">READINGS</span><h2>観測記録</h2></div><button class="primary-btn" data-action="add-reading">＋ NEW</button></div>
+      <div class="filter-row">
+        <select id="readingPersonFilter"></select>
+        <select id="readingSystemFilter"></select>
+      </div>
+      <div id="readingsList" class="list"></div>
+    </section>
+
+    <section id="view-timeline" class="view" data-view="timeline">
+      <div class="page-title"><div><span class="kicker">TIMELINE</span><h2>時期ごとの流れ</h2></div><button class="primary-btn" data-action="add-timeline">＋ ADD</button></div>
+      <div id="timelineFull" class="timeline timeline-full"></div>
+    </section>
+
+    <section id="view-projects" class="view" data-view="projects">
+      <div class="page-title"><div><span class="kicker">PROJECTS</span><h2>長期観測</h2></div><button class="primary-btn" data-action="add-project">＋ ADD</button></div>
+      <section id="dataTransferPanel" class="data-transfer-card"></section>
+      <div id="projectsList" class="projects-list"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="メインナビゲーション">
+    <button class="nav-item active" data-go="home"><span>⌂</span><small>Home</small></button>
+    <button class="nav-item" data-go="people"><span>◉</span><small>People</small></button>
+    <button class="nav-item" data-go="readings"><span>✦</span><small>Readings</small></button>
+    <button class="nav-item" data-go="timeline"><span>⌛</span><small>Timeline</small></button>
+    <button class="nav-item" data-go="projects"><span>◎</span><small>Projects</small></button>
+  </nav>
+
+  <dialog id="modal">
+    <button type="button" class="modal-close" data-close-modal aria-label="閉じる">×</button>
+    <form method="dialog" id="modalForm" class="modal-card">
+      <div id="modalBody"></div>
+    </form>
+  </dialog>
+
+  <input id="orbitImportFile" type="file" accept=".json,.orbit.json,application/json" hidden>
+  <input id="sizhuImportFile" type="file" accept=".json,application/json" hidden>
+  <template id="emptyTpl"><div class="empty">まだ記録がありません ✦</div></template>
+
+  <script src="app.js?v=0.15.2"></script>
+</body>
+</html>
