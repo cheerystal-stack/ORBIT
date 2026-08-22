@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.16.1';
+const APP_VERSION='0.17.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -91,12 +91,12 @@ const BUNDLED_MONTHLY_FOUR_PILLARS={
   }
 };
 
-const BUNDLED_FOUR_PILLARS={"chiaki":{"source":"大久保占い研究室 (Ookubo Uranai Laboratory)","calendarMethod":"定気法（真黄経）","schema":"senjutsu-integrated/0.21.44","bundledVersion":"0.8.0","importedAt":"2026-08-20T19:48:50.914Z","dayMaster":{"stem":"壬","yinyang":"陽","wuxing":"水"},"kubou":["寅","卯"],"fourPillars":{"year":{"label":"年柱","ganzhi":"癸亥","stem":"癸","branch":"亥","tsuhensei":"劫財","zoukan":["壬","甲"],"zoukan_tsuhensei":["比肩","食神"],"junishi_un":"建禄","kubou":false},"month":{"label":"月柱","ganzhi":"乙卯","stem":"乙","branch":"卯","tsuhensei":"傷官","zoukan":["乙"],"zoukan_tsuhensei":["傷官"],"junishi_un":"死","kubou":true},"day":{"label":"日柱","ganzhi":"壬子","stem":"壬","branch":"子","tsuhensei":null,"zoukan":["癸"],"zoukan_tsuhensei":["劫財"],"junishi_un":"帝旺","kubou":false},"hour":{"label":"時柱","ganzhi":"辛亥","stem":"辛","branch":"亥","tsuhensei":"印綬","zoukan":["壬","甲"],"zoukan_tsuhensei":["比肩","食神"],"junishi_un":"建禄","kubou":false}},"daiun":{"direction":"順行","start_age":3.62,"list":[{"index":1,"age_start":3.62,"age_end":13.620000000000001,"ganzhi":"丙辰","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"index":2,"age_start":13.620000000000001,"age_end":23.62,"ganzhi":"丁巳","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"index":3,"age_start":23.62,"age_end":33.62,"ganzhi":"戊午","tsuhensei":"偏官","junishi_un":"胎","kubou":false},{"index":4,"age_start":33.62,"age_end":43.62,"ganzhi":"己未","tsuhensei":"正官","junishi_un":"養","kubou":false},{"index":5,"age_start":43.62,"age_end":53.62,"ganzhi":"庚申","tsuhensei":"偏印","junishi_un":"長生","kubou":false},{"index":6,"age_start":53.62,"age_end":63.62,"ganzhi":"辛酉","tsuhensei":"印綬","junishi_un":"沐浴","kubou":false},{"index":7,"age_start":63.62,"age_end":73.62,"ganzhi":"壬戌","tsuhensei":"比肩","junishi_un":"冠帯","kubou":false},{"index":8,"age_start":73.62,"age_end":83.62,"ganzhi":"癸亥","tsuhensei":"劫財","junishi_un":"建禄","kubou":false}]},"ryunen":[{"year":2026,"age":43,"ganzhi":"丙午","tsuhensei":"偏財","junishi_un":"胎","kubou":false},{"year":2027,"age":44,"ganzhi":"丁未","tsuhensei":"正財","junishi_un":"養","kubou":false},{"year":2028,"age":45,"ganzhi":"戊申","tsuhensei":"偏官","junishi_un":"長生","kubou":false},{"year":2029,"age":46,"ganzhi":"己酉","tsuhensei":"正官","junishi_un":"沐浴","kubou":false},{"year":2030,"age":47,"ganzhi":"庚戌","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"year":2031,"age":48,"ganzhi":"辛亥","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"year":2032,"age":49,"ganzhi":"壬子","tsuhensei":"比肩","junishi_un":"帝旺","kubou":false},{"year":2033,"age":50,"ganzhi":"癸丑","tsuhensei":"劫財","junishi_un":"衰","kubou":false},{"year":2034,"age":51,"ganzhi":"甲寅","tsuhensei":"食神","junishi_un":"病","kubou":false},{"year":2035,"age":52,"ganzhi":"乙卯","tsuhensei":"傷官","junishi_un":"死","kubou":false}],"ryugetsu":[{"ganzhi":"丙申","term":"立秋","start":"2026-08-07T11:43Z","tsuhensei":"偏財","junishi_un":"長生","kubou":false},{"ganzhi":"丁酉","term":"白露","start":"2026-09-07T14:42Z","tsuhensei":"正財","junishi_un":"沐浴","kubou":false},{"ganzhi":"戊戌","term":"寒露","start":"2026-10-08T06:30Z","tsuhensei":"偏官","junishi_un":"冠帯","kubou":false},{"ganzhi":"己亥","term":"立冬","start":"2026-11-07T09:53Z","tsuhensei":"正官","junishi_un":"建禄","kubou":false},{"ganzhi":"庚子","term":"大雪","start":"2026-12-07T02:53Z","tsuhensei":"偏印","junishi_un":"帝旺","kubou":false},{"ganzhi":"辛丑","term":"小寒","start":"2027-01-05T14:10Z","tsuhensei":"印綬","junishi_un":"衰","kubou":false},{"ganzhi":"壬寅","term":"立春","start":"2027-02-04T01:46Z","tsuhensei":"比肩","junishi_un":"病","kubou":true},{"ganzhi":"癸卯","term":"啓蟄","start":"2027-03-05T19:39Z","tsuhensei":"劫財","junishi_un":"死","kubou":true},{"ganzhi":"甲辰","term":"清明","start":"2027-04-05T00:17Z","tsuhensei":"食神","junishi_un":"墓","kubou":false},{"ganzhi":"乙巳","term":"立夏","start":"2027-05-05T17:25Z","tsuhensei":"傷官","junishi_un":"絶","kubou":false},{"ganzhi":"丙午","term":"芒種","start":"2027-06-05T21:25Z","tsuhensei":"偏財","junishi_un":"胎","kubou":false},{"ganzhi":"丁未","term":"小暑","start":"2027-07-07T07:37Z","tsuhensei":"正財","junishi_un":"養","kubou":false},{"ganzhi":"戊申","term":"立秋","start":"2027-08-07T17:26Z","tsuhensei":"偏官","junishi_un":"長生","kubou":false},{"ganzhi":"己酉","term":"白露","start":"2027-09-07T20:28Z","tsuhensei":"正官","junishi_un":"沐浴","kubou":false},{"ganzhi":"庚戌","term":"寒露","start":"2027-10-08T12:17Z","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"ganzhi":"辛亥","term":"立冬","start":"2027-11-07T15:39Z","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"ganzhi":"壬子","term":"大雪","start":"2027-12-07T08:38Z","tsuhensei":"比肩","junishi_un":"帝旺","kubou":false},{"ganzhi":"癸丑","term":"小寒","start":"2028-01-05T19:55Z","tsuhensei":"劫財","junishi_un":"衰","kubou":false},{"ganzhi":"甲寅","term":"立春","start":"2028-02-04T07:31Z","tsuhensei":"食神","junishi_un":"病","kubou":true},{"ganzhi":"乙卯","term":"啓蟄","start":"2028-03-05T01:25Z","tsuhensei":"傷官","junishi_un":"死","kubou":true},{"ganzhi":"丙辰","term":"清明","start":"2028-04-04T06:03Z","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"ganzhi":"丁巳","term":"立夏","start":"2028-05-04T23:12Z","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"ganzhi":"戊午","term":"芒種","start":"2028-06-05T03:16Z","tsuhensei":"偏官","junishi_un":"胎","kubou":false},{"ganzhi":"己未","term":"小暑","start":"2028-07-06T13:30Z","tsuhensei":"正官","junishi_un":"養","kubou":false}],"input":{"birth_date":"1983-03-25","birth_time":"21:03","gender":"女性","birthplace":"東京都"},"birthTimeWarning":""},"naoya":{"source":"大久保占い研究室 (Ookubo Uranai Laboratory)","calendarMethod":"定気法（真黄経／時憲暦・天保暦系・GB/T 33661準拠）","schema":"sizhu-meishiki/2","importedAt":"2026-08-20T11:45:00.000Z","dayMaster":{"stem":"癸","yinyang":"陰","wuxing":"水"},"kubou":["申","酉"],"fourPillars":{"year":{"label":"年柱","ganzhi":"丙子","stem":"丙","stem_wuxing":"火","branch":"子","branch_wuxing":"水","tsuhensei":"正財","zoukan":["癸"],"zoukan_tsuhensei":["比肩"],"junishi_un":"建禄","kubou":false},"month":{"label":"月柱","ganzhi":"甲午","stem":"甲","stem_wuxing":"木","branch":"午","branch_wuxing":"火","tsuhensei":"傷官","zoukan":["丁","己"],"zoukan_tsuhensei":["偏財","偏官"],"junishi_un":"絶","kubou":false},"day":{"label":"日柱","ganzhi":"癸未","stem":"癸","stem_wuxing":"水","branch":"未","branch_wuxing":"土","tsuhensei":null,"zoukan":["己","丁","乙"],"zoukan_tsuhensei":["偏官","偏財","食神"],"junishi_un":"墓","kubou":false},"hour":{"label":"時柱","ganzhi":"壬子","stem":"壬","stem_wuxing":"水","branch":"子","branch_wuxing":"水","tsuhensei":"劫財","zoukan":["癸"],"zoukan_tsuhensei":["比肩"],"junishi_un":"建禄","kubou":false}},"daiun":{"direction":"順行","start_age":7.4,"list":[{"index":1,"age_start":7.4,"age_end":17.4,"ganzhi":"乙未","tsuhensei":"食神","junishi_un":"墓","kubou":false},{"index":2,"age_start":17.4,"age_end":27.4,"ganzhi":"丙申","tsuhensei":"正財","junishi_un":"死","kubou":true},{"index":3,"age_start":27.4,"age_end":37.4,"ganzhi":"丁酉","tsuhensei":"偏財","junishi_un":"病","kubou":true},{"index":4,"age_start":37.4,"age_end":47.4,"ganzhi":"戊戌","tsuhensei":"正官","junishi_un":"衰","kubou":false},{"index":5,"age_start":47.4,"age_end":57.4,"ganzhi":"己亥","tsuhensei":"偏官","junishi_un":"帝旺","kubou":false},{"index":6,"age_start":57.4,"age_end":67.4,"ganzhi":"庚子","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"index":7,"age_start":67.4,"age_end":77.4,"ganzhi":"辛丑","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"index":8,"age_start":77.4,"age_end":87.4,"ganzhi":"壬寅","tsuhensei":"劫財","junishi_un":"沐浴","kubou":false}]},"ryunen":[{"year":2026,"age":30,"ganzhi":"丙午","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"year":2027,"age":31,"ganzhi":"丁未","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"year":2028,"age":32,"ganzhi":"戊申","tsuhensei":"正官","junishi_un":"死","kubou":true},{"year":2029,"age":33,"ganzhi":"己酉","tsuhensei":"偏官","junishi_un":"病","kubou":true},{"year":2030,"age":34,"ganzhi":"庚戌","tsuhensei":"印綬","junishi_un":"衰","kubou":false},{"year":2031,"age":35,"ganzhi":"辛亥","tsuhensei":"偏印","junishi_un":"帝旺","kubou":false},{"year":2032,"age":36,"ganzhi":"壬子","tsuhensei":"劫財","junishi_un":"建禄","kubou":false},{"year":2033,"age":37,"ganzhi":"癸丑","tsuhensei":"比肩","junishi_un":"冠帯","kubou":false},{"year":2034,"age":38,"ganzhi":"甲寅","tsuhensei":"傷官","junishi_un":"沐浴","kubou":false},{"year":2035,"age":39,"ganzhi":"乙卯","tsuhensei":"食神","junishi_un":"長生","kubou":false}],"shinsatsu":{"year":["桃花(日)","将星(年)","月徳貴人"],"month":[],"day":["華蓋(日)"],"hour":["桃花(日)","将星(年)"]},"kankei":[{"type":"冲","pillars":["年柱","月柱"],"ganzhi":"子午"},{"type":"害","pillars":["年柱","日柱"],"ganzhi":"子未"},{"type":"天干の冲","pillars":["年柱","時柱"],"ganzhi":"丙壬","note":"立てない流派も多い","reference":true},{"type":"支合","pillars":["月柱","日柱"],"ganzhi":"午未","note":"化気は火とされる"},{"type":"冲","pillars":["月柱","時柱"],"ganzhi":"午子"},{"type":"害","pillars":["日柱","時柱"],"ganzhi":"未子"}],"input":{"birth_date":"1996-06-15","birth_time":"00:00","gender":"男性","birthplace":"福島県","longitude_deg":140.4673,"zoukan_method":"standard","time_correction":"apparent"},"birthTimeWarning":"出生時刻不明のため、時柱は参考扱い。","bundledVersion":"0.7.2"}};
+const BUNDLED_FOUR_PILLARS={"chiaki":{"source":"大久保占い研究室 (Ookubo Uranai Laboratory)","calendarMethod":"定気法（真黄経）","schema":"senjutsu-integrated/0.21.44","bundledVersion":"0.8.0","importedAt":"2026-08-20T19:48:50.914Z","dayMaster":{"stem":"壬","yinyang":"陽","wuxing":"水"},"kubou":["寅","卯"],"fourPillars":{"year":{"label":"年柱","ganzhi":"癸亥","stem":"癸","branch":"亥","tsuhensei":"劫財","zoukan":["壬","甲"],"zoukan_tsuhensei":["比肩","食神"],"junishi_un":"建禄","kubou":false},"month":{"label":"月柱","ganzhi":"乙卯","stem":"乙","branch":"卯","tsuhensei":"傷官","zoukan":["乙"],"zoukan_tsuhensei":["傷官"],"junishi_un":"死","kubou":true},"day":{"label":"日柱","ganzhi":"壬子","stem":"壬","branch":"子","tsuhensei":null,"zoukan":["癸"],"zoukan_tsuhensei":["劫財"],"junishi_un":"帝旺","kubou":false},"hour":{"label":"時柱","ganzhi":"辛亥","stem":"辛","branch":"亥","tsuhensei":"印綬","zoukan":["壬","甲"],"zoukan_tsuhensei":["比肩","食神"],"junishi_un":"建禄","kubou":false}},"daiun":{"direction":"順行","start_age":3.62,"list":[{"index":1,"age_start":3.62,"age_end":13.620000000000001,"ganzhi":"丙辰","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"index":2,"age_start":13.620000000000001,"age_end":23.62,"ganzhi":"丁巳","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"index":3,"age_start":23.62,"age_end":33.62,"ganzhi":"戊午","tsuhensei":"偏官","junishi_un":"胎","kubou":false},{"index":4,"age_start":33.62,"age_end":43.62,"ganzhi":"己未","tsuhensei":"正官","junishi_un":"養","kubou":false},{"index":5,"age_start":43.62,"age_end":53.62,"ganzhi":"庚申","tsuhensei":"偏印","junishi_un":"長生","kubou":false},{"index":6,"age_start":53.62,"age_end":63.62,"ganzhi":"辛酉","tsuhensei":"印綬","junishi_un":"沐浴","kubou":false},{"index":7,"age_start":63.62,"age_end":73.62,"ganzhi":"壬戌","tsuhensei":"比肩","junishi_un":"冠帯","kubou":false},{"index":8,"age_start":73.62,"age_end":83.62,"ganzhi":"癸亥","tsuhensei":"劫財","junishi_un":"建禄","kubou":false}]},"ryunen":[{"year":2026,"age":43,"ganzhi":"丙午","tsuhensei":"偏財","junishi_un":"胎","kubou":false},{"year":2027,"age":44,"ganzhi":"丁未","tsuhensei":"正財","junishi_un":"養","kubou":false},{"year":2028,"age":45,"ganzhi":"戊申","tsuhensei":"偏官","junishi_un":"長生","kubou":false},{"year":2029,"age":46,"ganzhi":"己酉","tsuhensei":"正官","junishi_un":"沐浴","kubou":false},{"year":2030,"age":47,"ganzhi":"庚戌","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"year":2031,"age":48,"ganzhi":"辛亥","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"year":2032,"age":49,"ganzhi":"壬子","tsuhensei":"比肩","junishi_un":"帝旺","kubou":false},{"year":2033,"age":50,"ganzhi":"癸丑","tsuhensei":"劫財","junishi_un":"衰","kubou":false},{"year":2034,"age":51,"ganzhi":"甲寅","tsuhensei":"食神","junishi_un":"病","kubou":false},{"year":2035,"age":52,"ganzhi":"乙卯","tsuhensei":"傷官","junishi_un":"死","kubou":false}],"ryugetsu":[{"ganzhi":"丙申","term":"立秋","start":"2026-08-07T11:43Z","tsuhensei":"偏財","junishi_un":"長生","kubou":false},{"ganzhi":"丁酉","term":"白露","start":"2026-09-07T14:42Z","tsuhensei":"正財","junishi_un":"沐浴","kubou":false},{"ganzhi":"戊戌","term":"寒露","start":"2026-10-08T06:30Z","tsuhensei":"偏官","junishi_un":"冠帯","kubou":false},{"ganzhi":"己亥","term":"立冬","start":"2026-11-07T09:53Z","tsuhensei":"正官","junishi_un":"建禄","kubou":false},{"ganzhi":"庚子","term":"大雪","start":"2026-12-07T02:53Z","tsuhensei":"偏印","junishi_un":"帝旺","kubou":false},{"ganzhi":"辛丑","term":"小寒","start":"2027-01-05T14:10Z","tsuhensei":"印綬","junishi_un":"衰","kubou":false},{"ganzhi":"壬寅","term":"立春","start":"2027-02-04T01:46Z","tsuhensei":"比肩","junishi_un":"病","kubou":true},{"ganzhi":"癸卯","term":"啓蟄","start":"2027-03-05T19:39Z","tsuhensei":"劫財","junishi_un":"死","kubou":true},{"ganzhi":"甲辰","term":"清明","start":"2027-04-05T00:17Z","tsuhensei":"食神","junishi_un":"墓","kubou":false},{"ganzhi":"乙巳","term":"立夏","start":"2027-05-05T17:25Z","tsuhensei":"傷官","junishi_un":"絶","kubou":false},{"ganzhi":"丙午","term":"芒種","start":"2027-06-05T21:25Z","tsuhensei":"偏財","junishi_un":"胎","kubou":false},{"ganzhi":"丁未","term":"小暑","start":"2027-07-07T07:37Z","tsuhensei":"正財","junishi_un":"養","kubou":false},{"ganzhi":"戊申","term":"立秋","start":"2027-08-07T17:26Z","tsuhensei":"偏官","junishi_un":"長生","kubou":false},{"ganzhi":"己酉","term":"白露","start":"2027-09-07T20:28Z","tsuhensei":"正官","junishi_un":"沐浴","kubou":false},{"ganzhi":"庚戌","term":"寒露","start":"2027-10-08T12:17Z","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"ganzhi":"辛亥","term":"立冬","start":"2027-11-07T15:39Z","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"ganzhi":"壬子","term":"大雪","start":"2027-12-07T08:38Z","tsuhensei":"比肩","junishi_un":"帝旺","kubou":false},{"ganzhi":"癸丑","term":"小寒","start":"2028-01-05T19:55Z","tsuhensei":"劫財","junishi_un":"衰","kubou":false},{"ganzhi":"甲寅","term":"立春","start":"2028-02-04T07:31Z","tsuhensei":"食神","junishi_un":"病","kubou":true},{"ganzhi":"乙卯","term":"啓蟄","start":"2028-03-05T01:25Z","tsuhensei":"傷官","junishi_un":"死","kubou":true},{"ganzhi":"丙辰","term":"清明","start":"2028-04-04T06:03Z","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"ganzhi":"丁巳","term":"立夏","start":"2028-05-04T23:12Z","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"ganzhi":"戊午","term":"芒種","start":"2028-06-05T03:16Z","tsuhensei":"偏官","junishi_un":"胎","kubou":false},{"ganzhi":"己未","term":"小暑","start":"2028-07-06T13:30Z","tsuhensei":"正官","junishi_un":"養","kubou":false}],"input":{"birth_date":"1983-03-25","birth_time":"21:03","gender":"女性","birthplace":"東京都"},"birthTimeWarning":""},"naoya":{"source":"大久保占い研究室 (Ookubo Uranai Laboratory)","calendarMethod":"定気法（真黄経／時憲暦・天保暦系・GB/T 33661準拠）","schema":"sizhu-meishiki/2","importedAt":"2026-08-20T11:45:00.000Z","dayMaster":{"stem":"癸","yinyang":"陰","wuxing":"水"},"kubou":["申","酉"],"fourPillars":{"year":{"label":"年柱","ganzhi":"丙子","stem":"丙","stem_wuxing":"火","branch":"子","branch_wuxing":"水","tsuhensei":"正財","zoukan":["癸"],"zoukan_tsuhensei":["比肩"],"junishi_un":"建禄","kubou":false},"month":{"label":"月柱","ganzhi":"甲午","stem":"甲","stem_wuxing":"木","branch":"午","branch_wuxing":"火","tsuhensei":"傷官","zoukan":["丁","己"],"zoukan_tsuhensei":["偏財","偏官"],"junishi_un":"絶","kubou":false},"day":{"label":"日柱","ganzhi":"癸未","stem":"癸","stem_wuxing":"水","branch":"未","branch_wuxing":"土","tsuhensei":null,"zoukan":["己","丁","乙"],"zoukan_tsuhensei":["偏官","偏財","食神"],"junishi_un":"墓","kubou":false},"hour":{"label":"時柱","ganzhi":"壬子","stem":"壬","stem_wuxing":"水","branch":"子","branch_wuxing":"水","tsuhensei":"劫財","zoukan":["癸"],"zoukan_tsuhensei":["比肩"],"junishi_un":"建禄","kubou":false}},"daiun":{"direction":"順行","start_age":7.4,"list":[{"index":1,"age_start":7.4,"age_end":17.4,"ganzhi":"乙未","tsuhensei":"食神","junishi_un":"墓","kubou":false},{"index":2,"age_start":17.4,"age_end":27.4,"ganzhi":"丙申","tsuhensei":"正財","junishi_un":"死","kubou":true},{"index":3,"age_start":27.4,"age_end":37.4,"ganzhi":"丁酉","tsuhensei":"偏財","junishi_un":"病","kubou":true},{"index":4,"age_start":37.4,"age_end":47.4,"ganzhi":"戊戌","tsuhensei":"正官","junishi_un":"衰","kubou":false},{"index":5,"age_start":47.4,"age_end":57.4,"ganzhi":"己亥","tsuhensei":"偏官","junishi_un":"帝旺","kubou":false},{"index":6,"age_start":57.4,"age_end":67.4,"ganzhi":"庚子","tsuhensei":"印綬","junishi_un":"建禄","kubou":false},{"index":7,"age_start":67.4,"age_end":77.4,"ganzhi":"辛丑","tsuhensei":"偏印","junishi_un":"冠帯","kubou":false},{"index":8,"age_start":77.4,"age_end":87.4,"ganzhi":"壬寅","tsuhensei":"劫財","junishi_un":"沐浴","kubou":false}]},"ryunen":[{"year":2026,"age":30,"ganzhi":"丙午","tsuhensei":"正財","junishi_un":"絶","kubou":false},{"year":2027,"age":31,"ganzhi":"丁未","tsuhensei":"偏財","junishi_un":"墓","kubou":false},{"year":2028,"age":32,"ganzhi":"戊申","tsuhensei":"正官","junishi_un":"死","kubou":true},{"year":2029,"age":33,"ganzhi":"己酉","tsuhensei":"偏官","junishi_un":"病","kubou":true},{"year":2030,"age":34,"ganzhi":"庚戌","tsuhensei":"印綬","junishi_un":"衰","kubou":false},{"year":2031,"age":35,"ganzhi":"辛亥","tsuhensei":"偏印","junishi_un":"帝旺","kubou":false},{"year":2032,"age":36,"ganzhi":"壬子","tsuhensei":"劫財","junishi_un":"建禄","kubou":false},{"year":2033,"age":37,"ganzhi":"癸丑","tsuhensei":"比肩","junishi_un":"冠帯","kubou":false},{"year":2034,"age":38,"ganzhi":"甲寅","tsuhensei":"傷官","junishi_un":"沐浴","kubou":false},{"year":2035,"age":39,"ganzhi":"乙卯","tsuhensei":"食神","junishi_un":"長生","kubou":false}],"shinsatsu":{"year":["桃花(日)","将星(年)","月徳貴人"],"month":[],"day":["華蓋(日)"],"hour":["桃花(日)","将星(年)"]},"kankei":[{"type":"冲","pillars":["年柱","月柱"],"ganzhi":"子午"},{"type":"害","pillars":["年柱","日柱"],"ganzhi":"子未"},{"type":"天干の冲","pillars":["年柱","時柱"],"ganzhi":"丙壬","note":"立てない流派も多い","reference":true},{"type":"支合","pillars":["月柱","日柱"],"ganzhi":"午未","note":"化気は火とされる"},{"type":"冲","pillars":["月柱","時柱"],"ganzhi":"午子"},{"type":"害","pillars":["日柱","時柱"],"ganzhi":"未子"}],"input":{"birth_date":"","birth_time":"","gender":"","birthplace":""},"birthTimeWarning":"出生時刻不明のため、時柱は参考扱い。","bundledVersion":"0.7.2"}};
 
 const defaultData={
   people:[
     {id:'chiaki',name:'Chiaki',birthDate:'1983-03-25',birthTime:'21:03',birthTimeStatus:'exact',birthPlace:'Tokyo, Japan',memo:'ORBIT owner'},
-    {id:'naoya',name:'N',birthDate:'1996-06-15',birthTime:'',birthTimeStatus:'unknown',birthTimeHypothesis:'06:00',birthPlace:'Fukushima, Japan',memo:''}
+    {id:'naoya',name:'N',birthDate:'',birthTime:'',birthTimeStatus:'unknown',birthTimeHypothesis:'',birthPlace:'',memo:''}
   ],
   settings:{focusPersonId:'naoya'},
   months:{},
@@ -121,7 +121,8 @@ const defaultData={
   ],
   projects:[{id:'p2033',title:'2033 PROJECT',personId:'naoya',targetPeriod:'2033',status:'OBSERVING',systems:['Western Astrology','四柱推命'],summary:'東西の長期サイクルを重ねて観測する重要ポイント',note:'早期実現歓迎'}],
   fourPillars:{profiles:JSON.parse(JSON.stringify(BUNDLED_FOUR_PILLARS)),monthly:{}},
-  monthlyChecks:{}
+  monthlyChecks:{},
+  monthlyMessages:{}
 };
 
 function cloneDefault(){return JSON.parse(JSON.stringify(defaultData))}
@@ -136,6 +137,7 @@ function migrate(d){
   d.month.focus=d.month.focus||'RELATIONSHIP';
   d.monthlyChecks=d.monthlyChecks||{};
   d.relationshipBase=d.relationshipBase||{reading:'',updatedAt:''};
+  d.monthlyMessages=d.monthlyMessages||{};
   d.fourPillars=d.fourPillars||{profiles:{},monthly:{}};
   d.fourPillars.profiles=d.fourPillars.profiles||{}; d.fourPillars.monthly=d.fourPillars.monthly||{};
   Object.entries(BUNDLED_FOUR_PILLARS).forEach(([id,profile])=>{
@@ -543,50 +545,196 @@ function orbitThisMonthModel(period){
   return {western:w,fourPillars:fp,cross,overlap,top,summary,fpLine,wLine,crossLine};
 }
 
-function orbitCoverCopy(m){
-  const primary=m.overlap?.[0]?.key||m.top?.[0]?.key||'';
-  const secondary=m.overlap?.[1]?.key||m.top?.[1]?.key||'';
-  const copy={
-    CHANGE:['変化の先に、新しい流れがひらく。','Transformation · Renewal'],
-    VALUES:['大切にしたいものが、輪郭を帯びてくる。','Value · Affection'],
-    CONNECTION:['結びつきの意味を、静かに見つめる。','Connection · Integration'],
-    TRANSFORMATION:['深いところから、景色が変わりはじめる。','Transformation · Depth'],
-    EXPANSION:['可能性のほうへ、少し視界がひらく。','Expansion · Possibility'],
-    RESPONSIBILITY:['形にするための、静かな整え。','Responsibility · Structure'],
-    SENSITIVITY:['感じ取るものを、急いで言葉にしなくていい。','Sensitivity · Ideal'],
-    EMOTION:['心が動く方向を、そっと確かめる。','Emotion · Security'],
-    COMMUNICATION:['言葉の向こうにあるものを、丁寧に拾う。','Communication · Thought'],
-    SELF:['自分の軸を、もう一度たしかめる。','Self · Direction'],
-    ACTION:['動きたい気持ちに、まっすぐ光を当てる。','Action · Desire'],
-    LEARNING:['答えを急がず、意味を育てていく。','Reflection · Learning'],
-    EXPRESSION:['内側にあるものを、外の世界へ。','Expression · Creation']
+
+function monthlyMessageFor(period){return data.monthlyMessages?.[period]||null}
+
+function monthlySynthesisMaterials(period){
+  const materials=[];
+  const m=orbitThisMonthModel(period);
+
+  if(m?.summary){
+    materials.push({
+      source:'ORBIT ENGINE · EAST × WEST',
+      method:'RULE-BASED SYNTHESIS',
+      summary:m.summary,
+      tags:(m.overlap.length?m.overlap:m.top).slice(0,4).map(x=>x.label)
+    });
+  }
+
+  const wm=westernMonth(period);
+  if(wm){
+    const items=[...(wm.progressions?.aspects_to_natal||[]),...(wm.long_transits?.aspects_to_natal||[])];
+    const wr=westernInterpretation(items);
+    if(wr.summary)materials.push({
+      source:'WESTERN ENGINE',
+      method:'PROGRESSIONS + LONG TRANSITS',
+      summary:wr.summary,
+      tags:wr.themes||[]
+    });
+  }
+
+  if(m?.fourPillars?.record){
+    materials.push({
+      source:'FOUR PILLARS',
+      method:'大運・歳運・月運',
+      summary:`${m.fpLine}。${m.fourPillars.themes.slice(0,4).map(x=>x.label).join('・')}。`,
+      tags:m.fourPillars.themes.slice(0,4).map(x=>x.label)
+    });
+  }
+
+  if(m?.cross){
+    materials.push({
+      source:'CROSS SIGNAL',
+      method:'MECHANICAL TRIGGER',
+      summary:m.crossLine,
+      tags:m.cross.shared_branch_relation_types||[]
+    });
+  }
+
+  data.readings
+    .filter(r=>r.targetPeriod===period)
+    .sort((a,b)=>(a.method||'').localeCompare(b.method||''))
+    .forEach(r=>{
+      const pairs=keywordPairsFromReading(r);
+      const tags=pairs.length
+        ? pairs.slice(0,6).map(x=>x.ja?`${x.en}（${x.ja}）`:x.en)
+        : (r.tags||[]).slice(0,6);
+      materials.push({
+        source:r.system||'READING',
+        method:r.method||'SAVED READING',
+        summary:[r.summary,r.brief].filter(Boolean).join(' / '),
+        tags,
+        readingId:r.id
+      });
+    });
+
+  return materials.filter(x=>x.summary);
+}
+
+function monthlySynthesisPrompt(period){
+  const materials=monthlySynthesisMaterials(period);
+  const lines=[
+    `ORBIT MONTHLY SYNTHESISを作成してください。対象月は ${periodLabel(period)} です。`,
+    '',
+    '【原則】',
+    '以下の保存済み観測要約だけを根拠に統合してください。',
+    '希望的観測にも悲観にも寄せず、同じテーマが複数観測で重なる場合は重みを置いてください。',
+    '観測同士に緊張・相違がある場合は、無理に一つの意味へ丸めないでください。',
+    '質問にない出来事・相手の行動・未来の事実を補完しないでください。',
+    '占術上のテーマとして表現し、断定しないでください。',
+    '',
+    '【OUTPUT】',
+    '次の4項目だけを、見出し名を変えずに出力してください。前置き・解説・あとがきは不要です。',
+    'TITLE: 英語1〜4語。HOMEの表紙になる短いタイトル。大文字。',
+    'SUBTITLE: 英語2〜4概念。 · で区切る。',
+    'MESSAGE: 日本語25〜55字程度。1〜2文。標語調・説教調を避け、静かで余韻のある言葉。',
+    'THEME: 日本語2〜4語。・で区切る。',
+    '',
+    '【観測材料】'
+  ];
+  materials.forEach((x,i)=>{
+    lines.push(``);
+    lines.push(`■ ${i+1}. ${x.source} / ${x.method}`);
+    lines.push(`要約: ${x.summary}`);
+    if(x.tags?.length)lines.push(`テーマ: ${x.tags.join(' / ')}`);
+  });
+  if(!materials.length)lines.push('（保存済み観測材料なし）');
+  return lines.join('\n');
+}
+
+function formatMonthlyMessage(msg){
+  if(!msg)return'';
+  return `TITLE: ${msg.title||''}\nSUBTITLE: ${msg.subtitle||''}\nMESSAGE: ${msg.message||''}\nTHEME: ${(msg.themes||[]).join('・')}`;
+}
+
+function parseMonthlyMessage(raw=''){
+  const text=String(raw||'').trim();
+  const grab=(label,nextLabels)=>{
+    const stop=nextLabels.length?`(?=\\n(?:${nextLabels.join('|')}):|$)`:'$';
+    const re=new RegExp(`${label}:\\s*([\\s\\S]*?)${stop}`,'i');
+    return (text.match(re)?.[1]||'').trim();
   };
-  const base=copy[primary]||['今月の流れを、静かに観測する。','Observe · Understand · Align'];
-  return {title:base[0],subtitle:base[1],keys:[primary,secondary].filter(Boolean)};
+  const title=grab('TITLE',['SUBTITLE','MESSAGE','THEME']).replace(/\s+/g,' ').toUpperCase();
+  const subtitle=grab('SUBTITLE',['MESSAGE','THEME']).replace(/\s+/g,' ');
+  const message=grab('MESSAGE',['THEME']).replace(/\n+/g,' ').replace(/\s+/g,' ').trim();
+  const themeRaw=grab('THEME',[]);
+  const themes=themeRaw.split(/[・,，/｜|]/).map(x=>x.trim()).filter(Boolean).slice(0,4);
+  return {title,subtitle,message,themes};
+}
+
+function viewMonthlySynthesis(){
+  const period=data.month.period;
+  const materials=monthlySynthesisMaterials(period);
+  const saved=monthlyMessageFor(period);
+  const materialHTML=materials.length?materials.map((x,i)=>`
+    <div class="monthly-material">
+      <div><span>${esc(String(i+1).padStart(2,'0'))}</span><small>${esc(x.source)}</small></div>
+      <strong>${esc(x.method)}</strong>
+      <p>${esc(x.summary)}</p>
+      ${x.tags?.length?`<div class="chips">${x.tags.slice(0,5).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
+    </div>`).join(''):'<div class="empty">この月の観測材料はまだありません ✦</div>';
+
+  openModal(`
+    <span class="kicker">MONTHLY SYNTHESIS · ${esc(data.month.title)}</span>
+    <h2>Message from the Orbit</h2>
+    <p class="modal-copy">同じ月の保存済みReadingとEngine要約を束ね、ChatGPTで一度だけ横断統合します。HOMEは保存したメッセージだけを表示します。</p>
+
+    <div class="monthly-materials">${materialHTML}</div>
+
+    <div class="ai-box monthly-ai-box">
+      <div class="ai-head">
+        <strong>AI READ</strong>
+        <button type="button" class="copy-btn" data-copy-monthly-synthesis>COPY</button>
+      </div>
+      <p>${materials.length}件の観測要約を、希望にも悲観にも寄せず統合する専用プロンプト。</p>
+    </div>
+
+    <label>AI RESULT <small>TITLE / SUBTITLE / MESSAGE / THEME</small></label>
+    <textarea id="monthlyMessagePaste" class="large-textarea monthly-message-paste" placeholder="ChatGPTの4項目をそのまま貼り付け">${esc(saved?formatMonthlyMessage(saved):'')}</textarea>
+
+    ${saved?`<div class="monthly-saved-note">SAVED · ${esc(saved.updatedAt?new Date(saved.updatedAt).toLocaleDateString('ja-JP'):'')}</div>`:''}
+
+    <div class="form-actions">
+      <button type="button" class="text-btn" data-close-modal>Close</button>
+      <button type="button" class="save-btn" data-save-monthly-message>${saved?'UPDATE MESSAGE':'SAVE MESSAGE'}</button>
+    </div>`);
 }
 
 function renderThisMonthV2(){
   const host=$('#thisMonthV2');if(!host)return;
-  const m=orbitThisMonthModel(data.month.period);
-  const cover=orbitCoverCopy(m);
-  const coverTags=(m.overlap.length?m.overlap:m.top.slice(0,4)).slice(0,4)
-    .map(x=>`<span class="chip">${esc(x.label)}</span>`).join('');
+  const period=data.month.period;
+  const m=orbitThisMonthModel(period);
+  const saved=monthlyMessageFor(period);
+
   const overlapTags=m.overlap.length
     ?m.overlap.map(x=>`<span class="chip overlap-hit">${esc(x.label)}</span>`).join('')
     :'<span class="tm-none">今月は共通分類なし</span>';
 
+  let coverHTML='';
+  if(saved){
+    const tags=(saved.themes||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
+    coverHTML=`
+      <section class="tm-cover tm-cover-saved">
+        <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
+        <h3 class="tm-cover-title-en">${esc(saved.title||'MONTHLY OBSERVATION')}</h3>
+        ${saved.subtitle?`<em class="tm-cover-subtitle-en">${esc(saved.subtitle)}</em>`:''}
+        <p class="tm-cover-message-ja">${esc(saved.message||'')}</p>
+        ${tags?`<div class="chips tm-cover-tags">${tags}</div>`:''}
+        <button type="button" class="tm-synthesis-link" data-monthly-synthesis>WHY THIS MESSAGE <span>›</span></button>
+      </section>`;
+  }else{
+    coverHTML=`
+      <section class="tm-cover tm-cover-awaiting">
+        <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
+        <h3 class="tm-cover-title-en">MONTHLY<br>OBSERVATION</h3>
+        <em class="tm-cover-subtitle-en">Awaiting synthesis.</em>
+        <p class="tm-cover-message-ja">保存した観測を束ねて、今月だけのメッセージをつくる。</p>
+        <button type="button" class="tm-synthesis-link primary" data-monthly-synthesis>CREATE SYNTHESIS <span>✦</span></button>
+      </section>`;
+  }
+
   host.innerHTML=`
-    <section class="tm-cover">
-      <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
-      <h3>${esc(cover.title)}</h3>
-      <em>${esc(cover.subtitle)}</em>
-      <div class="chips tm-cover-tags">${coverTags}</div>
-      <details class="tm-cover-details">
-        <summary>WHY THIS MESSAGE</summary>
-        <p>${esc(m.summary)}</p>
-        <small>四柱推命とWesternの計算済みマスターから、同じ月の観測テーマを整理しています。</small>
-      </details>
-    </section>
+    ${coverHTML}
     <div class="tm-systems">
       <div class="tm-system"><small>FOUR PILLARS</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div>
       <div class="tm-system"><small>WESTERN</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div>
@@ -655,16 +803,22 @@ function derivedTimeline(){
   const out=[];
   [...periods].sort((a,b)=>monthSortKey(a)-monthSortKey(b)).forEach(period=>{
     const rs=data.readings.filter(r=>r.targetPeriod===period),month=data.months?.[period],fp=fourPillarSummary('chiaki',period),tags=topReadingTags(period);
-    if(!rs.length && !month?.summary && !fp?.shift)return;
-    const theme=(month?.theme&&month.theme!=='OBSERVING')?month.theme:(tags[0]||'OBSERVING');
-    const summary=month?.summary||rs[0]?.summary||`${rs.length}件の観測を保存`;
-    out.push({id:`month-${period}`,period:periodLabel(period),periodKey:period,title:theme,summary,kind:'month',saved:rs.length,shift:fp?.shift||null});
+    const monthlyMessage=monthlyMessageFor(period);
+    const engineModel=(masterReady()&&westernMaster.loaded)?orbitThisMonthModel(period):null;
+    if(!rs.length && !month?.summary && !fp?.shift && !monthlyMessage)return;
+    const theme=monthlyMessage?.title
+      ||(engineModel?.top?.length?engineModel.top.slice(0,2).map(x=>x.key).join(' / '):'')
+      ||((month?.theme&&month.theme!=='OBSERVING')?month.theme:(tags[0]||'OBSERVING'));
+    const summary=monthlyMessage?.message
+      ||(engineModel?.summary||'')
+      ||month?.summary||rs[0]?.summary||`${rs.length}件の観測を保存`;
+    out.push({id:`month-${period}`,period:periodLabel(period),periodKey:period,title:theme,summary,kind:'month',saved:rs.length,shift:fp?.shift||null,synthesized:!!monthlyMessage});
   });
   // Long-range projects are true hypothesis markers, not fake monthly predictions.
   (data.projects||[]).forEach(p=>out.push({id:`project-${p.id}`,period:String(p.targetPeriod||''),title:p.title,summary:p.summary,kind:'project',projectId:p.id,status:p.status}));
   return out.sort((a,b)=>{const ay=parseInt(a.period)||9999,by=parseInt(b.period)||9999;if(ay!==by)return ay-by;return (a.periodKey||'99').localeCompare(b.periodKey||'99')});
 }
-function timelineItem(t){return `<button type="button" class="timeline-item timeline-button ${t.shift?'timeline-shift':''}" ${t.kind==='month'?`data-timeline-month="${esc(t.periodKey)}"`:`data-project="${esc(t.projectId||'')}"`}><div class="timeline-period">${esc(t.period)}</div><div class="timeline-line"></div><div class="timeline-copy">${t.shift?'<span class="timeline-badge">✦ MAJOR SHIFT</span>':t.kind==='project'?'<span class="timeline-badge long">◎ LONG RANGE</span>':''}<strong>${esc(t.title)}</strong><p>${esc(t.summary)}</p>${t.saved?`<small>${t.saved} SAVED OBSERVATION${t.saved>1?'S':''}</small>`:''}${t.shift?`<small>大運 ${esc(t.shift.from.ganzhi)} → ${esc(t.shift.to.ganzhi)} · ${esc(shiftLabel(t.shift))}</small>`:''}</div></button>`}
+function timelineItem(t){return `<button type="button" class="timeline-item timeline-button ${t.shift?'timeline-shift':''}" ${t.kind==='month'?`data-timeline-month="${esc(t.periodKey)}"`:`data-project="${esc(t.projectId||'')}"`}><div class="timeline-period">${esc(t.period)}</div><div class="timeline-line"></div><div class="timeline-copy">${t.shift?'<span class="timeline-badge">✦ MAJOR SHIFT</span>':t.kind==='project'?'<span class="timeline-badge long">◎ LONG RANGE</span>':t.synthesized?'<span class="timeline-badge synthesized">✦ SYNTHESIZED</span>':''}<strong>${esc(t.title)}</strong><p>${esc(t.summary)}</p>${t.saved?`<small>${t.saved} SAVED OBSERVATION${t.saved>1?'S':''}</small>`:''}${t.shift?`<small>大運 ${esc(t.shift.from.ganzhi)} → ${esc(t.shift.to.ganzhi)} · ${esc(shiftLabel(t.shift))}</small>`:''}</div></button>`}
 function empty(){return $('#emptyTpl').innerHTML}
 function renderPeople(){
   $('#peopleGrid').innerHTML=data.people.map(p=>`<article class="person-card" data-person="${p.id}"><div class="mini-planet"></div><h3>${esc(p.name)}</h3>${fpProfile(p.id)?'<span class="fp-badge">四柱 BASE ✓</span>':''}<p>${esc(p.birthDate||'Birth date unknown')}</p><p>${p.birthTimeStatus==='exact'?`Birth time ${esc(p.birthTime)}`:`Birth time UNKNOWN${p.birthTimeHypothesis?` · Hyp. ${esc(p.birthTimeHypothesis)}`:''}`}</p></article>`).join('')+`<article class="person-card" data-action="add-person"><div class="mini-planet" style="display:grid;place-items:center;font-size:36px">＋</div><h3>Add Person</h3><p>新しい観測対象を追加</p></article>`;
@@ -831,6 +985,15 @@ function saveReadingFromForm(fd,existing=null){
 
 document.addEventListener('click',async e=>{
   const go=e.target.closest('[data-go]'); if(go){showView(go.dataset.go);return}
+  if(e.target.closest('[data-monthly-synthesis]')){viewMonthlySynthesis();return}
+  if(e.target.closest('[data-copy-monthly-synthesis]')){const ok=await copyText(monthlySynthesisPrompt(data.month.period));toast(ok?'MONTHLY SYNTHESISプロンプトをコピーしました ✦':'コピーできませんでした');return}
+  if(e.target.closest('[data-save-monthly-message]')){
+    const parsed=parseMonthlyMessage($('#monthlyMessagePaste')?.value||'');
+    if(!parsed.title||!parsed.message){toast('TITLEとMESSAGEを確認してください');return}
+    data.monthlyMessages=data.monthlyMessages||{};
+    data.monthlyMessages[data.month.period]={...parsed,updatedAt:new Date().toISOString(),materialCount:monthlySynthesisMaterials(data.month.period).length};
+    save();$('#modal').close();toast('今月のメッセージを保存しました ✦');return
+  }
   if(e.target.closest('[data-relationship-base]')){viewRelationshipBase();return}
   if(e.target.closest('[data-copy-base]')){const ok=await copyText(relationshipBasePrompt());toast(ok?'BASEプロンプトをコピーしました ✦':'コピーできませんでした');return}
   if(e.target.closest('[data-save-base]')){data.relationshipBase=data.relationshipBase||{};data.relationshipBase.reading=$('#rbReading')?.value||'';data.relationshipBase.updatedAt=new Date().toISOString();save();$('#modal').close();toast('RELATIONSHIP BASEを保存しました ✦');return}
