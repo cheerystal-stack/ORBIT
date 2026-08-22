@@ -438,3 +438,31 @@ radial-gradient(circle,rgba(245,211,234,.32) 0 1px,transparent 1.2px);background
   transform:translateX(-50%)!important;
   bottom:calc(env(safe-area-inset-bottom) + 10px)!important;
 }
+/* ORBIT cosmic background layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(7, 11, 25, 0.10) 0%,
+      rgba(7, 11, 25, 0.35) 65%,
+      rgba(7, 11, 25, 0.75) 100%
+    ),
+    url("./assets/orbit-cosmos.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  opacity: 0.18;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+}
