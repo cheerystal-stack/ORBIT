@@ -469,7 +469,13 @@ body::after {
 /* Mobile: show more of the cosmic artwork */
 @media (max-width: 600px) {
   body::after {
-    background-size: 85% auto;
+    inset: -8% -18% auto -18%;
+    height: 82vh;
+
+    background-size: contain;
     background-position: center top;
+    background-repeat: no-repeat;
+
+    opacity: 0.18;
   }
 }
