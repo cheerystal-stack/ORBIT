@@ -1,0 +1,1496 @@
+{
+  "schema_version": "1.0.0",
+  "engine": "ORBIT FourPillars-compatible Monthly Engine v1",
+  "range": {
+    "from": "2026-01",
+    "to": "2033-12",
+    "record_count": 96
+  },
+  "static_natal_interactions": [
+    {
+      "chiaki_pillar": "month",
+      "chiaki_ganzhi": "乙卯",
+      "naoya_pillar": "year",
+      "naoya_ganzhi": "丙子",
+      "stem_relations": [],
+      "branch_relations": [
+        "刑"
+      ]
+    },
+    {
+      "chiaki_pillar": "month",
+      "chiaki_ganzhi": "乙卯",
+      "naoya_pillar": "month",
+      "naoya_ganzhi": "甲午",
+      "stem_relations": [],
+      "branch_relations": [
+        "破"
+      ]
+    },
+    {
+      "chiaki_pillar": "day",
+      "chiaki_ganzhi": "壬子",
+      "naoya_pillar": "month",
+      "naoya_ganzhi": "甲午",
+      "stem_relations": [],
+      "branch_relations": [
+        "冲"
+      ]
+    },
+    {
+      "chiaki_pillar": "day",
+      "chiaki_ganzhi": "壬子",
+      "naoya_pillar": "day",
+      "naoya_ganzhi": "癸未",
+      "stem_relations": [],
+      "branch_relations": [
+        "害"
+      ]
+    },
+    {
+      "chiaki_pillar": "hour",
+      "chiaki_ganzhi": "辛亥",
+      "naoya_pillar": "year",
+      "naoya_ganzhi": "丙子",
+      "stem_relations": [
+        "干合"
+      ],
+      "branch_relations": []
+    }
+  ],
+  "note": "CROSSは機械的な共通トリガーのみ。恋愛・関係性の意味づけは保存せず、解釈時に行う。",
+  "records": [
+    {
+      "period": "2026-01",
+      "period_start_jst": "2026-01-05T17:23:00+09:00",
+      "period_end_jst": "2026-02-04T05:02:00+09:00",
+      "month_ganzhi": "己丑",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-02",
+      "period_start_jst": "2026-02-04T05:02:00+09:00",
+      "period_end_jst": "2026-03-05T22:59:00+09:00",
+      "month_ganzhi": "庚寅",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-03",
+      "period_start_jst": "2026-03-05T22:59:00+09:00",
+      "period_end_jst": "2026-04-05T03:40:00+09:00",
+      "month_ganzhi": "辛卯",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-04",
+      "period_start_jst": "2026-04-05T03:40:00+09:00",
+      "period_end_jst": "2026-05-05T20:49:00+09:00",
+      "month_ganzhi": "壬辰",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-05",
+      "period_start_jst": "2026-05-05T20:49:00+09:00",
+      "period_end_jst": "2026-06-06T00:48:00+09:00",
+      "month_ganzhi": "癸巳",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-06",
+      "period_start_jst": "2026-06-06T00:48:00+09:00",
+      "period_end_jst": "2026-07-07T10:57:00+09:00",
+      "month_ganzhi": "甲午",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-07",
+      "period_start_jst": "2026-07-07T10:57:00+09:00",
+      "period_end_jst": "2026-08-07T20:43:00+09:00",
+      "month_ganzhi": "乙未",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-08",
+      "period_start_jst": "2026-08-07T20:43:00+09:00",
+      "period_end_jst": "2026-09-07T23:41:00+09:00",
+      "month_ganzhi": "丙申",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-09",
+      "period_start_jst": "2026-09-07T23:41:00+09:00",
+      "period_end_jst": "2026-10-08T15:29:00+09:00",
+      "month_ganzhi": "丁酉",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-10",
+      "period_start_jst": "2026-10-08T15:29:00+09:00",
+      "period_end_jst": "2026-11-07T18:52:00+09:00",
+      "month_ganzhi": "戊戌",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-11",
+      "period_start_jst": "2026-11-07T18:52:00+09:00",
+      "period_end_jst": "2026-12-07T11:53:00+09:00",
+      "month_ganzhi": "己亥",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": {
+        "from": "己未",
+        "to": "庚申",
+        "precision": "month_only"
+      },
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2026-12",
+      "period_start_jst": "2026-12-07T11:53:00+09:00",
+      "period_end_jst": "2027-01-05T23:10:00+09:00",
+      "month_ganzhi": "庚子",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-01",
+      "period_start_jst": "2027-01-05T23:10:00+09:00",
+      "period_end_jst": "2027-02-04T10:46:00+09:00",
+      "month_ganzhi": "辛丑",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-02",
+      "period_start_jst": "2027-02-04T10:46:00+09:00",
+      "period_end_jst": "2027-03-06T04:40:00+09:00",
+      "month_ganzhi": "壬寅",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-03",
+      "period_start_jst": "2027-03-06T04:40:00+09:00",
+      "period_end_jst": "2027-04-05T09:18:00+09:00",
+      "month_ganzhi": "癸卯",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-04",
+      "period_start_jst": "2027-04-05T09:18:00+09:00",
+      "period_end_jst": "2027-05-06T02:25:00+09:00",
+      "month_ganzhi": "甲辰",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-05",
+      "period_start_jst": "2027-05-06T02:25:00+09:00",
+      "period_end_jst": "2027-06-06T06:26:00+09:00",
+      "month_ganzhi": "乙巳",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-06",
+      "period_start_jst": "2027-06-06T06:26:00+09:00",
+      "period_end_jst": "2027-07-07T16:37:00+09:00",
+      "month_ganzhi": "丙午",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-07",
+      "period_start_jst": "2027-07-07T16:37:00+09:00",
+      "period_end_jst": "2027-08-08T02:27:00+09:00",
+      "month_ganzhi": "丁未",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-08",
+      "period_start_jst": "2027-08-08T02:27:00+09:00",
+      "period_end_jst": "2027-09-08T05:28:00+09:00",
+      "month_ganzhi": "戊申",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-09",
+      "period_start_jst": "2027-09-08T05:28:00+09:00",
+      "period_end_jst": "2027-10-08T21:17:00+09:00",
+      "month_ganzhi": "己酉",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-10",
+      "period_start_jst": "2027-10-08T21:17:00+09:00",
+      "period_end_jst": "2027-11-08T00:39:00+09:00",
+      "month_ganzhi": "庚戌",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-11",
+      "period_start_jst": "2027-11-08T00:39:00+09:00",
+      "period_end_jst": "2027-12-07T17:38:00+09:00",
+      "month_ganzhi": "辛亥",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2027-12",
+      "period_start_jst": "2027-12-07T17:38:00+09:00",
+      "period_end_jst": "2028-01-06T04:55:00+09:00",
+      "month_ganzhi": "壬子",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-01",
+      "period_start_jst": "2028-01-06T04:55:00+09:00",
+      "period_end_jst": "2028-02-04T16:31:00+09:00",
+      "month_ganzhi": "癸丑",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-02",
+      "period_start_jst": "2028-02-04T16:31:00+09:00",
+      "period_end_jst": "2028-03-05T10:25:00+09:00",
+      "month_ganzhi": "甲寅",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-03",
+      "period_start_jst": "2028-03-05T10:25:00+09:00",
+      "period_end_jst": "2028-04-04T15:03:00+09:00",
+      "month_ganzhi": "乙卯",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-04",
+      "period_start_jst": "2028-04-04T15:03:00+09:00",
+      "period_end_jst": "2028-05-05T08:12:00+09:00",
+      "month_ganzhi": "丙辰",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-05",
+      "period_start_jst": "2028-05-05T08:12:00+09:00",
+      "period_end_jst": "2028-06-05T12:16:00+09:00",
+      "month_ganzhi": "丁巳",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-06",
+      "period_start_jst": "2028-06-05T12:16:00+09:00",
+      "period_end_jst": "2028-07-06T22:30:00+09:00",
+      "month_ganzhi": "戊午",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-07",
+      "period_start_jst": "2028-07-06T22:30:00+09:00",
+      "period_end_jst": "2028-08-07T08:21:00+09:00",
+      "month_ganzhi": "己未",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-08",
+      "period_start_jst": "2028-08-07T08:21:00+09:00",
+      "period_end_jst": "2028-09-07T11:22:00+09:00",
+      "month_ganzhi": "庚申",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-09",
+      "period_start_jst": "2028-09-07T11:22:00+09:00",
+      "period_end_jst": "2028-10-08T03:09:00+09:00",
+      "month_ganzhi": "辛酉",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-10",
+      "period_start_jst": "2028-10-08T03:09:00+09:00",
+      "period_end_jst": "2028-11-07T06:27:00+09:00",
+      "month_ganzhi": "壬戌",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-11",
+      "period_start_jst": "2028-11-07T06:27:00+09:00",
+      "period_end_jst": "2028-12-06T23:25:00+09:00",
+      "month_ganzhi": "癸亥",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2028-12",
+      "period_start_jst": "2028-12-06T23:25:00+09:00",
+      "period_end_jst": "2029-01-05T10:42:00+09:00",
+      "month_ganzhi": "甲子",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-01",
+      "period_start_jst": "2029-01-05T10:42:00+09:00",
+      "period_end_jst": "2029-02-03T22:21:00+09:00",
+      "month_ganzhi": "乙丑",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-02",
+      "period_start_jst": "2029-02-03T22:21:00+09:00",
+      "period_end_jst": "2029-03-05T16:18:00+09:00",
+      "month_ganzhi": "丙寅",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-03",
+      "period_start_jst": "2029-03-05T16:18:00+09:00",
+      "period_end_jst": "2029-04-04T20:58:00+09:00",
+      "month_ganzhi": "丁卯",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-04",
+      "period_start_jst": "2029-04-04T20:58:00+09:00",
+      "period_end_jst": "2029-05-05T14:08:00+09:00",
+      "month_ganzhi": "戊辰",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-05",
+      "period_start_jst": "2029-05-05T14:08:00+09:00",
+      "period_end_jst": "2029-06-05T18:10:00+09:00",
+      "month_ganzhi": "己巳",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-06",
+      "period_start_jst": "2029-06-05T18:10:00+09:00",
+      "period_end_jst": "2029-07-07T04:22:00+09:00",
+      "month_ganzhi": "庚午",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-07",
+      "period_start_jst": "2029-07-07T04:22:00+09:00",
+      "period_end_jst": "2029-08-07T14:12:00+09:00",
+      "month_ganzhi": "辛未",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-08",
+      "period_start_jst": "2029-08-07T14:12:00+09:00",
+      "period_end_jst": "2029-09-07T17:12:00+09:00",
+      "month_ganzhi": "壬申",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-09",
+      "period_start_jst": "2029-09-07T17:12:00+09:00",
+      "period_end_jst": "2029-10-08T08:58:00+09:00",
+      "month_ganzhi": "癸酉",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-10",
+      "period_start_jst": "2029-10-08T08:58:00+09:00",
+      "period_end_jst": "2029-11-07T12:17:00+09:00",
+      "month_ganzhi": "甲戌",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-11",
+      "period_start_jst": "2029-11-07T12:17:00+09:00",
+      "period_end_jst": "2029-12-07T05:14:00+09:00",
+      "month_ganzhi": "乙亥",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2029-12",
+      "period_start_jst": "2029-12-07T05:14:00+09:00",
+      "period_end_jst": "2030-01-05T16:31:00+09:00",
+      "month_ganzhi": "丙子",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-01",
+      "period_start_jst": "2030-01-05T16:31:00+09:00",
+      "period_end_jst": "2030-02-04T04:08:00+09:00",
+      "month_ganzhi": "丁丑",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-02",
+      "period_start_jst": "2030-02-04T04:08:00+09:00",
+      "period_end_jst": "2030-03-05T22:03:00+09:00",
+      "month_ganzhi": "戊寅",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-03",
+      "period_start_jst": "2030-03-05T22:03:00+09:00",
+      "period_end_jst": "2030-04-05T02:41:00+09:00",
+      "month_ganzhi": "己卯",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-04",
+      "period_start_jst": "2030-04-05T02:41:00+09:00",
+      "period_end_jst": "2030-05-05T19:46:00+09:00",
+      "month_ganzhi": "庚辰",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-05",
+      "period_start_jst": "2030-05-05T19:46:00+09:00",
+      "period_end_jst": "2030-06-05T23:45:00+09:00",
+      "month_ganzhi": "辛巳",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-06",
+      "period_start_jst": "2030-06-05T23:45:00+09:00",
+      "period_end_jst": "2030-07-07T09:55:00+09:00",
+      "month_ganzhi": "壬午",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-07",
+      "period_start_jst": "2030-07-07T09:55:00+09:00",
+      "period_end_jst": "2030-08-07T19:47:00+09:00",
+      "month_ganzhi": "癸未",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-08",
+      "period_start_jst": "2030-08-07T19:47:00+09:00",
+      "period_end_jst": "2030-09-07T22:53:00+09:00",
+      "month_ganzhi": "甲申",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-09",
+      "period_start_jst": "2030-09-07T22:53:00+09:00",
+      "period_end_jst": "2030-10-08T14:45:00+09:00",
+      "month_ganzhi": "乙酉",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-10",
+      "period_start_jst": "2030-10-08T14:45:00+09:00",
+      "period_end_jst": "2030-11-07T18:09:00+09:00",
+      "month_ganzhi": "丙戌",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-11",
+      "period_start_jst": "2030-11-07T18:09:00+09:00",
+      "period_end_jst": "2030-12-07T11:08:00+09:00",
+      "month_ganzhi": "丁亥",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2030-12",
+      "period_start_jst": "2030-12-07T11:08:00+09:00",
+      "period_end_jst": "2031-01-05T22:23:00+09:00",
+      "month_ganzhi": "戊子",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-01",
+      "period_start_jst": "2031-01-05T22:23:00+09:00",
+      "period_end_jst": "2031-02-04T09:58:00+09:00",
+      "month_ganzhi": "己丑",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-02",
+      "period_start_jst": "2031-02-04T09:58:00+09:00",
+      "period_end_jst": "2031-03-06T03:51:00+09:00",
+      "month_ganzhi": "庚寅",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-03",
+      "period_start_jst": "2031-03-06T03:51:00+09:00",
+      "period_end_jst": "2031-04-05T08:28:00+09:00",
+      "month_ganzhi": "辛卯",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-04",
+      "period_start_jst": "2031-04-05T08:28:00+09:00",
+      "period_end_jst": "2031-05-06T01:35:00+09:00",
+      "month_ganzhi": "壬辰",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-05",
+      "period_start_jst": "2031-05-06T01:35:00+09:00",
+      "period_end_jst": "2031-06-06T05:36:00+09:00",
+      "month_ganzhi": "癸巳",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-06",
+      "period_start_jst": "2031-06-06T05:36:00+09:00",
+      "period_end_jst": "2031-07-07T15:49:00+09:00",
+      "month_ganzhi": "甲午",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-07",
+      "period_start_jst": "2031-07-07T15:49:00+09:00",
+      "period_end_jst": "2031-08-08T01:43:00+09:00",
+      "month_ganzhi": "乙未",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-08",
+      "period_start_jst": "2031-08-08T01:43:00+09:00",
+      "period_end_jst": "2031-09-08T04:50:00+09:00",
+      "month_ganzhi": "丙申",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-09",
+      "period_start_jst": "2031-09-08T04:50:00+09:00",
+      "period_end_jst": "2031-10-08T20:43:00+09:00",
+      "month_ganzhi": "丁酉",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-10",
+      "period_start_jst": "2031-10-08T20:43:00+09:00",
+      "period_end_jst": "2031-11-08T00:06:00+09:00",
+      "month_ganzhi": "戊戌",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-11",
+      "period_start_jst": "2031-11-08T00:06:00+09:00",
+      "period_end_jst": "2031-12-07T17:03:00+09:00",
+      "month_ganzhi": "己亥",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2031-12",
+      "period_start_jst": "2031-12-07T17:03:00+09:00",
+      "period_end_jst": "2032-01-06T04:16:00+09:00",
+      "month_ganzhi": "庚子",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-01",
+      "period_start_jst": "2032-01-06T04:16:00+09:00",
+      "period_end_jst": "2032-02-04T15:49:00+09:00",
+      "month_ganzhi": "辛丑",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-02",
+      "period_start_jst": "2032-02-04T15:49:00+09:00",
+      "period_end_jst": "2032-03-05T09:40:00+09:00",
+      "month_ganzhi": "壬寅",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-03",
+      "period_start_jst": "2032-03-05T09:40:00+09:00",
+      "period_end_jst": "2032-04-04T14:18:00+09:00",
+      "month_ganzhi": "癸卯",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-04",
+      "period_start_jst": "2032-04-04T14:18:00+09:00",
+      "period_end_jst": "2032-05-05T07:26:00+09:00",
+      "month_ganzhi": "甲辰",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-05",
+      "period_start_jst": "2032-05-05T07:26:00+09:00",
+      "period_end_jst": "2032-06-05T11:28:00+09:00",
+      "month_ganzhi": "乙巳",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-06",
+      "period_start_jst": "2032-06-05T11:28:00+09:00",
+      "period_end_jst": "2032-07-06T21:41:00+09:00",
+      "month_ganzhi": "丙午",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-07",
+      "period_start_jst": "2032-07-06T21:41:00+09:00",
+      "period_end_jst": "2032-08-07T07:33:00+09:00",
+      "month_ganzhi": "丁未",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-08",
+      "period_start_jst": "2032-08-07T07:33:00+09:00",
+      "period_end_jst": "2032-09-07T10:38:00+09:00",
+      "month_ganzhi": "戊申",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-09",
+      "period_start_jst": "2032-09-07T10:38:00+09:00",
+      "period_end_jst": "2032-10-08T02:30:00+09:00",
+      "month_ganzhi": "己酉",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-10",
+      "period_start_jst": "2032-10-08T02:30:00+09:00",
+      "period_end_jst": "2032-11-07T05:54:00+09:00",
+      "month_ganzhi": "庚戌",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-11",
+      "period_start_jst": "2032-11-07T05:54:00+09:00",
+      "period_end_jst": "2032-12-06T22:53:00+09:00",
+      "month_ganzhi": "辛亥",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2032-12",
+      "period_start_jst": "2032-12-06T22:53:00+09:00",
+      "period_end_jst": "2033-01-05T10:08:00+09:00",
+      "month_ganzhi": "壬子",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-01",
+      "period_start_jst": "2033-01-05T10:08:00+09:00",
+      "period_end_jst": "2033-02-03T21:42:00+09:00",
+      "month_ganzhi": "癸丑",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "衰",
+      "naoya_month_twelve_stage": "冠帯",
+      "shared_branch_relation_types": [
+        "支合"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-02",
+      "period_start_jst": "2033-02-03T21:42:00+09:00",
+      "period_end_jst": "2033-03-05T15:32:00+09:00",
+      "month_ganzhi": "甲寅",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "病",
+      "naoya_month_twelve_stage": "沐浴",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-03",
+      "period_start_jst": "2033-03-05T15:32:00+09:00",
+      "period_end_jst": "2033-04-04T20:08:00+09:00",
+      "month_ganzhi": "乙卯",
+      "chiaki_month_ten_god": "傷官",
+      "naoya_month_ten_god": "食神",
+      "chiaki_month_twelve_stage": "死",
+      "naoya_month_twelve_stage": "長生",
+      "shared_branch_relation_types": [
+        "刑"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-04",
+      "period_start_jst": "2033-04-04T20:08:00+09:00",
+      "period_end_jst": "2033-05-05T13:14:00+09:00",
+      "month_ganzhi": "丙辰",
+      "chiaki_month_ten_god": "偏財",
+      "naoya_month_ten_god": "正財",
+      "chiaki_month_twelve_stage": "墓",
+      "naoya_month_twelve_stage": "養",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-05",
+      "period_start_jst": "2033-05-05T13:14:00+09:00",
+      "period_end_jst": "2033-06-05T17:13:00+09:00",
+      "month_ganzhi": "丁巳",
+      "chiaki_month_ten_god": "正財",
+      "naoya_month_ten_god": "偏財",
+      "chiaki_month_twelve_stage": "絶",
+      "naoya_month_twelve_stage": "胎",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-06",
+      "period_start_jst": "2033-06-05T17:13:00+09:00",
+      "period_end_jst": "2033-07-07T03:25:00+09:00",
+      "month_ganzhi": "戊午",
+      "chiaki_month_ten_god": "偏官",
+      "naoya_month_ten_god": "正官",
+      "chiaki_month_twelve_stage": "胎",
+      "naoya_month_twelve_stage": "絶",
+      "shared_branch_relation_types": [
+        "冲"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-07",
+      "period_start_jst": "2033-07-07T03:25:00+09:00",
+      "period_end_jst": "2033-08-07T13:16:00+09:00",
+      "month_ganzhi": "己未",
+      "chiaki_month_ten_god": "正官",
+      "naoya_month_ten_god": "偏官",
+      "chiaki_month_twelve_stage": "養",
+      "naoya_month_twelve_stage": "墓",
+      "shared_branch_relation_types": [
+        "害"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-08",
+      "period_start_jst": "2033-08-07T13:16:00+09:00",
+      "period_end_jst": "2033-09-07T16:20:00+09:00",
+      "month_ganzhi": "庚申",
+      "chiaki_month_ten_god": "偏印",
+      "naoya_month_ten_god": "印綬",
+      "chiaki_month_twelve_stage": "長生",
+      "naoya_month_twelve_stage": "死",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-09",
+      "period_start_jst": "2033-09-07T16:20:00+09:00",
+      "period_end_jst": "2033-10-08T08:14:00+09:00",
+      "month_ganzhi": "辛酉",
+      "chiaki_month_ten_god": "印綬",
+      "naoya_month_ten_god": "偏印",
+      "chiaki_month_twelve_stage": "沐浴",
+      "naoya_month_twelve_stage": "病",
+      "shared_branch_relation_types": [
+        "破"
+      ],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": {
+        "from": "丁酉",
+        "to": "戊戌",
+        "precision": "month_only"
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-10",
+      "period_start_jst": "2033-10-08T08:14:00+09:00",
+      "period_end_jst": "2033-11-07T11:41:00+09:00",
+      "month_ganzhi": "壬戌",
+      "chiaki_month_ten_god": "比肩",
+      "naoya_month_ten_god": "劫財",
+      "chiaki_month_twelve_stage": "冠帯",
+      "naoya_month_twelve_stage": "衰",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-11",
+      "period_start_jst": "2033-11-07T11:41:00+09:00",
+      "period_end_jst": "2033-12-07T04:45:00+09:00",
+      "month_ganzhi": "癸亥",
+      "chiaki_month_ten_god": "劫財",
+      "naoya_month_ten_god": "比肩",
+      "chiaki_month_twelve_stage": "建禄",
+      "naoya_month_twelve_stage": "帝旺",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    },
+    {
+      "period": "2033-12",
+      "period_start_jst": "2033-12-07T04:45:00+09:00",
+      "period_end_jst": "2034-01-05T16:05:00+09:00",
+      "month_ganzhi": "甲子",
+      "chiaki_month_ten_god": "食神",
+      "naoya_month_ten_god": "傷官",
+      "chiaki_month_twelve_stage": "帝旺",
+      "naoya_month_twelve_stage": "建禄",
+      "shared_branch_relation_types": [],
+      "chiaki_major_transition": null,
+      "naoya_major_transition": null,
+      "interpretation": null
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "generated_at_utc": "2026-08-21T11:48:29.998884+00:00",
+  "record_counts": {
+    "chiaki": 96,
+    "naoya": 96,
+    "cross": 96
+  },
+  "verification_2026_solar_terms": [
+    {
+      "term": "小寒",
+      "actual": "2026-01-05T17:23:00+09:00",
+      "naoj": "2026-01-05T17:23:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "立春",
+      "actual": "2026-02-04T05:02:00+09:00",
+      "naoj": "2026-02-04T05:02:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "啓蟄",
+      "actual": "2026-03-05T22:59:00+09:00",
+      "naoj": "2026-03-05T22:59:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "清明",
+      "actual": "2026-04-05T03:40:00+09:00",
+      "naoj": "2026-04-05T03:40:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "立夏",
+      "actual": "2026-05-05T20:49:00+09:00",
+      "naoj": "2026-05-05T20:49:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "芒種",
+      "actual": "2026-06-06T00:48:00+09:00",
+      "naoj": "2026-06-06T00:48:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "小暑",
+      "actual": "2026-07-07T10:57:00+09:00",
+      "naoj": "2026-07-07T10:57:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "立秋",
+      "actual": "2026-08-07T20:43:00+09:00",
+      "naoj": "2026-08-07T20:43:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "白露",
+      "actual": "2026-09-07T23:41:00+09:00",
+      "naoj": "2026-09-07T23:41:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "寒露",
+      "actual": "2026-10-08T15:29:00+09:00",
+      "naoj": "2026-10-08T15:29:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "立冬",
+      "actual": "2026-11-07T18:52:00+09:00",
+      "naoj": "2026-11-07T18:52:00+09:00",
+      "delta_seconds": 0
+    },
+    {
+      "term": "大雪",
+      "actual": "2026-12-07T11:53:00+09:00",
+      "naoj": "2026-12-07T11:53:00+09:00",
+      "delta_seconds": 0
+    }
+  ],
+  "spot_check": {
+    "2026-09": {
+      "month_ganzhi": "丁酉",
+      "chiaki_ten_god": "正財",
+      "naoya_ten_god": "偏財"
+    },
+    "2026-11": {
+      "month_ganzhi": "己亥",
+      "chiaki_major_transition": {
+        "from": "己未",
+        "to": "庚申",
+        "precision": "month_only"
+      }
+    },
+    "2033-09": {
+      "month_ganzhi": "辛酉",
+      "naoya_major_transition": {
+        "from": "丁酉",
+        "to": "戊戌",
+        "precision": "month_only"
+      }
+    }
+  }
+}
