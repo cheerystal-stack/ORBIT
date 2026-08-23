@@ -242,8 +242,14 @@ function crossRawPrompt(period){
   return lines.join('\n');
 }
 function aiPrompt(g){
-  const pointLabel=g.system==='四柱推命'?'主要ポイント／命式・運気':'主要ポイント／アスペクト';
+  const pointLabel=['四柱推命','算命学'].includes(g.system)?'主要ポイント／命式・運気':'主要ポイント／アスペクト';
   const base=`${data.month.title}の${g.label}を見ます。画像または配置をもとに、ORBITへ保存しやすい形式で整理してください。\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ ${pointLabel}：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。断定ではなく、占術上のテーマ・可能性として読んでください。`;
+  if(g.system==='算命学'){
+    if(!sanmeigakuMaster.loaded)return base;
+    const pid=guideDefaultPerson(g),raw=sanmeigakuRawPrompt(pid,data.month.period);
+    if(!raw)return base;
+    return `${data.month.title}の算命学を見ます。以下はORBIT Sanmeigaku Engine v0.3-testの機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある位相法はORBIT採用方式に従い、吉凶を単純化しないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、YEAR／MONTH／DAYの作用位置を保持し、未来の出来事や特定人物との出来事を事実として補完しないでください。`;
+  }
   if(g.system!=='四柱推命'||!masterReady())return base;
   const pid=guideDefaultPerson(g);const raw=fpRawPrompt(pid,data.month.period),cross=crossRawPrompt(data.month.period);
   return `${data.month.title}の四柱推命を見ます。以下はORBIT FourPillars Engine v1の機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある補助判定は強く断定しないでください。\n\n${raw}${cross?`\n\n${cross}`:''}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、未来や関係性を事実として断定しないでください。`;
@@ -305,15 +311,20 @@ function sanmeigakuMonthModel(period,personId='chiaki'){
 }
 function sanmeigakuRawPrompt(personId,period){
   const x=sanmeigakuMonthModel(period,personId);if(!x)return'';
-  const p=personName(personId),m=x.month,y=x.annual;
+  const p=personName(personId),m=x.month,y=x.annual,rec=x.record,n=rec.natal||{};
   const fmt=t=>`${String(t.target||'').toUpperCase()} ${t.target_ganzhi||''}: ${(t.relations||[]).map(sanmeiRelationLabel).join(' / ')}`;
-  return `【算命学・${p}】
-対象: ${period}
-年運: ${y.ganzhi}｜${y.main_star}｜${y.sub_star}｜ENERGY ${y.energy}
-月運: ${m.ganzhi}｜${m.main_star}｜${m.sub_star}｜ENERGY ${m.energy}${m.tenchusatsu?'｜天中殺':''}
-月運→出生三柱:
-${(m.natal_triggers||[]).length?(m.natal_triggers||[]).map(fmt).map(v=>`- ${v}`).join('\n'):'- 主要位相なし'}
-※ORBIT Sanmeigaku Engine v0.3-test機械計算。吉凶や未来の出来事はRAWに含めない。`;
+  const fmtList=items=>(items||[]).length?(items||[]).map(fmt).map(v=>`- ${v}`).join('\n'):'- 主要位相なし';
+  return `【算命学マスター・${p}】
+対象期間: ${period} (${fmtMasterRange(rec)})
+原局: 年柱 ${n.year||'—'}｜月柱 ${n.month||'—'}｜日柱 ${n.day||'—'}
+天中殺: ${n.tenchusatsu||'—'}
+年運: ${y.ganzhi||'—'}｜${y.main_star||'—'}｜${y.sub_star||'—'}｜ENERGY ${y.energy??'—'}
+年運→原局:
+${fmtList(y.natal_triggers)}
+月運: ${m.ganzhi||'—'}｜${m.main_star||'—'}｜${m.sub_star||'—'}｜ENERGY ${m.energy??'—'}${m.tenchusatsu?'｜天中殺月':''}
+月運→原局:
+${fmtList(m.natal_triggers)}
+※ORBIT Sanmeigaku Engine v0.3-test機械計算。位相法はORBIT採用方式。吉凶や未来の出来事はRAWに含めない。`;
 }
 async function loadWesternMaster(){
   try{
@@ -855,7 +866,8 @@ function renderMonthlyChecks(){
   $('#monthlyProgress').textContent=`${saved} saved · ${touched}/${MONTHLY_GUIDE.length}`;
   $('#monthlyChecks').innerHTML=MONTHLY_GUIDE.map(g=>{
     const s=state[g.id]?.status||'unchecked';
-    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
+    const masterBadge=g.id==='sanmei'&&sanmeigakuMaster.loaded?'<b class="master-mini">MASTER</b>':'';
+    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}${masterBadge}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
   }).join('');
 }
 
