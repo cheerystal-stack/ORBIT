@@ -1,0 +1,32 @@
+{
+  "engine_version": "0.3-test",
+  "status": "PASS_WITH_DECLARED_DEPENDENCY",
+  "record_counts": {
+    "A": 96,
+    "B": 96,
+    "PAIR": 96
+  },
+  "cross_engine_consistency": {
+    "checks": 768,
+    "passed": 768,
+    "failed": 0,
+    "note": "主星/従星の算出はSanmeigakuロジック。節入り日時と年/月干支は既存FourPillars Engineのcalendar layerを入力として再利用。独立天文暦再計算ではない。"
+  },
+  "v0_2_snapshot_regression": {
+    "A_2033_11_ganzhi": true,
+    "A_2033_11_main": true,
+    "A_2033_11_sub": true,
+    "B_2033_11_ganzhi": true,
+    "B_2033_11_main": true,
+    "B_2033_11_sub": true,
+    "B_2033_11_day_dai_hankai": true
+  },
+  "pending": [
+    "二十八元蔵干を節入り日時からゼロ生成して出生人体図を完全独立再現",
+    "立運年齢を節入り日時からゼロ生成して大運開始時期を完全独立再現",
+    "月運そのものの外部サイト画面との96か月直接照合",
+    "大運天中殺 Advanced module",
+    "数理法・調候守護神"
+  ],
+  "important_constraint": "2033年だけを特別扱いする分岐は存在しない。全96か月を同一関数で生成。"
+}
