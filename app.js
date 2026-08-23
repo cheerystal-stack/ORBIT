@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.19.1';
+const APP_VERSION='0.19.2';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -372,7 +372,9 @@ function sanmeigakuMonthModel(period,personId='chiaki'){
 }
 function sanmeigakuRawPrompt(personId,period){
   const x=sanmeigakuMonthModel(period,personId);if(!x)return'';
-  const p=personName(personId),m=x.month,y=x.annual,rec=x.record,n=rec.natal||{};
+  const p=personName(personId),m=x.month,y=x.annual,rec=x.record;
+  const personKey=personId==='chiaki'?'chiaki':personId==='naoya'?'naoya':null;
+  const n=personKey?(sanmeigakuMaster[personKey]?.natal||{}):{};
   const fmt=t=>`${String(t.target||'').toUpperCase()} ${t.target_ganzhi||''}: ${(t.relations||[]).map(sanmeiRelationLabel).join(' / ')}`;
   const fmtList=items=>(items||[]).length?(items||[]).map(fmt).map(v=>`- ${v}`).join('\n'):'- 主要位相なし';
   return `【算命学マスター・${p}】

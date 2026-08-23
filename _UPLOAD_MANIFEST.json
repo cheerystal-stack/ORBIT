@@ -1,9 +1,14 @@
 {
-  "version": "0.19.1",
+  "version": "0.19.2",
   "changed_or_added": [
     "app.js",
     "index.html",
     "sw.js"
   ],
-  "note": "Public-facing ORBIT scope label changed from NAOYA to N. Internal scope key remains `naoya` for compatibility."
+  "fix": "Sanmeigaku RAW prompt now reads natal/year/month/day/tenchusatsu from the top-level natal object in each person monthly JSON.",
+  "expected": {
+    "Chiaki": "年柱 癸亥｜月柱 乙卯｜日柱 壬子｜天中殺 寅卯",
+    "N": "年柱 丙子｜月柱 甲午｜日柱 癸未｜天中殺 申酉"
+  },
+  "data_json_changed": false
 }
