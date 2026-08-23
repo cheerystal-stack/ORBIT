@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.19.0';
+const APP_VERSION='0.19.1';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -76,7 +76,7 @@ const RELATIONSHIP_BASE={
 const MONTHLY_SCOPES={
   all:{label:'ALL',title:'ALL OBSERVATIONS'},
   chiaki:{label:'CHIAKI',title:'CHIAKI · PERSONAL'},
-  naoya:{label:'NAOYA',title:'NAOYA · PERSONAL'},
+  naoya:{label:'N',title:'N · PERSONAL'},
   relationship:{label:'RELATIONSHIP',title:'RELATIONSHIP'}
 };
 let monthlyScope='all';
@@ -774,7 +774,7 @@ function monthlySynthesisPrompt(period){
     '以下の保存済み観測要約だけを根拠に統合してください。',
     '観測材料には CHIAKI PERSONAL / NAOYA PERSONAL / RELATIONSHIP のscopeがあります。scopeを失わずに読んでください。',
     'CHIAKI PERSONALだけにあるテーマをRELATIONSHIPの出来事へ拡張しないでください。',
-    'NAOYA PERSONALだけにあるテーマを二人の関係や特定人物との出来事へ拡張しないでください。',
+    'N PERSONALだけにあるテーマを二人の関係や特定人物との出来事へ拡張しないでください。',
     'RELATIONSHIPだけにあるテーマを、どちらか一人の人生上の出来事と断定しないでください。',
     '複数scopeで独立して同じテーマが重なる場合は、その一致自体に重みを置いてください。',
     '観測同士に緊張・相違がある場合は、無理に一つの意味へ丸めないでください。',
