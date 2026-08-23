@@ -549,3 +549,37 @@ body::after {
   .scope-tabs{gap:3px}
   .scope-tab{padding:9px 2px;font-size:7px;letter-spacing:.04em}
 }
+
+/* ===== v0.20 — PERSONAL / RELATIONSHIP SYNTHESIS + HOME MONTH NAV ===== */
+.home-month-nav{
+  display:grid;grid-template-columns:42px 1fr 42px auto;gap:7px;align-items:center;
+  margin:-2px 0 14px;
+}
+.home-month-nav button{
+  min-height:36px;border:1px solid rgba(226,199,147,.13);border-radius:12px;
+  background:rgba(7,13,31,.34);color:#aaa3b5;font-size:13px;
+}
+.home-month-nav .home-month-current{font-size:8px;letter-spacing:.15em;color:#c3b9cd}
+.home-month-nav .home-month-today{padding:0 10px;font-size:7px;letter-spacing:.12em;color:#cbb98e}
+.tm-relationship-summary{
+  margin:0 0 16px;padding:15px 16px;border-radius:18px;
+  border:1px solid rgba(220,178,205,.14);
+  background:linear-gradient(145deg,rgba(31,25,52,.46),rgba(9,14,32,.48));
+}
+.tm-relationship-summary>div:first-child{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.tm-relationship-summary h3{
+  margin:5px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:17px;font-weight:400;
+  letter-spacing:.07em;color:#e6dce8;
+}
+.tm-relationship-summary em{font-family:Georgia,"Times New Roman",serif;font-size:9px;color:#9b91a4}
+.tm-relationship-summary p{margin:10px 0 0;color:#aaa3b1;font-size:.72rem;line-height:1.7}
+.tm-relationship-summary .chips{margin-top:10px}
+.tm-relationship-summary.awaiting{opacity:.88}
+.tm-legacy-note{
+  margin:-5px 4px 14px;padding:9px 11px;border-left:2px solid rgba(218,188,127,.25);
+  color:#777183;font-size:9px;line-height:1.6;
+}
+@media(max-width:430px){
+  .home-month-nav{grid-template-columns:38px 1fr 38px auto;gap:5px}
+  .home-month-nav .home-month-today{padding:0 7px}
+}

@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.19.2';
+const APP_VERSION='0.20.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -83,9 +83,12 @@ let monthlyScope='all';
 
 const MONTHLY_GUIDE=[
   {id:'personal',scope:'chiaki',label:'Personal Transits',source:'Astro-Seek',system:'Western Astrology',method:'Personal Transits',defaultPerson:'chiaki',why:'自分自身が今どんな時期にいて、恋愛以外も含め何が刺激されているかを見る。',how:'Astro-Seek → Predictive Astrology / Personal Prognoses → Transit Chart。自分の出生データを入力し、Transit chart の日付を対象月に設定 → 「Aspects」を開く。',capture:'「Main planet aspects」の Transit planet × Birth planet 一覧。長期天体と個人天体へのタイトな角度を優先。',dontNeed:'円チャートだけの画像は補助。月テーマ保存ではMain planet aspectsを優先。'},
+  {id:'progressions',scope:'chiaki',label:'Secondary Progressions',source:'Astro-Seek',system:'Western Astrology',method:'Secondary Progressions',defaultPerson:'chiaki',why:'Chiaki本人の内的な時間の進み方や、長期的に育っているテーマをPERSONALとして見る。',how:'Astro-Seek → Secondary Progressions / Progressed Chart を開き、Chiakiの出生データと対象月の日付を設定。',capture:'Progressed planets × Natal planets のアスペクト一覧。orbが読める画面を優先。',dontNeed:'RELATIONSHIP用のProgressed Synastryとは混同しない。円チャートだけの画像は補助。'},
   {id:'sanmei',scope:'chiaki',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'chiaki',why:'Chiaki個人の年運・月運と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。外部スクショは検証時のみ追加する。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガー。',dontNeed:'吉凶の自動採点や、位相から未来の出来事を自動断定しない。'},
   {id:'shichu',scope:'chiaki',label:'四柱推命',source:'ORBIT FourPillars Engine',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'chiaki',why:'Chiaki個人の大運・流年・月運を重ねて、長期・中期・短期サイクルを確認する。',how:'ORBIT内蔵FourPillars masterを使用。',capture:'大運・歳運・月運、原局への作用、補助判定。',dontNeed:'CROSSの関係性トリガーはここへ混ぜず、RELATIONSHIPで別観測する。'},
 
+  {id:'personal_naoya',scope:'naoya',label:'Personal Transits',source:'Astro-Seek',system:'Western Astrology',method:'Personal Transits',defaultPerson:'naoya',why:'N本人の今の時期に、外からどんな刺激が入りやすいかをPERSONALとして独立観測する。',how:'Astro-Seek → Transit Chart。Nの出生データを入力し、対象月の日付に設定 → Aspectsを開く。',capture:'Transit planet × Birth planet のアスペクト一覧。出生時刻不明の場合はASC/MC/ハウス等の時刻依存要素を根拠にしない。',dontNeed:'N PERSONALの結果を二人の関係イベントへ自動変換しない。'},
+  {id:'progressions_naoya',scope:'naoya',label:'Secondary Progressions',source:'Astro-Seek',system:'Western Astrology',method:'Secondary Progressions',defaultPerson:'naoya',why:'N本人の内的・長期的な変化をPERSONALとして独立観測する。',how:'Astro-Seek → Secondary Progressions / Progressed Chart。Nの出生データと対象月の日付を設定。',capture:'Progressed planets × Natal planets のアスペクト一覧。出生時刻不明の場合は時刻依存要素を除外。',dontNeed:'Progressed Synastryとは別物。関係性の出来事をここから補完しない。'},
   {id:'sanmei_naoya',scope:'naoya',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'naoya',why:'N個人の年運・月運と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガー。',dontNeed:'N個人のシグナルを、二人の関係に起こる出来事として自動変換しない。'},
   {id:'shichu_naoya',scope:'naoya',label:'四柱推命',source:'ORBIT FourPillars Engine',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'naoya',why:'N個人の大運・流年・月運を独立して観測し、本人側の時間軸を確認する。',how:'ORBIT内蔵FourPillars masterを使用。',capture:'大運・歳運・月運、原局への作用、大運切替。',dontNeed:'本人側の変化を、特定の相手や関係の出来事と断定しない。'},
 
@@ -162,7 +165,7 @@ function migrate(d){
   d.month.focus=d.month.focus||'RELATIONSHIP';
   d.monthlyChecks=d.monthlyChecks||{};
   d.relationshipBase=d.relationshipBase||{reading:'',updatedAt:''};
-  d.monthlyMessages=d.monthlyMessages||{};
+  d.monthlyMessages=d.monthlyMessages||{};d.personalMonthlyMessages=d.personalMonthlyMessages||{};d.relationshipMonthlyMessages=d.relationshipMonthlyMessages||{};
   d.fourPillars=d.fourPillars||{profiles:{},monthly:{}};
   d.fourPillars.profiles=d.fourPillars.profiles||{}; d.fourPillars.monthly=d.fourPillars.monthly||{};
   Object.entries(BUNDLED_FOUR_PILLARS).forEach(([id,profile])=>{
@@ -223,7 +226,7 @@ function readingScope(r){
   if(r?.scope)return r.scope;
   const g=MONTHLY_GUIDE.find(x=>x.id===r?.guideId);
   if(g)return guideScope(g);
-  if(r?.method==='Personal Transits')return 'chiaki';
+  if(['Personal Transits','Secondary Progressions'].includes(r?.method))return r?.personId==='naoya'?'naoya':'chiaki';
   if(['PCC','Progressed Synastry','Transits × PCC'].includes(r?.method))return 'relationship';
   return 'chiaki';
 }
@@ -688,9 +691,13 @@ function orbitThisMonthModel(period){
 }
 
 
-function monthlyMessageFor(period){return data.monthlyMessages?.[period]||null}
+function monthlyMessageFor(period,scope='chiaki'){
+  if(scope==='relationship')return data.relationshipMonthlyMessages?.[period]||null;
+  return data.personalMonthlyMessages?.[period]||null;
+}
+function legacyMonthlyMessageFor(period){return data.monthlyMessages?.[period]||null}
 
-function monthlySynthesisMaterials(period){
+function monthlyAllMaterials(period){
   const materials=[];
   const m=orbitThisMonthModel(period);
 
@@ -767,20 +774,29 @@ function monthlySynthesisMaterials(period){
 
   return materials.filter(x=>x.summary);
 }
-function monthlySynthesisPrompt(period){
-  const materials=monthlySynthesisMaterials(period);
+function monthlySynthesisMaterials(period,scope='chiaki'){
+  return monthlyAllMaterials(period).filter(x=>(x.scope||'chiaki')===scope);
+}
+
+function monthlySynthesisPrompt(period,scope='chiaki'){
+  const materials=monthlySynthesisMaterials(period,scope);
+  const isRelationship=scope==='relationship';
+  const title=isRelationship?'ORBIT RELATIONSHIP MONTHLY SYNTHESIS':'ORBIT PERSONAL MONTHLY SYNTHESIS';
+  const scopeLabel=isRelationship?'RELATIONSHIP':'CHIAKI PERSONAL';
   const lines=[
-    `ORBIT MONTHLY SYNTHESISを作成してください。対象月は ${periodLabel(period)} です。`,
+    `${title}を作成してください。対象月は ${periodLabel(period)} です。`,
+    '',
+    '【SCOPE】'+scopeLabel,
+    isRelationship
+      ?'以下は二人という関係系について保存された観測だけです。どちらか一人のPERSONAL運へ拡張しないでください。'
+      :'以下はChiaki本人について保存されたPERSONAL観測だけです。RELATIONSHIPやN PERSONALの内容を混ぜないでください。',
     '',
     '【原則】',
     '以下の保存済み観測要約だけを根拠に統合してください。',
-    '観測材料には CHIAKI PERSONAL / NAOYA PERSONAL / RELATIONSHIP のscopeがあります。scopeを失わずに読んでください。',
-    'CHIAKI PERSONALだけにあるテーマをRELATIONSHIPの出来事へ拡張しないでください。',
-    'N PERSONALだけにあるテーマを二人の関係や特定人物との出来事へ拡張しないでください。',
-    'RELATIONSHIPだけにあるテーマを、どちらか一人の人生上の出来事と断定しないでください。',
-    '複数scopeで独立して同じテーマが重なる場合は、その一致自体に重みを置いてください。',
+    '希望的観測にも悲観にも寄せず、同じテーマが複数観測で重なる場合は重みを置いてください。',
     '観測同士に緊張・相違がある場合は、無理に一つの意味へ丸めないでください。',
-    '希望的観測にも悲観にも寄せず、質問にない出来事・相手の行動・未来の事実を補完しないでください。',
+    '質問にない出来事・相手の行動・未来の事実を補完しないでください。',
+    '占術上のテーマとして表現し、断定しないでください。',
     '',
     '【OUTPUT】',
     '次の4項目だけを、見出し名を変えずに出力してください。前置き・解説・あとがきは不要です。',
@@ -791,20 +807,10 @@ function monthlySynthesisPrompt(period){
     '',
     '【観測材料】'
   ];
-
-  const order=['chiaki','naoya','relationship'];
-  const labels={chiaki:'CHIAKI PERSONAL',naoya:'NAOYA PERSONAL',relationship:'RELATIONSHIP'};
-  let n=0;
-  order.forEach(scope=>{
-    const group=materials.filter(x=>(x.scope||'chiaki')===scope);
-    if(!group.length)return;
-    lines.push('',`### ${labels[scope]}`);
-    group.forEach(x=>{
-      n+=1;
-      lines.push('',`■ ${n}. ${x.source} / ${x.method}`);
-      lines.push(`要約: ${x.summary}`);
-      if(x.tags?.length)lines.push(`テーマ: ${x.tags.join(' / ')}`);
-    });
+  materials.forEach((x,i)=>{
+    lines.push('',`■ ${i+1}. ${x.source} / ${x.method}`);
+    lines.push(`要約: ${x.summary}`);
+    if(x.tags?.length)lines.push(`テーマ: ${x.tags.join(' / ')}`);
   });
   if(!materials.length)lines.push('（保存済み観測材料なし）');
   return lines.join('\n');
@@ -829,88 +835,89 @@ function parseMonthlyMessage(raw=''){
   return {title,subtitle,message,themes};
 }
 
-function viewMonthlySynthesis(){
+function viewMonthlySynthesis(scope='chiaki'){
   const period=data.month.period;
-  const materials=monthlySynthesisMaterials(period);
-  const saved=monthlyMessageFor(period);
+  const materials=monthlySynthesisMaterials(period,scope);
+  const saved=monthlyMessageFor(period,scope);
+  const isRelationship=scope==='relationship';
+  const heading=isRelationship?'Relationship Message':'Personal Message';
   const materialHTML=materials.length?materials.map((x,i)=>`
     <div class="monthly-material" data-material-scope="${esc(x.scope||'chiaki')}">
-      <div><span>${esc(String(i+1).padStart(2,'0'))}</span><small>${esc(MONTHLY_SCOPES[x.scope||'chiaki']?.title||'OBSERVATION')} · ${esc(x.source)}</small></div>
+      <div><span>${esc(String(i+1).padStart(2,'0'))}</span><small>${esc(x.source)}</small></div>
       <strong>${esc(x.method)}</strong>
       <p>${esc(x.summary)}</p>
       ${x.tags?.length?`<div class="chips">${x.tags.slice(0,5).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
-    </div>`).join(''):'<div class="empty">この月の観測材料はまだありません ✦</div>';
+    </div>`).join(''):'<div class="empty">このscopeの保存済み観測はまだありません ✦</div>';
 
   openModal(`
-    <span class="kicker">MONTHLY SYNTHESIS · ${esc(data.month.title)}</span>
-    <h2>Message from the Orbit</h2>
-    <p class="modal-copy">同じ月の保存済みReadingとEngine要約を束ね、ChatGPTで一度だけ横断統合します。HOMEは保存したメッセージだけを表示します。</p>
-
+    <span class="kicker">${isRelationship?'RELATIONSHIP':'PERSONAL'} SYNTHESIS · ${esc(data.month.title)}</span>
+    <h2>${heading}</h2>
+    <p class="modal-copy">${isRelationship?'二人という関係系だけ':'Chiaki本人のPERSONAL観測だけ'}を束ねて、別々に月次統合します。</p>
     <div class="monthly-materials">${materialHTML}</div>
-
     <div class="ai-box monthly-ai-box">
-      <div class="ai-head">
-        <strong>AI READ</strong>
-        <button type="button" class="copy-btn" data-copy-monthly-synthesis>COPY</button>
-      </div>
-      <p>${materials.length}件の観測要約を、希望にも悲観にも寄せず統合する専用プロンプト。</p>
+      <div class="ai-head"><strong>AI READ</strong><button type="button" class="copy-btn" data-copy-monthly-synthesis="${scope}">COPY</button></div>
+      <p>${materials.length}件の観測要約を、このscopeだけで統合する専用プロンプト。</p>
     </div>
-
     <label>AI RESULT <small>TITLE / SUBTITLE / MESSAGE / THEME</small></label>
     <textarea id="monthlyMessagePaste" class="large-textarea monthly-message-paste" placeholder="ChatGPTの4項目をそのまま貼り付け">${esc(saved?formatMonthlyMessage(saved):'')}</textarea>
-
     ${saved?`<div class="monthly-saved-note">SAVED · ${esc(saved.updatedAt?new Date(saved.updatedAt).toLocaleDateString('ja-JP'):'')}</div>`:''}
-
     <div class="form-actions">
       <button type="button" class="text-btn" data-close-modal>Close</button>
-      <button type="button" class="save-btn" data-save-monthly-message>${saved?'UPDATE MESSAGE':'SAVE MESSAGE'}</button>
+      <button type="button" class="save-btn" data-save-monthly-message="${scope}">${saved?'UPDATE MESSAGE':'SAVE MESSAGE'}</button>
     </div>`);
 }
-
 function renderThisMonthV2(){
   const host=$('#thisMonthV2');if(!host)return;
   const period=data.month.period;
   const m=orbitThisMonthModel(period);
-  const saved=monthlyMessageFor(period);
+  const personal=monthlyMessageFor(period,'chiaki');
+  const relationship=monthlyMessageFor(period,'relationship');
+  const legacy=legacyMonthlyMessageFor(period);
 
-  const overlapTags=m.overlap.length
-    ?m.overlap.map(x=>`<span class="chip overlap-hit">${esc(x.label)}</span>`).join('')
-    :'<span class="tm-none">今月は共通分類なし</span>';
+  const personalTags=personal?(personal.themes||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join(''):'';
+  const personalCover=personal?`
+    <section class="tm-cover tm-cover-saved">
+      <span class="tm-cover-kicker">✦ PERSONAL · CHIAKI</span>
+      <h3 class="tm-cover-title-en">${esc(personal.title||'PERSONAL MONTH')}</h3>
+      ${personal.subtitle?`<em class="tm-cover-subtitle-en">${esc(personal.subtitle)}</em>`:''}
+      <p class="tm-cover-message-ja">${esc(personal.message||'')}</p>
+      ${personalTags?`<div class="chips tm-cover-tags">${personalTags}</div>`:''}
+      <button type="button" class="tm-synthesis-link" data-monthly-synthesis="chiaki">WHY THIS MESSAGE <span>›</span></button>
+    </section>`:`
+    <section class="tm-cover tm-cover-awaiting">
+      <span class="tm-cover-kicker">✦ PERSONAL · CHIAKI</span>
+      <h3 class="tm-cover-title-en">PERSONAL<br>OBSERVATION</h3>
+      <em class="tm-cover-subtitle-en">Awaiting personal synthesis.</em>
+      <p class="tm-cover-message-ja">Chiaki本人の観測だけを束ねて、この月のメッセージをつくる。</p>
+      <button type="button" class="tm-synthesis-link primary" data-monthly-synthesis="chiaki">CREATE PERSONAL <span>✦</span></button>
+    </section>`;
 
-  let coverHTML='';
-  if(saved){
-    const tags=(saved.themes||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
-    coverHTML=`
-      <section class="tm-cover tm-cover-saved">
-        <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
-        <h3 class="tm-cover-title-en">${esc(saved.title||'MONTHLY OBSERVATION')}</h3>
-        ${saved.subtitle?`<em class="tm-cover-subtitle-en">${esc(saved.subtitle)}</em>`:''}
-        <p class="tm-cover-message-ja">${esc(saved.message||'')}</p>
-        ${tags?`<div class="chips tm-cover-tags">${tags}</div>`:''}
-        <button type="button" class="tm-synthesis-link" data-monthly-synthesis>WHY THIS MESSAGE <span>›</span></button>
-      </section>`;
-  }else{
-    coverHTML=`
-      <section class="tm-cover tm-cover-awaiting">
-        <span class="tm-cover-kicker">✦ MESSAGE FROM THE ORBIT</span>
-        <h3 class="tm-cover-title-en">MONTHLY<br>OBSERVATION</h3>
-        <em class="tm-cover-subtitle-en">Awaiting synthesis.</em>
-        <p class="tm-cover-message-ja">保存した観測を束ねて、今月だけのメッセージをつくる。</p>
-        <button type="button" class="tm-synthesis-link primary" data-monthly-synthesis>CREATE SYNTHESIS <span>✦</span></button>
-      </section>`;
-  }
+  const relTags=relationship?(relationship.themes||[]).slice(0,4).map(t=>`<span class="chip">${esc(t)}</span>`).join(''):'';
+  const relCard=relationship?`
+    <section class="tm-relationship-summary">
+      <div><span class="kicker">RELATIONSHIP · THIS MONTH</span><h3>${esc(relationship.title||'RELATIONSHIP')}</h3>${relationship.subtitle?`<em>${esc(relationship.subtitle)}</em>`:''}</div>
+      <p>${esc(relationship.message||'')}</p>
+      ${relTags?`<div class="chips">${relTags}</div>`:''}
+      <button type="button" class="tm-synthesis-link" data-monthly-synthesis="relationship">VIEW RELATIONSHIP <span>›</span></button>
+    </section>`:`
+    <section class="tm-relationship-summary awaiting">
+      <div><span class="kicker">RELATIONSHIP · THIS MONTH</span><h3>RELATIONSHIP OBSERVATION</h3><em>Separate from Personal.</em></div>
+      <p>二人の関係について保存した観測だけを、PERSONALとは混ぜずにまとめる。</p>
+      <button type="button" class="tm-synthesis-link" data-monthly-synthesis="relationship">CREATE RELATIONSHIP <span>✦</span></button>
+    </section>`;
+
+  const legacyNote=legacy&&!personal?`<div class="tm-legacy-note">旧版の統合メッセージは保存済みです。PERSONAL / RELATIONSHIP分離後は再統合すると新しい表紙になります。</div>`:'';
 
   host.innerHTML=`
-    ${coverHTML}
+    ${personalCover}
+    ${relCard}
+    ${legacyNote}
     <div class="tm-systems">
-      <div class="tm-system"><small>FOUR PILLARS</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div>
-      <div class="tm-system"><small>SANMEIGAKU</small><strong>${esc(m.sanmeiLine)}</strong><span>${esc(m.sanmei?.triggerLine||'RAW master loading')}</span></div>
-      <div class="tm-system"><small>WESTERN</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div>
-      <div class="tm-system"><small>CROSS SIGNAL</small><strong>${esc(m.crossLine)}</strong><span>機械的トリガー。関係性の意味は自動付与しません。</span></div>
-    </div>
-    <div class="tm-overlap"><small>OVERLAP · EAST × WEST</small><div class="chips">${overlapTags}</div></div>`;
+      <div class="tm-system"><small>FOUR PILLARS · CHIAKI</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div>
+      <div class="tm-system"><small>SANMEIGAKU · CHIAKI</small><strong>${esc(m.sanmeiLine)}</strong><span>${esc(m.sanmei?.triggerLine||'RAW master loading')}</span></div>
+      <div class="tm-system"><small>WESTERN · CHIAKI</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div>
+    </div>`;
 }
-
 function relationshipAspectHTML(x){
   const [a,aspect,b,orb,flag]=x,meta=WESTERN_ASPECTS[aspect]||{symbol:'·',ja:aspect};
   return `<div class="rb-aspect ${flag==='time'?'reference':''}"><span>${esc(a)}</span><b>${meta.symbol}</b><span>${esc(b)}</span><small>${esc(orb)}${flag==='time'?' · TIME DEP.':''}</small></div>`;
@@ -1171,19 +1178,25 @@ function saveReadingFromForm(fd,existing=null){
 document.addEventListener('click',async e=>{
   const scopeTab=e.target.closest('[data-scope-tab]');if(scopeTab){monthlyScope=scopeTab.dataset.scopeTab||'all';renderMonthlyChecks();return}
   const go=e.target.closest('[data-go]'); if(go){showView(go.dataset.go);return}
-  if(e.target.closest('[data-monthly-synthesis]')){viewMonthlySynthesis();return}
-  if(e.target.closest('[data-copy-monthly-synthesis]')){const ok=await copyText(monthlySynthesisPrompt(data.month.period));toast(ok?'MONTHLY SYNTHESISプロンプトをコピーしました ✦':'コピーできませんでした');return}
+  if(e.target.closest('[data-monthly-synthesis]')){const b=e.target.closest('[data-monthly-synthesis]');viewMonthlySynthesis(b.dataset.monthlySynthesis||'chiaki');return}
+  if(e.target.closest('[data-copy-monthly-synthesis]')){const b=e.target.closest('[data-copy-monthly-synthesis]');const scope=b.dataset.copyMonthlySynthesis||'chiaki';const ok=await copyText(monthlySynthesisPrompt(data.month.period,scope));toast(ok?`${scope==='relationship'?'RELATIONSHIP':'PERSONAL'} SYNTHESISプロンプトをコピーしました ✦`:'コピーできませんでした');return}
   if(e.target.closest('[data-save-monthly-message]')){
+    const b=e.target.closest('[data-save-monthly-message]');const scope=b.dataset.saveMonthlyMessage||'chiaki';
     const parsed=parseMonthlyMessage($('#monthlyMessagePaste')?.value||'');
     if(!parsed.title||!parsed.message){toast('TITLEとMESSAGEを確認してください');return}
-    data.monthlyMessages=data.monthlyMessages||{};
-    data.monthlyMessages[data.month.period]={...parsed,updatedAt:new Date().toISOString(),materialCount:monthlySynthesisMaterials(data.month.period).length};
-    save();$('#modal').close();toast('今月のメッセージを保存しました ✦');return
+    if(scope==='relationship'){
+      data.relationshipMonthlyMessages=data.relationshipMonthlyMessages||{};
+      data.relationshipMonthlyMessages[data.month.period]={...parsed,updatedAt:new Date().toISOString(),materialCount:monthlySynthesisMaterials(data.month.period,'relationship').length};
+    }else{
+      data.personalMonthlyMessages=data.personalMonthlyMessages||{};
+      data.personalMonthlyMessages[data.month.period]={...parsed,updatedAt:new Date().toISOString(),materialCount:monthlySynthesisMaterials(data.month.period,'chiaki').length};
+    }
+    save();$('#modal').close();toast(`${scope==='relationship'?'RELATIONSHIP':'PERSONAL'}メッセージを保存しました ✦`);return
   }
   if(e.target.closest('[data-relationship-base]')){viewRelationshipBase();return}
   if(e.target.closest('[data-copy-base]')){const ok=await copyText(relationshipBasePrompt());toast(ok?'BASEプロンプトをコピーしました ✦':'コピーできませんでした');return}
   if(e.target.closest('[data-save-base]')){data.relationshipBase=data.relationshipBase||{};data.relationshipBase.reading=$('#rbReading')?.value||'';data.relationshipBase.updatedAt=new Date().toISOString();save();$('#modal').close();toast('RELATIONSHIP BASEを保存しました ✦');return}
-  const a=e.target.closest('[data-action]'); if(a){({"add-person":addPerson,"add-reading":()=>addReading(),"add-timeline":addTimeline,"add-project":addProject,"edit-month":editMonth,"choose-month":chooseMonth,"export-data":exportData,"import-data":openImportPicker,"restore-import":restoreImportRollback}[a.dataset.action]||(()=>{}))();return}
+  const a=e.target.closest('[data-action]'); if(a){({"add-person":addPerson,"add-reading":()=>addReading(),"add-timeline":addTimeline,"add-project":addProject,"edit-month":editMonth, "choose-month":chooseMonth,"current-month":()=>{const now=new Date();ensureMonth(`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`);save()},"export-data":exportData,"import-data":openImportPicker,"restore-import":restoreImportRollback}[a.dataset.action]||(()=>{}))();return}
   const shift=e.target.closest('[data-month-shift]');if(shift){shiftMonth(Number(shift.dataset.monthShift));return}
   const ar=e.target.closest('[data-add-reality]');if(ar){addReality(ar.dataset.addReality);return}
   const guide=e.target.closest('[data-guide]');if(guide){viewGuide(guide.dataset.guide);return}

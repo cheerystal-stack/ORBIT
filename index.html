@@ -9,7 +9,7 @@
   <title>ORBIT</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" sizes="180x180" href="orbit-icon-180.png" />
-  <link rel="stylesheet" href="style.css?v=0.19.2" />
+  <link rel="stylesheet" href="style.css?v=0.20.0" />
 </head>
 <body>
 <div class="cosmic-atmosphere" aria-hidden="true">
@@ -36,6 +36,7 @@
     <section id="view-home" class="view active" data-view="home">
       <section class="glass-card flow-card">
         <div class="section-head"><div><span class="kicker">THIS MONTH</span><h2 id="monthTitle">2026 AUG</h2></div><button class="icon-btn" data-action="edit-month" aria-label="今月の流れを編集">✦</button></div>
+        <div class="home-month-nav"><button type="button" data-month-shift="-1" aria-label="前の月">‹</button><button type="button" class="home-month-current" data-action="choose-month">SELECT MONTH</button><button type="button" data-month-shift="1" aria-label="次の月">›</button><button type="button" class="home-month-today" data-action="current-month">CURRENT</button></div>
         
         <div id="thisMonthV2"><div class="western-state">BUILDING MONTHLY OBSERVATION…</div></div>
       </section>
@@ -130,6 +131,6 @@
   <input id="sizhuImportFile" type="file" accept=".json,application/json" hidden>
   <template id="emptyTpl"><div class="empty">まだ記録がありません ✦</div></template>
 
-  <script src="app.js?v=0.19.2"></script>
+  <script src="app.js?v=0.20.0"></script>
 </body>
 </html>
