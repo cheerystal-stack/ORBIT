@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.17.1';
+const APP_VERSION='0.18.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -15,6 +15,17 @@ let fourPillarsMaster={loaded:false,error:null,engine:null,chiaki:null,naoya:nul
 
 const WESTERN_MASTER_URL='./data/western/orbit_western_master_2026_2033.json';
 let westernMaster={loaded:false,error:null,data:null};
+
+
+const SANMEIGAKU_MASTER_BASE='./data/sanmeigaku/';
+const SANMEIGAKU_MASTER_FILES={
+  engine:'sanmeigaku_engine_v0.3-test.json',
+  chiaki:'person_a_monthly_2026_2033.json',
+  naoya:'person_b_monthly_2026_2033.json',
+  pair:'pair_monthly_2026_2033.json',
+  audit:'AUDIT.json'
+};
+let sanmeigakuMaster={loaded:false,error:null,engine:null,chiaki:null,naoya:null,pair:null,audit:null};
 
 // v0.12 — Western Engine display dictionary.
 // Calculation/master data stays untouched; only the UI translation layer lives here.
@@ -67,6 +78,7 @@ const MONTHLY_GUIDE=[
   {id:'psyn',label:'Progressed Synastry',source:'Astro-Seek',system:'Western Astrology',method:'Progressed Synastry',defaultPerson:'focus',why:'ふたりそれぞれの進行図を重ね、今の噛み合い方や動きやすいテーマを見る。',how:'Partner relationship horoscopes → Progressed Synastry Chart を開き、対象月の日付に設定。',capture:'「Aspects」タブ。Birth A × Progr B / Progr A × Birth B / Progr A × Progr B の一覧が入るように撮る。',dontNeed:'チャート円だけではなく、orbが読めるアスペクト一覧を優先。'},
   {id:'tpcc',label:'Transits × PCC',source:'Astro-Seek',system:'Western Astrology',method:'Transits × PCC',defaultPerson:'focus',why:'その月、関係性に外からどんな刺激が入りやすいかを見る。',how:'Progressed Composite Chart → 「Transits × PCC」タブを開き、対象日を設定。',capture:'下へスクロールして「Transits × PCC: / Transits / Aspect / PCC / Orb」の表を撮る。',dontNeed:'「Chart × PCC」は今回の保存用では不要。'},
   {id:'personal',label:'Personal Transits',source:'Astro-Seek',system:'Western Astrology',method:'Personal Transits',defaultPerson:'chiaki',why:'自分自身が今どんな時期にいて、恋愛以外も含め何が刺激されているかを見る。',how:'Astro-Seek → Predictive Astrology / Personal Prognoses → Transit Chart。自分の出生データを入力し、Transit chart の日付を対象月に設定 → 「Aspects」を開く。',capture:'「Main planet aspects」の Transit planet × Birth planet 一覧。まず冥王星・海王星・天王星・土星・木星などの長期天体と、太陽・月・水星・金星・火星へのタイトな角度を優先して撮る。',dontNeed:'円チャートだけの画像は補助。出生時刻が分かる本人ならASC/MC・ハウスも参考にできるが、月テーマ保存ではMain planet aspectsを優先。'},
+  {id:'sanmei',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'chiaki',why:'年運・月運の星と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。外部スクショは検証時のみ追加する。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガーを保存する。',dontNeed:'吉凶の自動採点や、位相から未来の出来事を自動断定しない。'},
   {id:'shichu',label:'四柱推命',source:'命式 / ChatGPT',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'chiaki',why:'大運・流年・月運を重ねて、今の長期・中期・短期サイクルを確認。',how:'命式を開き、大運 → 流年 → 対象月の月運の順に確認。',capture:'大運・流年・月運の干支や通変星など、ChatGPTが読み取れる表を撮る。',dontNeed:'画面全体より、対象期間と項目名・値が読める部分を優先。'},
 ]
 
@@ -268,6 +280,41 @@ async function loadFourPillarsMaster(){
     console.warn('ORBIT FourPillars master load failed',err);
   }
 }
+
+async function loadSanmeigakuMaster(){
+  try{
+    const entries=await Promise.all(Object.entries(SANMEIGAKU_MASTER_FILES).map(async([key,file])=>{
+      const res=await fetch(`${SANMEIGAKU_MASTER_BASE}${file}`,{cache:'no-store'});if(!res.ok)throw new Error(`${file}: ${res.status}`);return [key,await res.json()];
+    }));
+    const loaded=Object.fromEntries(entries);
+    const counts=['chiaki','naoya','pair'].map(k=>loaded[k]?.records?.length||0);
+    if(counts.some(n=>n!==96))throw new Error(`record count mismatch: ${counts.join('/')}`);
+    sanmeigakuMaster={loaded:true,error:null,...loaded};renderAll();
+  }catch(err){sanmeigakuMaster={...sanmeigakuMaster,loaded:false,error:String(err?.message||err)};console.warn('ORBIT Sanmeigaku master load failed',err);renderAll()}
+}
+function sanmeigakuRecord(personId,period){
+  const key=personId==='chiaki'?'chiaki':personId==='naoya'?'naoya':null;
+  return key?sanmeigakuMaster[key]?.records?.find(x=>x.period===period)||null:null;
+}
+function sanmeiRelationLabel(v=''){return String(v).replace('半会:','半会・')}
+function sanmeigakuMonthModel(period,personId='chiaki'){
+  const rec=sanmeigakuRecord(personId,period);if(!rec)return null;
+  const m=rec.month||{},y=rec.annual||{};
+  const triggers=(m.natal_triggers||[]).flatMap(t=>(t.relations||[]).map(r=>`${String(t.target||'').toUpperCase()} ${sanmeiRelationLabel(r)}`));
+  return {record:rec,month:m,annual:y,triggers,line:`${m.ganzhi||'—'}｜${m.main_star||'—'}｜${m.sub_star||'—'} · ${m.energy??'—'}`,triggerLine:triggers.join(' / ')||'主要位相なし'};
+}
+function sanmeigakuRawPrompt(personId,period){
+  const x=sanmeigakuMonthModel(period,personId);if(!x)return'';
+  const p=personName(personId),m=x.month,y=x.annual;
+  const fmt=t=>`${String(t.target||'').toUpperCase()} ${t.target_ganzhi||''}: ${(t.relations||[]).map(sanmeiRelationLabel).join(' / ')}`;
+  return `【算命学・${p}】
+対象: ${period}
+年運: ${y.ganzhi}｜${y.main_star}｜${y.sub_star}｜ENERGY ${y.energy}
+月運: ${m.ganzhi}｜${m.main_star}｜${m.sub_star}｜ENERGY ${m.energy}${m.tenchusatsu?'｜天中殺':''}
+月運→出生三柱:
+${(m.natal_triggers||[]).length?(m.natal_triggers||[]).map(fmt).map(v=>`- ${v}`).join('\n'):'- 主要位相なし'}
+※ORBIT Sanmeigaku Engine v0.3-test機械計算。吉凶や未来の出来事はRAWに含めない。`;
+}
 async function loadWesternMaster(){
   try{
     const res=await fetch(WESTERN_MASTER_URL,{cache:'no-store'});if(!res.ok)throw new Error(`western master: ${res.status}`);
@@ -428,6 +475,25 @@ function viewFourPillars(personId){
   const pr=fp.profile,dm=pr.dayMaster||{},pill=pr.fourPillars||{};
   openModal(`<span class="kicker">FOUR PILLARS · BASE CHART</span><h2>${esc(p.name)}</h2><div class="fp-core"><small>DAY MASTER</small><strong>${esc(dm.stem||'—')} · ${esc(dm.yinyang||'')} ${esc(dm.wuxing||'')}</strong><span>${esc(pr.calendarMethod||'')}</span></div>${pr.birthTimeWarning?`<div class="fp-warning">△ ${esc(pr.birthTimeWarning)}</div>`:''}<div class="fp-pillars">${pillarMini('YEAR',pill.year)}${pillarMini('MONTH',pill.month)}${pillarMini('DAY',pill.day)}${pillarMini('HOUR',pill.hour)}</div><div class="fp-section"><span class="kicker">CURRENT CYCLE · ${esc(data.month.title)}</span>${fp.shift?`<div class="shift-banner"><span>✦ MAJOR SHIFT</span><strong>大運切替 · ${esc(fp.shift.from.ganzhi)} → ${esc(fp.shift.to.ganzhi)}</strong><small>${esc(shiftLabel(fp.shift))} · 10年サイクルの転換点</small></div>`:''}${fp.d?`<button class="fp-luck" data-fp-meaning="${esc(fp.d.tsuhensei)}" data-fp-un="${esc(fp.d.junishi_un)}"><small>大運 / 10 YEAR${daiunBounds(p.id,fp.d).start?` · ${esc(fmtMonth(daiunBounds(p.id,fp.d).start))}〜`:''}</small><strong>${esc(fp.d.ganzhi)}｜${esc(fp.d.tsuhensei)}｜${esc(fp.d.junishi_un)}</strong><p>${esc(fpMeaning(fp.d.tsuhensei,fp.d.junishi_un))}</p></button>`:''}${fp.y?`<button class="fp-luck" data-fp-meaning="${esc(fp.y.tsuhensei)}" data-fp-un="${esc(fp.y.junishi_un)}"><small>流年 / ${fp.year}</small><strong>${esc(fp.y.ganzhi)}｜${esc(fp.y.tsuhensei)}｜${esc(fp.y.junishi_un)}</strong><p>${esc(fpMeaning(fp.y.tsuhensei,fp.y.junishi_un))}</p></button>`:''}${fp.m?`<button class="fp-luck" data-fp-meaning="${esc(fp.m.tsuhensei||'')}" data-fp-un="${esc(fp.m.junishi_un||'')}"><small>流月 / ${esc(data.month.title)}${fp.m.term?` · ${esc(fp.m.term)}`:''}${fp.m.range?` · ${esc(fp.m.range)}`:''}</small><strong>${esc(fp.m.ganzhi||'—')}｜${esc([fp.m.tsuhensei,fp.m.branchTsuhensei].filter(Boolean).join('・')||'—')}｜${esc(fp.m.junishi_un||'—')}</strong><p>${esc([fpMeaning(fp.m.tsuhensei,fp.m.junishi_un),fp.m.note].filter(Boolean).join(' '))}</p></button>`:`<button class="fp-add-month" data-fp-month="${p.id}">＋ この年の月運データを追加 / 編集</button>`}</div>${fpInteractionHTML(fp,p.id)}<div class="fp-source"><small>SOURCE</small><span>${esc(fp.master?'ORBIT FourPillars Engine v1 · FourPillars NEXT master':`${pr.source} · ${pr.calendarMethod}`)}</span></div><div class="form-actions split-actions"><button type="button" class="secondary-btn" data-fp-import="${p.id}">RE-IMPORT JSON</button><button type="button" class="save-btn" data-close-modal>Close</button></div>`)
 }
+function viewSanmeigaku(personId){
+  const p=data.people.find(x=>x.id===personId);if(!p)return;
+  const x=sanmeigakuMonthModel(data.month.period,personId);
+  if(!x)return openModal(`<span class="kicker">SANMEIGAKU</span><h2>${esc(p.name)}</h2><p class="modal-copy">Sanmeigaku masterを読み込めませんでした。</p><div class="form-actions"><button type="button" class="save-btn" data-close-modal>Close</button></div>`);
+  const m=x.month,y=x.annual,n=x.record.natal||{};
+  const triggerHTML=(m.natal_triggers||[]).length?(m.natal_triggers||[]).map(t=>`<div class="rb-signal"><b>${esc(String(t.target||'').toUpperCase())} · ${esc(t.target_ganzhi||'')}</b><p>${esc((t.relations||[]).map(sanmeiRelationLabel).join(' / '))}</p></div>`).join(''):'<p class="modal-copy">今月の主要位相トリガーなし。</p>';
+  openModal(`<span class="kicker">SANMEIGAKU · RAW ENGINE</span><h2>${esc(p.name)} · ${esc(data.month.title)}</h2><div class="fp-core"><small>NATAL</small><strong>${esc(n.year||'—')} · ${esc(n.month||'—')} · ${esc(n.day||'—')}</strong><span>天中殺 ${esc(n.tenchusatsu||'—')}</span></div><div class="fp-section"><span class="kicker">ANNUAL</span><div class="fp-luck"><small>YEAR</small><strong>${esc(y.ganzhi)}｜${esc(y.main_star)}｜${esc(y.sub_star)} · ${esc(y.energy)}</strong></div><span class="kicker">MONTH</span><div class="fp-luck"><small>${esc(data.month.title)}</small><strong>${esc(m.ganzhi)}｜${esc(m.main_star)}｜${esc(m.sub_star)} · ${esc(m.energy)}</strong><p>${m.tenchusatsu?'天中殺月':''}</p></div></div><div class="rb-section"><span class="kicker">MONTH → NATAL TRIGGERS</span>${triggerHTML}</div><div class="fp-source"><small>SOURCE</small><span>ORBIT Sanmeigaku Engine v0.3-test · RAW / no automatic good-bad scoring</span></div><div class="ai-box"><div class="ai-head"><strong>AI READ</strong><button type="button" class="copy-btn" data-copy-sanmei="${esc(personId)}">COPY</button></div><p>機械計算RAWだけを使う算命学観測プロンプト。</p></div><div class="form-actions"><button type="button" class="save-btn" data-close-modal>Close</button></div>`);
+}
+function sanmeigakuPrompt(personId,period){const raw=sanmeigakuRawPrompt(personId,period);return `${raw}
+
+このRAWだけを根拠に算命学として読んでください。流派差のある半会はORBIT採用方式に従い、吉凶を単純化せず、YEAR/MONTH/DAYの作用位置を保持してください。未来の出来事や特定人物との出来事を事実として補完しないでください。
+
+① 一行結論：30〜50字
+② 要約：100〜150字
+③ 主要ポイント／星・位相：箇条書き
+④ 詳細解釈：300〜500字
+⑤ キーワード：3〜5個（英語＋日本語）
+⑥ 今月の観察ポイント：100〜200字`;}
+
 function editFourPillarMonth(personId){const old=data.fourPillars?.monthly?.[personId]?.[data.month.period]||{};openModal(`<span class="kicker">FOUR PILLARS · MONTHLY</span><h2>${esc(personName(personId))} · ${esc(data.month.title)}</h2><input type="hidden" name="personId" value="${esc(personId)}"><label>干支</label><input name="ganzhi" value="${esc(old.ganzhi||'')}" placeholder="丙申"><label>天干通変星</label><input name="tsuhensei" value="${esc(old.tsuhensei||'')}" placeholder="偏財"><label>地支通変星</label><input name="branchTsuhensei" value="${esc(old.branchTsuhensei||'')}" placeholder="偏印"><label>十二運</label><input name="junishi_un" value="${esc(old.junishi_un||'')}" placeholder="長生"><label>期間</label><input name="range" value="${esc(old.range||'')}" placeholder="8/7〜9/6"><label>命式との関係 / メモ</label><textarea name="note" placeholder="害・冲・合など。サイトの表示をそのまま記録">${esc(old.note||'')}</textarea><div class="form-actions"><button type="button" class="text-btn" data-close-modal>Cancel</button><button type="button" class="save-btn" data-save="fp-month">SAVE MONTH</button></div>`)}
 function keywordPairsFromReading(r){
   const out=[];
@@ -542,7 +608,9 @@ function orbitThisMonthModel(period){
   const wLine=w.themes.length?w.themes.slice(0,3).map(x=>x.label).join(' / '):'マスター読込待ち';
   const crossTypes=cross?.shared_branch_relation_types||[];
   const crossLine=cross?`${crossTypes.length?crossTypes.join('・'):'共通支関係なし'}${cross.chiaki_major_transition||cross.naoya_major_transition?' / 大運切替あり':''}`:'CROSSデータ読込待ち';
-  return {western:w,fourPillars:fp,cross,overlap,top,summary,fpLine,wLine,crossLine};
+  const sanmei=sanmeigakuMonthModel(period,'chiaki');
+  const sanmeiLine=sanmei?sanmei.line:'マスター読込待ち';
+  return {western:w,fourPillars:fp,cross,sanmei,overlap,top,summary,fpLine,wLine,crossLine,sanmeiLine};
 }
 
 
@@ -579,6 +647,15 @@ function monthlySynthesisMaterials(period){
       method:'大運・歳運・月運',
       summary:`${m.fpLine}。${m.fourPillars.themes.slice(0,4).map(x=>x.label).join('・')}。`,
       tags:m.fourPillars.themes.slice(0,4).map(x=>x.label)
+    });
+  }
+
+  if(m?.sanmei){
+    materials.push({
+      source:'SANMEIGAKU',
+      method:'十大主星・十二大従星・位相法',
+      summary:`${m.sanmei.line}。月運→出生三柱: ${m.sanmei.triggerLine}。`,
+      tags:[m.sanmei.month.main_star,m.sanmei.month.sub_star,...m.sanmei.triggers.slice(0,3)].filter(Boolean)
     });
   }
 
@@ -737,6 +814,7 @@ function renderThisMonthV2(){
     ${coverHTML}
     <div class="tm-systems">
       <div class="tm-system"><small>FOUR PILLARS</small><strong>${esc(m.fpLine)}</strong><span>${esc(m.fourPillars.themes.slice(0,3).map(x=>x.label).join(' / ')||'—')}</span></div>
+      <div class="tm-system"><small>SANMEIGAKU</small><strong>${esc(m.sanmeiLine)}</strong><span>${esc(m.sanmei?.triggerLine||'RAW master loading')}</span></div>
       <div class="tm-system"><small>WESTERN</small><strong>${esc(m.wLine)}</strong><span>Progressions + Long Transits</span></div>
       <div class="tm-system"><small>CROSS SIGNAL</small><strong>${esc(m.crossLine)}</strong><span>機械的トリガー。関係性の意味は自動付与しません。</span></div>
     </div>
@@ -896,7 +974,7 @@ function addTimeline(){openModal(`<h2>Timeline Entry</h2><label>Period</label><i
 function addProject(){openModal(`<h2>Long-term Project</h2><label>Title</label><input name="title"><label>Person</label><select name="personId">${personOptions()}</select><label>Target period</label><input name="targetPeriod" placeholder="2033"><label>Status</label><input name="status" value="OBSERVING"><label>Systems</label><input name="systems" placeholder="Western Astrology, 四柱推命"><label>Summary</label><textarea name="summary"></textarea><label>Note</label><input name="note"><div class="form-actions"><button type="button" class="text-btn" data-close-modal>Cancel</button><button type="button" class="save-btn" data-save="project">Save</button></div>`)}
 function editMonth(){openModal(`<h2>This Month</h2><label>Title</label><input name="title" value="${esc(data.month.title)}"><label>Theme</label><input name="theme" value="${esc(data.month.theme||'REBUILDING')}"><label>Focus</label><input name="focus" value="${esc(data.month.focus||'RELATIONSHIP')}"><label>Detail (secondary)</label><input name="summary" value="${esc(data.month.summary)}"><label>Overlap tags</label><input name="overlap" value="${esc(data.month.overlap.join(', '))}"><div class="form-actions"><button type="button" class="text-btn" data-close-modal>Cancel</button><button type="button" class="save-btn" data-save="month">Save</button></div>`)}
 function viewReading(id){const r=data.readings.find(x=>x.id===id);if(!r)return;const p=data.people.find(x=>x.id===r.personId);const reality=(data.realityLogs||[]).filter(x=>(x.relatedReadingIds||[]).includes(r.id));openModal(`<div class="reading-meta"><span>${esc(r.system)}</span><span>${esc(r.method)}</span><span>${esc(r.targetPeriod)}</span><span>${esc(personName(r.personId))}</span>${p?.birthTimeStatus!=='exact'&&p?.birthTimeHypothesis?`<span>Hyp. ${esc(p.birthTimeHypothesis)}</span>`:''}</div><h2>${esc(r.title)}</h2><p class="lead">${esc(r.summary)}</p><div class="chips">${(r.tags||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>${r.brief?`<label>② 要約</label><p class="modal-copy">${esc(r.brief)}</p>`:''}<label>③ ${r.system==='四柱推命'?'主要ポイント / 命式・運気':'主要ポイント / アスペクト'}</label><div class="aspect-stack">${(r.aspects||[]).length?(r.aspects||[]).map((a,i)=>aspectCardHTML(a,i)).join(''):'<div class="aspect-card">—</div>'}</div><label>④ 詳細解釈</label><p class="modal-copy">${esc(r.interpretation||'')}</p>${r.observationPoint?`<div class="watch-card"><span>🔭 WHAT TO WATCH</span><p>${esc(r.observationPoint)}</p></div>`:''}<div class="reality-card"><div><span class="kicker">REALITY CHECK</span><strong>${reality.length?`${reality.length}件の現実ログ`:'まだ記録されていません'}</strong></div><button type="button" class="secondary-btn" data-add-reality="${r.id}">＋ ADD</button></div>${reality.map(x=>`<div class="reality-item"><small>${esc(x.date)}</small><strong>${esc(x.title)}</strong><p>${esc(x.description)}</p></div>`).join('')}<div class="form-actions split-actions"><button type="button" class="danger-btn" data-delete-reading="${r.id}">Delete</button><button type="button" class="secondary-btn" data-edit-reading="${r.id}">Edit</button><button type="button" class="save-btn" data-close-modal>Close</button></div>`)}
-function viewPerson(id){const p=data.people.find(x=>x.id===id);if(!p)return;openModal(`<span class="kicker">PERSON</span><h2>${esc(p.name)}</h2><p>${esc(p.birthDate||'')}</p><p>Birth time: ${p.birthTimeStatus==='exact'?esc(p.birthTime):'UNKNOWN'}</p><p>Hypothesis: ${esc(p.birthTimeHypothesis||'—')}</p><p>Birth place: ${esc(p.birthPlace||'—')}</p>${p.memo?`<p class="person-memo">${esc(p.memo)}</p>`:''}<div class="person-tools"><button type="button" class="secondary-btn" data-fp-view="${p.id}">☯ FOUR PILLARS</button><button type="button" class="secondary-btn" data-fp-import="${p.id}">⇩ IMPORT JSON</button></div><div class="form-actions split-actions"><button type="button" class="text-btn" data-edit-person="${p.id}">Edit</button><button type="button" class="save-btn" data-focus="${p.id}">Set as Focus</button></div>`)}
+function viewPerson(id){const p=data.people.find(x=>x.id===id);if(!p)return;openModal(`<span class="kicker">PERSON</span><h2>${esc(p.name)}</h2><p>${esc(p.birthDate||'')}</p><p>Birth time: ${p.birthTimeStatus==='exact'?esc(p.birthTime):'UNKNOWN'}</p><p>Hypothesis: ${esc(p.birthTimeHypothesis||'—')}</p><p>Birth place: ${esc(p.birthPlace||'—')}</p>${p.memo?`<p class="person-memo">${esc(p.memo)}</p>`:''}<div class="person-tools"><button type="button" class="secondary-btn" data-fp-view="${p.id}">☯ FOUR PILLARS</button><button type="button" class="secondary-btn" data-sanmei-view="${p.id}">✦ SANMEIGAKU</button><button type="button" class="secondary-btn" data-fp-import="${p.id}">⇩ IMPORT JSON</button></div><div class="form-actions split-actions"><button type="button" class="text-btn" data-edit-person="${p.id}">Edit</button><button type="button" class="save-btn" data-focus="${p.id}">Set as Focus</button></div>`)}
 
 function periodToDate(period){const m=/^(\d{4})-(\d{2})$/.exec(period||'');return m?new Date(Number(m[1]),Number(m[2])-1,1):new Date()}
 function periodLabel(period){const d=periodToDate(period);return `${d.getFullYear()} ${d.toLocaleString('en',{month:'short'}).toUpperCase()}`}
@@ -1010,6 +1088,8 @@ document.addEventListener('click',async e=>{
   const close=e.target.closest('[data-close-modal]');if(close){$('#modal').close();return}
   const edit=e.target.closest('[data-edit-person]');if(edit){editPerson(edit.dataset.editPerson);return}
   const er=e.target.closest('[data-edit-reading]');if(er){editReading(er.dataset.editReading);return}
+  const smv=e.target.closest('[data-sanmei-view]');if(smv){viewSanmeigaku(smv.dataset.sanmeiView);return}
+  const smcopy=e.target.closest('[data-copy-sanmei]');if(smcopy){const ok=await copyText(sanmeigakuPrompt(smcopy.dataset.copySanmei,data.month.period));toast(ok?'算命学プロンプトをコピーしました ✦':'コピーできませんでした');return}
   const fpv=e.target.closest('[data-fp-view],[data-fp-cycle]');if(fpv){viewFourPillars(fpv.dataset.fpView||fpv.dataset.fpCycle);return}
   const fpi=e.target.closest('[data-fp-import]');if(fpi){window.__orbitFpImportPerson=fpi.dataset.fpImport;const input=$('#sizhuImportFile');if(input){input.value='';input.click()}return}
   const fpm=e.target.closest('[data-fp-month]');if(fpm){editFourPillarMonth(fpm.dataset.fpMonth);return}
@@ -1039,4 +1119,5 @@ $('#readingPersonFilter').addEventListener('change',renderReadings);$('#readingS
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 renderAll();
 loadFourPillarsMaster();
+loadSanmeigakuMaster();
 loadWesternMaster();
