@@ -1,17 +1,9 @@
 {
-  "version": "0.19.0",
+  "version": "0.19.1",
   "changed_or_added": [
     "app.js",
     "index.html",
-    "style.css",
     "sw.js"
   ],
-  "removed": [],
-  "notes": [
-    "Monthly Checkに ALL / CHIAKI / NAOYA / RELATIONSHIP scope tabsを追加",
-    "N個人のFour Pillars / Sanmeigaku観測を追加",
-    "RelationshipにFour Pillars CROSS / Sanmeigaku PAIRを追加",
-    "Monthly Synthesisでscopeを保持し、個人→関係への自動拡張を禁止",
-    "既存ReadingはguideIdからscopeを推定。新規保存Readingにはscopeを記録"
-  ]
+  "note": "Public-facing ORBIT scope label changed from NAOYA to N. Internal scope key remains `naoya` for compatibility."
 }
