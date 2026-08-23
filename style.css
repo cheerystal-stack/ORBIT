@@ -479,3 +479,73 @@ body::after {
     opacity: 0.25;
   }
 }
+
+
+/* ===== v0.19 ORBIT SCOPE SYSTEM ===== */
+.scope-tabs{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin:14px 0 16px;
+  padding:4px;
+  border:1px solid rgba(228,202,150,.12);
+  border-radius:16px;
+  background:rgba(5,10,28,.38);
+}
+.scope-tab{
+  min-width:0;
+  border:0;
+  border-radius:12px;
+  padding:9px 5px;
+  background:transparent;
+  color:#878191;
+  font-size:8px;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+.scope-tab.active{
+  color:#e7d4a8;
+  background:linear-gradient(145deg,rgba(217,187,128,.12),rgba(129,113,177,.10));
+  box-shadow:inset 0 0 0 1px rgba(226,199,147,.16);
+}
+.scope-group{margin:0 0 16px}
+.scope-group-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:16px 4px 7px;
+  padding:0 2px;
+}
+.scope-group-head span{
+  color:#bcb4cc;
+  font-size:9px;
+  letter-spacing:.16em;
+}
+.scope-group-head small{
+  color:#656174;
+  font-size:8px;
+  letter-spacing:.10em;
+}
+.guide-scope,.scope-form-badge{
+  display:inline-flex;
+  width:max-content;
+  margin-bottom:7px;
+  padding:4px 7px;
+  border:1px solid rgba(224,198,144,.16);
+  border-radius:999px;
+  color:#b9a982;
+  font-size:8px;
+  letter-spacing:.13em;
+  background:rgba(218,188,127,.045);
+}
+.scope-form-badge{margin:0 0 12px}
+.monthly-material[data-material-scope="naoya"]{
+  border-color:rgba(165,175,224,.17);
+}
+.monthly-material[data-material-scope="relationship"]{
+  border-color:rgba(225,185,207,.16);
+}
+@media(max-width:430px){
+  .scope-tabs{gap:3px}
+  .scope-tab{padding:9px 2px;font-size:7px;letter-spacing:.04em}
+}

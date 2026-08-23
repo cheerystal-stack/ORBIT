@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.18.0';
+const APP_VERSION='0.19.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -73,15 +73,28 @@ const RELATIONSHIP_BASE={
   }
 };
 
-const MONTHLY_GUIDE=[
-  {id:'pcc',label:'PCC',source:'Astro-Seek',system:'Western Astrology',method:'PCC',defaultPerson:'focus',why:'ふたりの関係そのものが、今どんなフェーズにいるかを見る。',how:'Partner relationship horoscopes → Progressed Composite Chart を開き、対象月の日付に設定。',capture:'「Progressed Composite (PCC)」タブ内の PCC Main aspects。必要に応じて PCC Other aspects も撮る。',dontNeed:'チャート円だけの画像は補助。アスペクト一覧が読めるスクショを優先。'},
-  {id:'psyn',label:'Progressed Synastry',source:'Astro-Seek',system:'Western Astrology',method:'Progressed Synastry',defaultPerson:'focus',why:'ふたりそれぞれの進行図を重ね、今の噛み合い方や動きやすいテーマを見る。',how:'Partner relationship horoscopes → Progressed Synastry Chart を開き、対象月の日付に設定。',capture:'「Aspects」タブ。Birth A × Progr B / Progr A × Birth B / Progr A × Progr B の一覧が入るように撮る。',dontNeed:'チャート円だけではなく、orbが読めるアスペクト一覧を優先。'},
-  {id:'tpcc',label:'Transits × PCC',source:'Astro-Seek',system:'Western Astrology',method:'Transits × PCC',defaultPerson:'focus',why:'その月、関係性に外からどんな刺激が入りやすいかを見る。',how:'Progressed Composite Chart → 「Transits × PCC」タブを開き、対象日を設定。',capture:'下へスクロールして「Transits × PCC: / Transits / Aspect / PCC / Orb」の表を撮る。',dontNeed:'「Chart × PCC」は今回の保存用では不要。'},
-  {id:'personal',label:'Personal Transits',source:'Astro-Seek',system:'Western Astrology',method:'Personal Transits',defaultPerson:'chiaki',why:'自分自身が今どんな時期にいて、恋愛以外も含め何が刺激されているかを見る。',how:'Astro-Seek → Predictive Astrology / Personal Prognoses → Transit Chart。自分の出生データを入力し、Transit chart の日付を対象月に設定 → 「Aspects」を開く。',capture:'「Main planet aspects」の Transit planet × Birth planet 一覧。まず冥王星・海王星・天王星・土星・木星などの長期天体と、太陽・月・水星・金星・火星へのタイトな角度を優先して撮る。',dontNeed:'円チャートだけの画像は補助。出生時刻が分かる本人ならASC/MC・ハウスも参考にできるが、月テーマ保存ではMain planet aspectsを優先。'},
-  {id:'sanmei',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'chiaki',why:'年運・月運の星と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。外部スクショは検証時のみ追加する。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガーを保存する。',dontNeed:'吉凶の自動採点や、位相から未来の出来事を自動断定しない。'},
-  {id:'shichu',label:'四柱推命',source:'命式 / ChatGPT',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'chiaki',why:'大運・流年・月運を重ねて、今の長期・中期・短期サイクルを確認。',how:'命式を開き、大運 → 流年 → 対象月の月運の順に確認。',capture:'大運・流年・月運の干支や通変星など、ChatGPTが読み取れる表を撮る。',dontNeed:'画面全体より、対象期間と項目名・値が読める部分を優先。'},
-]
+const MONTHLY_SCOPES={
+  all:{label:'ALL',title:'ALL OBSERVATIONS'},
+  chiaki:{label:'CHIAKI',title:'CHIAKI · PERSONAL'},
+  naoya:{label:'NAOYA',title:'NAOYA · PERSONAL'},
+  relationship:{label:'RELATIONSHIP',title:'RELATIONSHIP'}
+};
+let monthlyScope='all';
 
+const MONTHLY_GUIDE=[
+  {id:'personal',scope:'chiaki',label:'Personal Transits',source:'Astro-Seek',system:'Western Astrology',method:'Personal Transits',defaultPerson:'chiaki',why:'自分自身が今どんな時期にいて、恋愛以外も含め何が刺激されているかを見る。',how:'Astro-Seek → Predictive Astrology / Personal Prognoses → Transit Chart。自分の出生データを入力し、Transit chart の日付を対象月に設定 → 「Aspects」を開く。',capture:'「Main planet aspects」の Transit planet × Birth planet 一覧。長期天体と個人天体へのタイトな角度を優先。',dontNeed:'円チャートだけの画像は補助。月テーマ保存ではMain planet aspectsを優先。'},
+  {id:'sanmei',scope:'chiaki',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'chiaki',why:'Chiaki個人の年運・月運と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。外部スクショは検証時のみ追加する。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガー。',dontNeed:'吉凶の自動採点や、位相から未来の出来事を自動断定しない。'},
+  {id:'shichu',scope:'chiaki',label:'四柱推命',source:'ORBIT FourPillars Engine',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'chiaki',why:'Chiaki個人の大運・流年・月運を重ねて、長期・中期・短期サイクルを確認する。',how:'ORBIT内蔵FourPillars masterを使用。',capture:'大運・歳運・月運、原局への作用、補助判定。',dontNeed:'CROSSの関係性トリガーはここへ混ぜず、RELATIONSHIPで別観測する。'},
+
+  {id:'sanmei_naoya',scope:'naoya',label:'算命学',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'十大主星・十二大従星・位相法',defaultPerson:'naoya',why:'N個人の年運・月運と、出生三柱へ入る位相トリガーを独立観測する。',how:'ORBIT内蔵Sanmeigaku masterを使用。',capture:'Engineが生成した年運・月運・ENERGY・YEAR/MONTH/DAY別トリガー。',dontNeed:'N個人のシグナルを、二人の関係に起こる出来事として自動変換しない。'},
+  {id:'shichu_naoya',scope:'naoya',label:'四柱推命',source:'ORBIT FourPillars Engine',system:'四柱推命',method:'大運・流年・月運',defaultPerson:'naoya',why:'N個人の大運・流年・月運を独立して観測し、本人側の時間軸を確認する。',how:'ORBIT内蔵FourPillars masterを使用。',capture:'大運・歳運・月運、原局への作用、大運切替。',dontNeed:'本人側の変化を、特定の相手や関係の出来事と断定しない。'},
+
+  {id:'pcc',scope:'relationship',label:'PCC',source:'Astro-Seek',system:'Western Astrology',method:'PCC',defaultPerson:'focus',why:'ふたりの関係そのものが、今どんなフェーズにいるかを見る。',how:'Partner relationship horoscopes → Progressed Composite Chart を開き、対象月の日付に設定。',capture:'PCC Main aspects。必要に応じて PCC Other aspects も撮る。',dontNeed:'チャート円だけの画像は補助。アスペクト一覧が読めるスクショを優先。'},
+  {id:'psyn',scope:'relationship',label:'Progressed Synastry',source:'Astro-Seek',system:'Western Astrology',method:'Progressed Synastry',defaultPerson:'focus',why:'ふたりそれぞれの進行図を重ね、今の噛み合い方や動きやすいテーマを見る。',how:'Partner relationship horoscopes → Progressed Synastry Chart を開き、対象月の日付に設定。',capture:'Aspectsタブ。Birth A × Progr B / Progr A × Birth B / Progr A × Progr B。',dontNeed:'チャート円だけではなく、orbが読める一覧を優先。'},
+  {id:'tpcc',scope:'relationship',label:'Transits × PCC',source:'Astro-Seek',system:'Western Astrology',method:'Transits × PCC',defaultPerson:'focus',why:'その月、関係性に外からどんな刺激が入りやすいかを見る。',how:'Progressed Composite Chart → 「Transits × PCC」タブを開き、対象日を設定。',capture:'Transits × PCC のアスペクト表。',dontNeed:'Chart × PCC は今回の保存用では不要。'},
+  {id:'shichu_cross',scope:'relationship',label:'Four Pillars CROSS',source:'ORBIT FourPillars Engine',system:'四柱推命',method:'CROSS機械トリガー',defaultPerson:'focus',why:'同じ節月に二人の命式へ入る機械的トリガーを、個人運と分けて観測する。',how:'ORBIT内蔵FourPillars CROSS masterを使用。',capture:'共通支関係、大運切替などCROSSに保存されたRAWだけ。',dontNeed:'CROSSだけから恋愛・結婚・別離など具体的出来事を補完しない。'},
+  {id:'sanmei_pair',scope:'relationship',label:'Sanmeigaku PAIR',source:'ORBIT Sanmeigaku Engine',system:'算命学',method:'PAIR・共通トリガー',defaultPerson:'focus',why:'A/Bそれぞれの月運トリガーの重なりと、出生PAIRの固定位相を関係レイヤーとして観測する。',how:'ORBIT内蔵Sanmeigaku pair masterを使用。',capture:'A/Bの主星・従星・ENERGY、shared trigger types、出生PAIR固定位相。',dontNeed:'shared triggerを「二人に同じ出来事が起きる」と解釈しない。'}
+];
 
 
 // 2026 monthly cycle data captured from the user's KINOTO monthly table.
@@ -194,7 +207,26 @@ function checkEntry(id){return (data.monthlyChecks[currentCheckKey()]||{})[id]||
 function statusClass(s){return s==='saved'?'saved':s==='checked'?'checked':''}
 function statusIcon(s){return s==='saved'?'✓':s==='checked'?'◐':'○'}
 function statusLabel(s){return s==='saved'?'SAVED':s==='checked'?'CHECKED':'TO CHECK'}
-function guideDefaultPerson(g){return g.defaultPerson==='chiaki'?(data.people.find(p=>p.id==='chiaki')?.id||data.people[0]?.id):focus().id}
+function guideDefaultPerson(g){
+  if(g.defaultPerson==='chiaki')return data.people.find(p=>p.id==='chiaki')?.id||data.people[0]?.id;
+  if(g.defaultPerson==='naoya')return data.people.find(p=>p.id==='naoya')?.id||data.people.find(p=>p.id!=='chiaki')?.id||data.people[0]?.id;
+  return focus().id;
+}
+function guideScope(g){return g?.scope||'relationship'}
+function guideScopeLabel(g){return MONTHLY_SCOPES[guideScope(g)]?.title||'OBSERVATION'}
+function guideHasMaster(g){
+  if(['sanmei','sanmei_naoya','sanmei_pair'].includes(g.id))return sanmeigakuMaster.loaded;
+  if(['shichu','shichu_naoya','shichu_cross'].includes(g.id))return masterReady();
+  return false;
+}
+function readingScope(r){
+  if(r?.scope)return r.scope;
+  const g=MONTHLY_GUIDE.find(x=>x.id===r?.guideId);
+  if(g)return guideScope(g);
+  if(r?.method==='Personal Transits')return 'chiaki';
+  if(['PCC','Progressed Synastry','Transits × PCC'].includes(r?.method))return 'relationship';
+  return 'chiaki';
+}
 function masterDatasetForPerson(personId){return fourPillarsMaster?.[personId]||null}
 function masterRecord(personId,period){return masterDatasetForPerson(personId)?.records?.find(x=>x.period===period)||null}
 function masterCrossRecord(period){return fourPillarsMaster?.cross?.records?.find(x=>x.period===period)||null}
@@ -243,18 +275,30 @@ function crossRawPrompt(period){
 }
 function aiPrompt(g){
   const pointLabel=['四柱推命','算命学'].includes(g.system)?'主要ポイント／命式・運気':'主要ポイント／アスペクト';
-  const base=`${data.month.title}の${g.label}を見ます。画像または配置をもとに、ORBITへ保存しやすい形式で整理してください。\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ ${pointLabel}：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。断定ではなく、占術上のテーマ・可能性として読んでください。`;
+  const scope=guideScope(g),scopeTitle=guideScopeLabel(g);
+  const base=`${data.month.title}の${g.label}を見ます。画像または配置をもとに、ORBITへ保存しやすい形式で整理してください。\n\n【SCOPE】${scopeTitle}\nこの観測のscopeを保持し、PERSONALの内容をRELATIONSHIPの出来事へ、RELATIONSHIPの内容を特定個人の出来事へ自動拡張しないでください。\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ ${pointLabel}：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。断定ではなく、占術上のテーマ・可能性として読んでください。`;
+
+  if(g.id==='sanmei_pair'){
+    const raw=sanmeigakuPairRawPrompt(data.month.period);if(!raw)return base;
+    return `${data.month.title}の算命学PAIRを見ます。以下はORBIT Sanmeigaku Engineの機械計算済みPAIRデータです。記載のない出来事・人物関係を補完しないでください。\n\n【SCOPE】RELATIONSHIP\nA/BそれぞれのPERSONALトリガーとPAIR固定位相を区別してください。shared trigger typesを具体的な関係イベントと同一視しないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\n未来の出来事、交際・結婚・別離などを事実として補完せず、RELATIONSHIP scopeの観測テーマとして整理してください。`;
+  }
+
   if(g.system==='算命学'){
     if(!sanmeigakuMaster.loaded)return base;
     const pid=guideDefaultPerson(g),raw=sanmeigakuRawPrompt(pid,data.month.period);
     if(!raw)return base;
-    return `${data.month.title}の算命学を見ます。以下はORBIT Sanmeigaku Engine v0.3-testの機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある位相法はORBIT採用方式に従い、吉凶を単純化しないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、YEAR／MONTH／DAYの作用位置を保持し、未来の出来事や特定人物との出来事を事実として補完しないでください。`;
+    return `${data.month.title}の算命学を見ます。以下はORBIT Sanmeigaku Engine v0.3-testの機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある位相法はORBIT採用方式に従い、吉凶を単純化しないでください。\n\n【SCOPE】${scopeTitle}\nこの結果は${scope==='naoya'?'N':'Chiaki'}個人のPERSONAL観測です。この個人シグナルを二人の関係や特定人物との出来事へ自動的に拡張しないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、YEAR／MONTH／DAYの作用位置を保持し、未来の出来事や特定人物との出来事を事実として補完しないでください。`;
   }
-  if(g.system!=='四柱推命'||!masterReady())return base;
-  const pid=guideDefaultPerson(g);const raw=fpRawPrompt(pid,data.month.period),cross=crossRawPrompt(data.month.period);
-  return `${data.month.title}の四柱推命を見ます。以下はORBIT FourPillars Engine v1の機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある補助判定は強く断定しないでください。\n\n${raw}${cross?`\n\n${cross}`:''}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、未来や関係性を事実として断定しないでください。`;
-}
 
+  if(g.id==='shichu_cross'){
+    const raw=crossRawPrompt(data.month.period);if(!raw)return base;
+    return `${data.month.title}のFour Pillars CROSSを見ます。以下はORBIT FourPillars Engine v1の機械計算済みCROSSデータです。\n\n【SCOPE】RELATIONSHIP\nCROSSは二人に同じ節月が作る機械トリガーです。個人運と区別し、具体的な恋愛・結婚・別離などを補完しないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nRELATIONSHIP scopeの機械的観測として、共通点と非共通点を区別して整理してください。`;
+  }
+
+  if(g.system!=='四柱推命'||!masterReady())return base;
+  const pid=guideDefaultPerson(g);const raw=fpRawPrompt(pid,data.month.period);
+  return `${data.month.title}の四柱推命を見ます。以下はORBIT FourPillars Engine v1の機械計算済みマスターデータです。画像よりこのデータを優先し、記載のない事実を補完しないでください。半会など流派差のある補助判定は強く断定しないでください。\n\n【SCOPE】${scopeTitle}\nこれは${scope==='naoya'?'N':'Chiaki'}個人のPERSONAL観測です。CROSSやRELATIONSHIPの意味をここへ混ぜないでください。\n\n${raw}\n\n① 一行結論：30〜50字\n② 要約：100〜150字\n③ 主要ポイント／命式・運気：箇条書き\n④ 詳細解釈：300〜500字\n⑤ キーワード：3〜5個（英語＋日本語訳を併記）\n⑥ 今月の観察ポイント：100〜200字\n\nORBITへの保存用なので、見出し名と順番を変更せず出力してください。計算データと解釈を分け、未来や特定の関係性を事実として断定しないでください。`;
+}
 
 const TSUHEN_MEANINGS={
   '比肩':'自分軸・独立・主体性。自分の意思で動き、同等の相手や競争も意識しやすい。',
@@ -302,6 +346,23 @@ function sanmeigakuRecord(personId,period){
   const key=personId==='chiaki'?'chiaki':personId==='naoya'?'naoya':null;
   return key?sanmeigakuMaster[key]?.records?.find(x=>x.period===period)||null:null;
 }
+
+function sanmeigakuPairRecord(period){return sanmeigakuMaster?.pair?.records?.find(x=>x.period===period)||null}
+function sanmeigakuPairRawPrompt(period){
+  const r=sanmeigakuPairRecord(period);if(!r)return'';
+  const staticR=sanmeigakuMaster?.pair?.static_natal_relations||[];
+  const lines=['【算命学PAIRマスター】',`対象期間: ${period}`,`月干支: ${r.month_ganzhi||'—'}`];
+  lines.push(`A: ${r.A?.main_star||'—'}｜${r.A?.sub_star||'—'}｜ENERGY ${r.A?.energy??'—'}｜月運トリガー種別 ${(r.A?.trigger_types||[]).join(' / ')||'なし'}`);
+  lines.push(`B: ${r.B?.main_star||'—'}｜${r.B?.sub_star||'—'}｜ENERGY ${r.B?.energy??'—'}｜月運トリガー種別 ${(r.B?.trigger_types||[]).join(' / ')||'なし'}`);
+  lines.push(`共通トリガー種別: ${(r.shared_trigger_types||[]).join(' / ')||'なし'}`);
+  if(staticR.length){
+    lines.push('出生PAIR固定位相:');
+    staticR.forEach(x=>lines.push(`- A ${String(x.a_target||'').toUpperCase()} ${x.a_ganzhi||''} × B ${String(x.b_target||'').toUpperCase()} ${x.b_ganzhi||''}: ${(x.relations||[]).map(sanmeiRelationLabel).join(' / ')}`));
+  }
+  lines.push('※shared trigger typesは「同じ節月がA/Bそれぞれの原局に作る位相種別の重なり」。PAIR固有の未来事象を意味しません。');
+  return lines.join('\n');
+}
+
 function sanmeiRelationLabel(v=''){return String(v).replace('半会:','半会・')}
 function sanmeigakuMonthModel(period,personId='chiaki'){
   const rec=sanmeigakuRecord(personId,period);if(!rec)return null;
@@ -633,8 +694,9 @@ function monthlySynthesisMaterials(period){
 
   if(m?.summary){
     materials.push({
+      scope:'chiaki',
       source:'ORBIT ENGINE · EAST × WEST',
-      method:'RULE-BASED SYNTHESIS',
+      method:'RULE-BASED PERSONAL SYNTHESIS',
       summary:m.summary,
       tags:(m.overlap.length?m.overlap:m.top).slice(0,4).map(x=>x.label)
     });
@@ -645,6 +707,7 @@ function monthlySynthesisMaterials(period){
     const items=[...(wm.progressions?.aspects_to_natal||[]),...(wm.long_transits?.aspects_to_natal||[])];
     const wr=westernInterpretation(items);
     if(wr.summary)materials.push({
+      scope:'chiaki',
       source:'WESTERN ENGINE',
       method:'PROGRESSIONS + LONG TRANSITS',
       summary:wr.summary,
@@ -654,6 +717,7 @@ function monthlySynthesisMaterials(period){
 
   if(m?.fourPillars?.record){
     materials.push({
+      scope:'chiaki',
       source:'FOUR PILLARS',
       method:'大運・歳運・月運',
       summary:`${m.fpLine}。${m.fourPillars.themes.slice(0,4).map(x=>x.label).join('・')}。`,
@@ -663,6 +727,7 @@ function monthlySynthesisMaterials(period){
 
   if(m?.sanmei){
     materials.push({
+      scope:'chiaki',
       source:'SANMEIGAKU',
       method:'十大主星・十二大従星・位相法',
       summary:`${m.sanmei.line}。月運→出生三柱: ${m.sanmei.triggerLine}。`,
@@ -672,7 +737,8 @@ function monthlySynthesisMaterials(period){
 
   if(m?.cross){
     materials.push({
-      source:'CROSS SIGNAL',
+      scope:'relationship',
+      source:'FOUR PILLARS CROSS',
       method:'MECHANICAL TRIGGER',
       summary:m.crossLine,
       tags:m.cross.shared_branch_relation_types||[]
@@ -688,6 +754,7 @@ function monthlySynthesisMaterials(period){
         ? pairs.slice(0,6).map(x=>x.ja?`${x.en}（${x.ja}）`:x.en)
         : (r.tags||[]).slice(0,6);
       materials.push({
+        scope:readingScope(r),
         source:r.system||'READING',
         method:r.method||'SAVED READING',
         summary:[r.summary,r.brief].filter(Boolean).join(' / '),
@@ -698,7 +765,6 @@ function monthlySynthesisMaterials(period){
 
   return materials.filter(x=>x.summary);
 }
-
 function monthlySynthesisPrompt(period){
   const materials=monthlySynthesisMaterials(period);
   const lines=[
@@ -706,10 +772,13 @@ function monthlySynthesisPrompt(period){
     '',
     '【原則】',
     '以下の保存済み観測要約だけを根拠に統合してください。',
-    '希望的観測にも悲観にも寄せず、同じテーマが複数観測で重なる場合は重みを置いてください。',
+    '観測材料には CHIAKI PERSONAL / NAOYA PERSONAL / RELATIONSHIP のscopeがあります。scopeを失わずに読んでください。',
+    'CHIAKI PERSONALだけにあるテーマをRELATIONSHIPの出来事へ拡張しないでください。',
+    'NAOYA PERSONALだけにあるテーマを二人の関係や特定人物との出来事へ拡張しないでください。',
+    'RELATIONSHIPだけにあるテーマを、どちらか一人の人生上の出来事と断定しないでください。',
+    '複数scopeで独立して同じテーマが重なる場合は、その一致自体に重みを置いてください。',
     '観測同士に緊張・相違がある場合は、無理に一つの意味へ丸めないでください。',
-    '質問にない出来事・相手の行動・未来の事実を補完しないでください。',
-    '占術上のテーマとして表現し、断定しないでください。',
+    '希望的観測にも悲観にも寄せず、質問にない出来事・相手の行動・未来の事実を補完しないでください。',
     '',
     '【OUTPUT】',
     '次の4項目だけを、見出し名を変えずに出力してください。前置き・解説・あとがきは不要です。',
@@ -720,16 +789,24 @@ function monthlySynthesisPrompt(period){
     '',
     '【観測材料】'
   ];
-  materials.forEach((x,i)=>{
-    lines.push(``);
-    lines.push(`■ ${i+1}. ${x.source} / ${x.method}`);
-    lines.push(`要約: ${x.summary}`);
-    if(x.tags?.length)lines.push(`テーマ: ${x.tags.join(' / ')}`);
+
+  const order=['chiaki','naoya','relationship'];
+  const labels={chiaki:'CHIAKI PERSONAL',naoya:'NAOYA PERSONAL',relationship:'RELATIONSHIP'};
+  let n=0;
+  order.forEach(scope=>{
+    const group=materials.filter(x=>(x.scope||'chiaki')===scope);
+    if(!group.length)return;
+    lines.push('',`### ${labels[scope]}`);
+    group.forEach(x=>{
+      n+=1;
+      lines.push('',`■ ${n}. ${x.source} / ${x.method}`);
+      lines.push(`要約: ${x.summary}`);
+      if(x.tags?.length)lines.push(`テーマ: ${x.tags.join(' / ')}`);
+    });
   });
   if(!materials.length)lines.push('（保存済み観測材料なし）');
   return lines.join('\n');
 }
-
 function formatMonthlyMessage(msg){
   if(!msg)return'';
   return `TITLE: ${msg.title||''}\nSUBTITLE: ${msg.subtitle||''}\nMESSAGE: ${msg.message||''}\nTHEME: ${(msg.themes||[]).join('・')}`;
@@ -755,8 +832,8 @@ function viewMonthlySynthesis(){
   const materials=monthlySynthesisMaterials(period);
   const saved=monthlyMessageFor(period);
   const materialHTML=materials.length?materials.map((x,i)=>`
-    <div class="monthly-material">
-      <div><span>${esc(String(i+1).padStart(2,'0'))}</span><small>${esc(x.source)}</small></div>
+    <div class="monthly-material" data-material-scope="${esc(x.scope||'chiaki')}">
+      <div><span>${esc(String(i+1).padStart(2,'0'))}</span><small>${esc(MONTHLY_SCOPES[x.scope||'chiaki']?.title||'OBSERVATION')} · ${esc(x.source)}</small></div>
       <strong>${esc(x.method)}</strong>
       <p>${esc(x.summary)}</p>
       ${x.tags?.length?`<div class="chips">${x.tags.slice(0,5).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
@@ -861,20 +938,35 @@ function renderHome(){
 function renderMonthlyChecks(){
   if($('#guideMonthLabel')) $('#guideMonthLabel').textContent=data.month.title;
   const state=data.monthlyChecks[currentCheckKey()]||{};
-  const saved=MONTHLY_GUIDE.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
-  const touched=MONTHLY_GUIDE.filter(x=>['checked','saved'].includes(state[x.id]?.status)).length;
-  $('#monthlyProgress').textContent=`${saved} saved · ${touched}/${MONTHLY_GUIDE.length}`;
-  $('#monthlyChecks').innerHTML=MONTHLY_GUIDE.map(g=>{
-    const s=state[g.id]?.status||'unchecked';
-    const masterBadge=g.id==='sanmei'&&sanmeigakuMaster.loaded?'<b class="master-mini">MASTER</b>':'';
-    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}${masterBadge}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
-  }).join('');
-}
+  const visible=monthlyScope==='all'?MONTHLY_GUIDE:MONTHLY_GUIDE.filter(g=>guideScope(g)===monthlyScope);
+  const saved=visible.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
+  const touched=visible.filter(x=>['checked','saved'].includes(state[x.id]?.status)).length;
+  $('#monthlyProgress').textContent=`${saved} saved · ${touched}/${visible.length}`;
 
+  const tabs=`<div class="scope-tabs">${Object.entries(MONTHLY_SCOPES).map(([key,x])=>`<button type="button" class="scope-tab ${monthlyScope===key?'active':''}" data-scope-tab="${key}">${esc(x.label)}</button>`).join('')}</div>`;
+
+  const row=g=>{
+    const s=state[g.id]?.status||'unchecked';
+    const masterBadge=guideHasMaster(g)?'<b class="master-mini">MASTER</b>':'';
+    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}${masterBadge}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
+  };
+
+  let body='';
+  if(monthlyScope==='all'){
+    ['chiaki','naoya','relationship'].forEach(scope=>{
+      const gs=MONTHLY_GUIDE.filter(g=>guideScope(g)===scope);
+      const ss=gs.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
+      body+=`<section class="scope-group"><div class="scope-group-head"><span>${esc(MONTHLY_SCOPES[scope].title)}</span><small>${ss}/${gs.length} SAVED</small></div>${gs.map(row).join('')}</section>`;
+    });
+  }else{
+    body=`<section class="scope-group">${visible.map(row).join('')}</section>`;
+  }
+  $('#monthlyChecks').innerHTML=tabs+body;
+}
 function viewGuide(id){
   const g=MONTHLY_GUIDE.find(x=>x.id===id); if(!g)return;
   const entry=checkEntry(id), prompt=aiPrompt(g);
-  openModal(`<span class="kicker">MONTHLY CHECK · ${esc(data.month.title)}</span><div class="guide-modal-title"><div><h2>${esc(g.label)}</h2><p class="guide-source">${esc(g.source)}</p></div><span class="status-badge ${statusClass(entry.status)}">${statusLabel(entry.status)}</span></div>
+  openModal(`<span class="kicker">MONTHLY CHECK · ${esc(data.month.title)}</span><div class="guide-modal-title"><div><div class="guide-scope">${esc(guideScopeLabel(g))}</div><h2>${esc(g.label)}</h2><p class="guide-source">${esc(g.source)}</p></div><span class="status-badge ${statusClass(entry.status)}">${statusLabel(entry.status)}</span></div>
     <label>WHY</label><p class="modal-copy">${esc(g.why)}</p>
     <label>HOW TO FIND</label><p class="modal-copy">${esc(g.how)}</p>
     <div class="capture-guide"><div><span>📷 WHAT TO CAPTURE</span><p>${esc(g.capture)}</p></div><div><span>− DON'T NEED</span><p>${esc(g.dontNeed)}</p></div></div>
@@ -965,7 +1057,8 @@ function readingForm(r=null,guideId=''){
   const method=r?.method||g?.method||'';
   const title=r?.title||(g?`${data.month.title} · ${g.label}`:'');
   return `<span class="kicker">${g?'MONTHLY OBSERVATION':'READING'}</span><h2>${isEdit?'Edit Observation':'New Observation'}</h2>
-  ${isEdit?`<input type="hidden" name="readingId" value="${esc(r.id)}">`:''}<input type="hidden" name="guideId" value="${esc(guideId||r?.guideId||'')}">
+  ${isEdit?`<input type="hidden" name="readingId" value="${esc(r.id)}">`:''}<input type="hidden" name="guideId" value="${esc(guideId||r?.guideId||'')}"><input type="hidden" name="scope" value="${esc(r?.scope||guideScope(g))}">
+  ${g?`<div class="scope-form-badge">${esc(guideScopeLabel(g))}</div>`:''}
   <label>Person / Focus</label><select name="personId">${personOptions(selectedPerson)}</select>
   <label>Target period</label><input name="targetPeriod" value="${esc(target)}" placeholder="2026-09 / 2033">
   <label>System</label><select name="system">${['Western Astrology','四柱推命','算命学','九星気学','宿曜','数秘術','Other'].map(s=>`<option ${s===system?'selected':''}>${s}</option>`).join('')}</select>
@@ -1067,13 +1160,14 @@ function markGuideSaved(guideId,readingId){if(guideId)setCheck(guideId,'saved',r
 
 function saveReadingFromForm(fd,existing=null){
   const record=existing||{id:'r'+Date.now(),createdAt:todayISO()};
-  record.personId=fd.get('personId');record.targetPeriod=fd.get('targetPeriod');record.system=fd.get('system');record.method=fd.get('method');record.title=fd.get('title')||'Untitled observation';record.summary=fd.get('summary');record.brief=fd.get('brief');record.aspects=String(fd.get('aspects')||'').split('\n').map(s=>s.trim()).filter(Boolean);record.interpretation=fd.get('interpretation');record.observationPoint=fd.get('observationPoint');record.tags=String(fd.get('tags')||'').split(',').map(s=>s.trim()).filter(Boolean);record.guideId=fd.get('guideId')||record.guideId||'';
+  record.personId=fd.get('personId');record.targetPeriod=fd.get('targetPeriod');record.scope=fd.get('scope')||record.scope||'';record.system=fd.get('system');record.method=fd.get('method');record.title=fd.get('title')||'Untitled observation';record.summary=fd.get('summary');record.brief=fd.get('brief');record.aspects=String(fd.get('aspects')||'').split('\n').map(s=>s.trim()).filter(Boolean);record.interpretation=fd.get('interpretation');record.observationPoint=fd.get('observationPoint');record.tags=String(fd.get('tags')||'').split(',').map(s=>s.trim()).filter(Boolean);record.guideId=fd.get('guideId')||record.guideId||'';
   if(!existing)data.readings.unshift(record);
   markGuideSaved(record.guideId,record.id);
   return record;
 }
 
 document.addEventListener('click',async e=>{
+  const scopeTab=e.target.closest('[data-scope-tab]');if(scopeTab){monthlyScope=scopeTab.dataset.scopeTab||'all';renderMonthlyChecks();return}
   const go=e.target.closest('[data-go]'); if(go){showView(go.dataset.go);return}
   if(e.target.closest('[data-monthly-synthesis]')){viewMonthlySynthesis();return}
   if(e.target.closest('[data-copy-monthly-synthesis]')){const ok=await copyText(monthlySynthesisPrompt(data.month.period));toast(ok?'MONTHLY SYNTHESISプロンプトをコピーしました ✦':'コピーできませんでした');return}
