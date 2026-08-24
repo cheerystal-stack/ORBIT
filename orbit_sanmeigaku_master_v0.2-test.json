@@ -1,0 +1,302 @@
+{
+  "schema": "ORBIT_SANMEIGAKU_MASTER",
+  "version": "0.2-test",
+  "created_at": "2026-08-23",
+  "status": "frozen_test_master",
+  "interpretation_included": false,
+  "privacy": {
+    "public_safe_aliases": true,
+    "person_a": "A",
+    "person_b": "B",
+    "birth_dates_omitted_from_master": true,
+    "names_omitted": true
+  },
+  "method_basis": {
+    "primary": "算命学の窓",
+    "cross_check": [
+      "Sanmei Scope",
+      "朱学院"
+    ],
+    "calendar": {
+      "year_boundary": "立春",
+      "month_boundary": "節入り"
+    },
+    "phase_rule_variant": {
+      "half_combination": "算命学の窓方式",
+      "note": "亥卯未・寅午戌・巳酉丑・申子辰の三合各3支について、任意の2支を半会として扱う。よって亥未も半会。",
+      "do_not_mix_other_variants": true
+    }
+  },
+  "verification_labels": {
+    "reference": "ユーザー提供スクリーンショット等の既知結果と直接一致",
+    "rule_verified": "採用規則から再計算し既知結果と整合",
+    "computed": "検証済み規則で計算したが、同一項目の外部画面とは未直接照合",
+    "pending": "追加検証が必要",
+    "variant": "流派差を明示して採用"
+  },
+  "people": {
+    "A": {
+      "natal": {
+        "year": "癸亥",
+        "month": "乙卯",
+        "day": "壬子",
+        "day_stem": "壬",
+        "tenchusatsu": "寅卯"
+      },
+      "natal_phase_relations": [
+        {
+          "targets": [
+            "year",
+            "month"
+          ],
+          "relation": "半会",
+          "group": "木局",
+          "status": "rule_verified"
+        },
+        {
+          "targets": [
+            "month",
+            "day"
+          ],
+          "relation": "旺気刑",
+          "status": "rule_verified"
+        }
+      ],
+      "2033": {
+        "annual": {
+          "kanshi": "癸丑",
+          "main_star": "石門星",
+          "sub_star": "天堂星",
+          "energy": 8,
+          "natal_triggers": [
+            {
+              "target": "day",
+              "relation": "支合",
+              "branches": [
+                "子",
+                "丑"
+              ]
+            }
+          ],
+          "status": "reference"
+        },
+        "november": {
+          "period": "立冬〜大雪",
+          "kanshi": "癸亥",
+          "main_star": "石門星",
+          "sub_star": "天禄星",
+          "energy": 11,
+          "natal_triggers": [
+            {
+              "target": "year",
+              "relations": [
+                "律音",
+                "自刑"
+              ],
+              "natal_kanshi": "癸亥",
+              "transit_kanshi": "癸亥"
+            },
+            {
+              "target": "month",
+              "relations": [
+                "半会"
+              ],
+              "group": "木局",
+              "branches": [
+                "卯",
+                "亥"
+              ]
+            }
+          ],
+          "status": "computed"
+        }
+      }
+    },
+    "B": {
+      "natal": {
+        "year": "丙子",
+        "month": "甲午",
+        "day": "癸未",
+        "day_stem": "癸",
+        "tenchusatsu": "申酉"
+      },
+      "natal_phase_relations": [
+        {
+          "targets": [
+            "year",
+            "month"
+          ],
+          "relation": "冲",
+          "status": "rule_verified"
+        },
+        {
+          "targets": [
+            "year",
+            "day"
+          ],
+          "relation": "害",
+          "status": "rule_verified"
+        },
+        {
+          "targets": [
+            "month",
+            "day"
+          ],
+          "relation": "支合",
+          "status": "rule_verified"
+        }
+      ],
+      "2033": {
+        "annual": {
+          "kanshi": "癸丑",
+          "main_star": "貫索星",
+          "sub_star": "天南星",
+          "energy": 10,
+          "natal_triggers": [
+            {
+              "target": "year",
+              "relations": [
+                "支合"
+              ],
+              "branches": [
+                "子",
+                "丑"
+              ]
+            },
+            {
+              "target": "month",
+              "relations": [
+                "害"
+              ],
+              "branches": [
+                "午",
+                "丑"
+              ]
+            },
+            {
+              "target": "day",
+              "relations": [
+                "冲",
+                "庫気刑",
+                "納音"
+              ],
+              "natal_kanshi": "癸未",
+              "transit_kanshi": "癸丑"
+            }
+          ],
+          "status": "reference"
+        },
+        "november": {
+          "period": "立冬〜大雪",
+          "kanshi": "癸亥",
+          "main_star": "貫索星",
+          "sub_star": "天将星",
+          "energy": 12,
+          "natal_triggers": [
+            {
+              "target": "day",
+              "relations": [
+                "半会",
+                "大半会"
+              ],
+              "group": "木局",
+              "natal_kanshi": "癸未",
+              "transit_kanshi": "癸亥",
+              "method_variant": "算命学の窓方式"
+            }
+          ],
+          "status": "computed"
+        }
+      }
+    }
+  },
+  "pair_natal": {
+    "scope": "出生三柱同士のRAW位相のみ",
+    "relations": [
+      {
+        "a_target": "year",
+        "b_target": "day",
+        "a_kanshi": "癸亥",
+        "b_kanshi": "癸未",
+        "relations": [
+          "半会",
+          "大半会"
+        ],
+        "group": "木局",
+        "method_variant": "算命学の窓方式",
+        "status": "rule_verified"
+      },
+      {
+        "a_target": "month",
+        "b_target": "year",
+        "relations": [
+          "旺気刑"
+        ],
+        "status": "rule_verified"
+      },
+      {
+        "a_target": "month",
+        "b_target": "month",
+        "relations": [
+          "破"
+        ],
+        "status": "rule_verified"
+      },
+      {
+        "a_target": "month",
+        "b_target": "day",
+        "relations": [
+          "半会"
+        ],
+        "group": "木局",
+        "status": "rule_verified"
+      },
+      {
+        "a_target": "day",
+        "b_target": "month",
+        "relations": [
+          "冲"
+        ],
+        "status": "rule_verified"
+      },
+      {
+        "a_target": "day",
+        "b_target": "day",
+        "relations": [
+          "害"
+        ],
+        "status": "rule_verified"
+      }
+    ],
+    "interpretation": null
+  },
+  "2033_observation_scope": {
+    "raw_summary": {
+      "A": "年運は日柱に支合。11月運は年柱に律音・自刑、月柱に木局半会。",
+      "B": "年運と11月運の双方が日柱へ直接作用。年運は冲・庫気刑・納音、11月運は木局半会・大半会。",
+      "pair_specific_2033_trigger_confirmed": false
+    },
+    "reading_constraint": "現段階では2033年の出来事や対象人物を特定しない。B側の個人トリガーがA側より日柱へ集中している、というRAW配置のみ保持する。"
+  },
+  "validation": {
+    "passed": [
+      "天中殺算出（A/B）",
+      "出生位相法（A/B）",
+      "PAIR出生位相法",
+      "十大主星算出規則",
+      "十二大従星算出規則",
+      "十二大従星エネルギー固定値",
+      "2026〜2034年運の主星・従星連続照合",
+      "大運干支列・主星・従星連続照合",
+      "2033年運の既知結果照合"
+    ],
+    "pending": [
+      "二十八元蔵干を節入り時刻からゼロ生成する完全監査",
+      "立運年齢を天文節入り時刻からゼロ生成する完全監査",
+      "2026全12節月の外部画面による月運直接照合",
+      "大運天中殺Advanced module",
+      "数理法",
+      "調候守護神"
+    ]
+  }
+}
