@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.3-test",
+  "engine": "ORBIT Sanmeigaku Engine",
+  "status": "STAGING_NOT_APP_CONNECTED",
+  "rules": {
+    "year_boundary": "立春",
+    "month_boundary": "節入り",
+    "calendar_period_source": "Existing validated ORBIT FourPillars monthly calendar layer (dates + year/month ganzhi only)",
+    "main_star": "day stem × transit stem",
+    "sub_star": "day stem × transit branch -> 十二運 -> 十二大従星",
+    "half_combination_variant": "算命学の窓方式：三合3支の任意2支を半会とする",
+    "interpretation_embedded": false
+  },
+  "verification_policy": {
+    "reference": "外部/ユーザー提供の既知結果と直接照合",
+    "cross_engine_consistency": "同じ暦干支を使う別Engineの既知星/十二運と整合",
+    "computed": "検証済みルールで新規計算",
+    "pending": "未検証"
+  },
+  "privacy": {
+    "aliases_only": true,
+    "birth_dates_in_files": false,
+    "names_in_files": false
+  }
+}

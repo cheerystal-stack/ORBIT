@@ -1,0 +1,6046 @@
+{
+  "schema_version": "0.3-test",
+  "engine": "ORBIT Sanmeigaku Engine v0.3-test",
+  "person_alias": "B",
+  "natal": {
+    "year": "丙子",
+    "month": "甲午",
+    "day": "癸未",
+    "day_stem": "癸",
+    "tenchusatsu": "申酉"
+  },
+  "range": {
+    "from": "2026-01",
+    "to": "2033-12",
+    "record_count": 96
+  },
+  "records": [
+    {
+      "period": "2026-01",
+      "period_start_jst": "2026-01-05T17:23:00+09:00",
+      "period_end_jst": "2026-02-04T05:02:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "乙巳",
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": []
+      },
+      "month": {
+        "ganzhi": "己丑",
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "天剋地冲"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-02",
+      "period_start_jst": "2026-02-04T05:02:00+09:00",
+      "period_end_jst": "2026-03-05T22:59:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚寅",
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-03",
+      "period_start_jst": "2026-03-05T22:59:00+09:00",
+      "period_end_jst": "2026-04-05T03:40:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛卯",
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-04",
+      "period_start_jst": "2026-04-05T03:40:00+09:00",
+      "period_end_jst": "2026-05-05T20:49:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬辰",
+        "main_star": "石門星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-05",
+      "period_start_jst": "2026-05-05T20:49:00+09:00",
+      "period_end_jst": "2026-06-06T00:48:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸巳",
+        "main_star": "貫索星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-06",
+      "period_start_jst": "2026-06-06T00:48:00+09:00",
+      "period_end_jst": "2026-07-07T10:57:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲午",
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "律音"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-07",
+      "period_start_jst": "2026-07-07T10:57:00+09:00",
+      "period_end_jst": "2026-08-07T20:43:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙未",
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "洩天地比"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-08",
+      "period_start_jst": "2026-08-07T20:43:00+09:00",
+      "period_end_jst": "2026-09-07T23:41:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙申",
+        "main_star": "司禄星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-09",
+      "period_start_jst": "2026-09-07T23:41:00+09:00",
+      "period_end_jst": "2026-10-08T15:29:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁酉",
+        "main_star": "禄存星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-10",
+      "period_start_jst": "2026-10-08T15:29:00+09:00",
+      "period_end_jst": "2026-11-07T18:52:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊戌",
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-11",
+      "period_start_jst": "2026-11-07T18:52:00+09:00",
+      "period_end_jst": "2026-12-07T11:53:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己亥",
+        "main_star": "車騎星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2026-12",
+      "period_start_jst": "2026-12-07T11:53:00+09:00",
+      "period_end_jst": "2027-01-05T23:10:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚子",
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲",
+              "天剋地冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-01",
+      "period_start_jst": "2027-01-05T23:10:00+09:00",
+      "period_end_jst": "2027-02-04T10:46:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛丑",
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-02",
+      "period_start_jst": "2027-02-04T10:46:00+09:00",
+      "period_end_jst": "2027-03-06T04:40:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬寅",
+        "main_star": "石門星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-03",
+      "period_start_jst": "2027-03-06T04:40:00+09:00",
+      "period_end_jst": "2027-04-05T09:18:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸卯",
+        "main_star": "貫索星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-04",
+      "period_start_jst": "2027-04-05T09:18:00+09:00",
+      "period_end_jst": "2027-05-06T02:25:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲辰",
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-05",
+      "period_start_jst": "2027-05-06T02:25:00+09:00",
+      "period_end_jst": "2027-06-06T06:26:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙巳",
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-06",
+      "period_start_jst": "2027-06-06T06:26:00+09:00",
+      "period_end_jst": "2027-07-07T16:37:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-07",
+      "period_start_jst": "2027-07-07T16:37:00+09:00",
+      "period_end_jst": "2027-08-08T02:27:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-08",
+      "period_start_jst": "2027-08-08T02:27:00+09:00",
+      "period_end_jst": "2027-09-08T05:28:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-09",
+      "period_start_jst": "2027-09-08T05:28:00+09:00",
+      "period_end_jst": "2027-10-08T21:17:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-10",
+      "period_start_jst": "2027-10-08T21:17:00+09:00",
+      "period_end_jst": "2027-11-08T00:39:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-11",
+      "period_start_jst": "2027-11-08T00:39:00+09:00",
+      "period_end_jst": "2027-12-07T17:38:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2027-12",
+      "period_start_jst": "2027-12-07T17:38:00+09:00",
+      "period_end_jst": "2028-01-06T04:55:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-01",
+      "period_start_jst": "2028-01-06T04:55:00+09:00",
+      "period_end_jst": "2028-02-04T16:31:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-02",
+      "period_start_jst": "2028-02-04T16:31:00+09:00",
+      "period_end_jst": "2028-03-05T10:25:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲寅",
+        "main_star": "調舒星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-03",
+      "period_start_jst": "2028-03-05T10:25:00+09:00",
+      "period_end_jst": "2028-04-04T15:03:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙卯",
+        "main_star": "鳳閣星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-04",
+      "period_start_jst": "2028-04-04T15:03:00+09:00",
+      "period_end_jst": "2028-05-05T08:12:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙辰",
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-05",
+      "period_start_jst": "2028-05-05T08:12:00+09:00",
+      "period_end_jst": "2028-06-05T12:16:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁巳",
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-06",
+      "period_start_jst": "2028-06-05T12:16:00+09:00",
+      "period_end_jst": "2028-07-06T22:30:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊午",
+        "main_star": "牽牛星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-07",
+      "period_start_jst": "2028-07-06T22:30:00+09:00",
+      "period_end_jst": "2028-08-07T08:21:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己未",
+        "main_star": "車騎星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-08",
+      "period_start_jst": "2028-08-07T08:21:00+09:00",
+      "period_end_jst": "2028-09-07T11:22:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚申",
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-09",
+      "period_start_jst": "2028-09-07T11:22:00+09:00",
+      "period_end_jst": "2028-10-08T03:09:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛酉",
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-10",
+      "period_start_jst": "2028-10-08T03:09:00+09:00",
+      "period_end_jst": "2028-11-07T06:27:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬戌",
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-11",
+      "period_start_jst": "2028-11-07T06:27:00+09:00",
+      "period_end_jst": "2028-12-06T23:25:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸亥",
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2028-12",
+      "period_start_jst": "2028-12-06T23:25:00+09:00",
+      "period_end_jst": "2029-01-05T10:42:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲子",
+        "main_star": "調舒星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-01",
+      "period_start_jst": "2029-01-05T10:42:00+09:00",
+      "period_end_jst": "2029-02-03T22:21:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙丑",
+        "main_star": "鳳閣星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-02",
+      "period_start_jst": "2029-02-03T22:21:00+09:00",
+      "period_end_jst": "2029-03-05T16:18:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙寅",
+        "main_star": "司禄星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-03",
+      "period_start_jst": "2029-03-05T16:18:00+09:00",
+      "period_end_jst": "2029-04-04T20:58:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁卯",
+        "main_star": "禄存星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-04",
+      "period_start_jst": "2029-04-04T20:58:00+09:00",
+      "period_end_jst": "2029-05-05T14:08:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊辰",
+        "main_star": "牽牛星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-05",
+      "period_start_jst": "2029-05-05T14:08:00+09:00",
+      "period_end_jst": "2029-06-05T18:10:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己巳",
+        "main_star": "車騎星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-06",
+      "period_start_jst": "2029-06-05T18:10:00+09:00",
+      "period_end_jst": "2029-07-07T04:22:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚午",
+        "main_star": "玉堂星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "天剋地冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-07",
+      "period_start_jst": "2029-07-07T04:22:00+09:00",
+      "period_end_jst": "2029-08-07T14:12:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛未",
+        "main_star": "龍高星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "洩天地比"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-08",
+      "period_start_jst": "2029-08-07T14:12:00+09:00",
+      "period_end_jst": "2029-09-07T17:12:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬申",
+        "main_star": "石門星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-09",
+      "period_start_jst": "2029-09-07T17:12:00+09:00",
+      "period_end_jst": "2029-10-08T08:58:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸酉",
+        "main_star": "貫索星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-10",
+      "period_start_jst": "2029-10-08T08:58:00+09:00",
+      "period_end_jst": "2029-11-07T12:17:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲戌",
+        "main_star": "調舒星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-11",
+      "period_start_jst": "2029-11-07T12:17:00+09:00",
+      "period_end_jst": "2029-12-07T05:14:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙亥",
+        "main_star": "鳳閣星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2029-12",
+      "period_start_jst": "2029-12-07T05:14:00+09:00",
+      "period_end_jst": "2030-01-05T16:31:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙子",
+        "main_star": "司禄星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "律音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-01",
+      "period_start_jst": "2030-01-05T16:31:00+09:00",
+      "period_end_jst": "2030-02-04T04:08:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁丑",
+        "main_star": "禄存星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "天剋地冲"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-02",
+      "period_start_jst": "2030-02-04T04:08:00+09:00",
+      "period_end_jst": "2030-03-05T22:03:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊寅",
+        "main_star": "牽牛星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-03",
+      "period_start_jst": "2030-03-05T22:03:00+09:00",
+      "period_end_jst": "2030-04-05T02:41:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己卯",
+        "main_star": "車騎星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-04",
+      "period_start_jst": "2030-04-05T02:41:00+09:00",
+      "period_end_jst": "2030-05-05T19:46:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚辰",
+        "main_star": "玉堂星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-05",
+      "period_start_jst": "2030-05-05T19:46:00+09:00",
+      "period_end_jst": "2030-06-05T23:45:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛巳",
+        "main_star": "龍高星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-06",
+      "period_start_jst": "2030-06-05T23:45:00+09:00",
+      "period_end_jst": "2030-07-07T09:55:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬午",
+        "main_star": "石門星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "天剋地冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-07",
+      "period_start_jst": "2030-07-07T09:55:00+09:00",
+      "period_end_jst": "2030-08-07T19:47:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸未",
+        "main_star": "貫索星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "律音"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-08",
+      "period_start_jst": "2030-08-07T19:47:00+09:00",
+      "period_end_jst": "2030-09-07T22:53:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲申",
+        "main_star": "調舒星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-09",
+      "period_start_jst": "2030-09-07T22:53:00+09:00",
+      "period_end_jst": "2030-10-08T14:45:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙酉",
+        "main_star": "鳳閣星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-10",
+      "period_start_jst": "2030-10-08T14:45:00+09:00",
+      "period_end_jst": "2030-11-07T18:09:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙戌",
+        "main_star": "司禄星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-11",
+      "period_start_jst": "2030-11-07T18:09:00+09:00",
+      "period_end_jst": "2030-12-07T11:08:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁亥",
+        "main_star": "禄存星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2030-12",
+      "period_start_jst": "2030-12-07T11:08:00+09:00",
+      "period_end_jst": "2031-01-05T22:23:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊子",
+        "main_star": "牽牛星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲",
+              "天剋地冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-01",
+      "period_start_jst": "2031-01-05T22:23:00+09:00",
+      "period_end_jst": "2031-02-04T09:58:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己丑",
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "天剋地冲"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-02",
+      "period_start_jst": "2031-02-04T09:58:00+09:00",
+      "period_end_jst": "2031-03-06T03:51:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚寅",
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-03",
+      "period_start_jst": "2031-03-06T03:51:00+09:00",
+      "period_end_jst": "2031-04-05T08:28:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛卯",
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-04",
+      "period_start_jst": "2031-04-05T08:28:00+09:00",
+      "period_end_jst": "2031-05-06T01:35:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬辰",
+        "main_star": "石門星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-05",
+      "period_start_jst": "2031-05-06T01:35:00+09:00",
+      "period_end_jst": "2031-06-06T05:36:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸巳",
+        "main_star": "貫索星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-06",
+      "period_start_jst": "2031-06-06T05:36:00+09:00",
+      "period_end_jst": "2031-07-07T15:49:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲午",
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "律音"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-07",
+      "period_start_jst": "2031-07-07T15:49:00+09:00",
+      "period_end_jst": "2031-08-08T01:43:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙未",
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "洩天地比"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-08",
+      "period_start_jst": "2031-08-08T01:43:00+09:00",
+      "period_end_jst": "2031-09-08T04:50:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙申",
+        "main_star": "司禄星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-09",
+      "period_start_jst": "2031-09-08T04:50:00+09:00",
+      "period_end_jst": "2031-10-08T20:43:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁酉",
+        "main_star": "禄存星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-10",
+      "period_start_jst": "2031-10-08T20:43:00+09:00",
+      "period_end_jst": "2031-11-08T00:06:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊戌",
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-11",
+      "period_start_jst": "2031-11-08T00:06:00+09:00",
+      "period_end_jst": "2031-12-07T17:03:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己亥",
+        "main_star": "車騎星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2031-12",
+      "period_start_jst": "2031-12-07T17:03:00+09:00",
+      "period_end_jst": "2032-01-06T04:16:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚子",
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲",
+              "天剋地冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-01",
+      "period_start_jst": "2032-01-06T04:16:00+09:00",
+      "period_end_jst": "2032-02-04T15:49:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛丑",
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-02",
+      "period_start_jst": "2032-02-04T15:49:00+09:00",
+      "period_end_jst": "2032-03-05T09:40:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬寅",
+        "main_star": "石門星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-03",
+      "period_start_jst": "2032-03-05T09:40:00+09:00",
+      "period_end_jst": "2032-04-04T14:18:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸卯",
+        "main_star": "貫索星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-04",
+      "period_start_jst": "2032-04-04T14:18:00+09:00",
+      "period_end_jst": "2032-05-05T07:26:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲辰",
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-05",
+      "period_start_jst": "2032-05-05T07:26:00+09:00",
+      "period_end_jst": "2032-06-05T11:28:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙巳",
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-06",
+      "period_start_jst": "2032-06-05T11:28:00+09:00",
+      "period_end_jst": "2032-07-06T21:41:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙午",
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑",
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-07",
+      "period_start_jst": "2032-07-06T21:41:00+09:00",
+      "period_end_jst": "2032-08-07T07:33:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁未",
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-08",
+      "period_start_jst": "2032-08-07T07:33:00+09:00",
+      "period_end_jst": "2032-09-07T10:38:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊申",
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-09",
+      "period_start_jst": "2032-09-07T10:38:00+09:00",
+      "period_end_jst": "2032-10-08T02:30:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己酉",
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-10",
+      "period_start_jst": "2032-10-08T02:30:00+09:00",
+      "period_end_jst": "2032-11-07T05:54:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚戌",
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-11",
+      "period_start_jst": "2032-11-07T05:54:00+09:00",
+      "period_end_jst": "2032-12-06T22:53:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛亥",
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2032-12",
+      "period_start_jst": "2032-12-06T22:53:00+09:00",
+      "period_end_jst": "2033-01-05T10:08:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-01",
+      "period_start_jst": "2033-01-05T10:08:00+09:00",
+      "period_end_jst": "2033-02-03T21:42:00+09:00",
+      "start_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "end_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "壬子",
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-02",
+      "period_start_jst": "2033-02-03T21:42:00+09:00",
+      "period_end_jst": "2033-03-05T15:32:00+09:00",
+      "start_solar_term": {
+        "name": "立春",
+        "solar_longitude_deg": 315
+      },
+      "end_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲寅",
+        "main_star": "調舒星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "twelve_stage_internal": "沐浴",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-03",
+      "period_start_jst": "2033-03-05T15:32:00+09:00",
+      "period_end_jst": "2033-04-04T20:08:00+09:00",
+      "start_solar_term": {
+        "name": "啓蟄",
+        "solar_longitude_deg": 345
+      },
+      "end_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "乙卯",
+        "main_star": "鳳閣星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "twelve_stage_internal": "長生",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "旺気刑"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "破"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-04",
+      "period_start_jst": "2033-04-04T20:08:00+09:00",
+      "period_end_jst": "2033-05-05T13:14:00+09:00",
+      "start_solar_term": {
+        "name": "清明",
+        "solar_longitude_deg": 15
+      },
+      "end_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丙辰",
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "twelve_stage_internal": "養",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-05",
+      "period_start_jst": "2033-05-05T13:14:00+09:00",
+      "period_end_jst": "2033-06-05T17:13:00+09:00",
+      "start_solar_term": {
+        "name": "立夏",
+        "solar_longitude_deg": 45
+      },
+      "end_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "丁巳",
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "twelve_stage_internal": "胎",
+        "natal_triggers": [],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-06",
+      "period_start_jst": "2033-06-05T17:13:00+09:00",
+      "period_end_jst": "2033-07-07T03:25:00+09:00",
+      "start_solar_term": {
+        "name": "芒種",
+        "solar_longitude_deg": 75
+      },
+      "end_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "戊午",
+        "main_star": "牽牛星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "twelve_stage_internal": "絶",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "冲"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "自刑"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-07",
+      "period_start_jst": "2033-07-07T03:25:00+09:00",
+      "period_end_jst": "2033-08-07T13:16:00+09:00",
+      "start_solar_term": {
+        "name": "小暑",
+        "solar_longitude_deg": 105
+      },
+      "end_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "己未",
+        "main_star": "車騎星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "twelve_stage_internal": "墓",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "支合"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-08",
+      "period_start_jst": "2033-08-07T13:16:00+09:00",
+      "period_end_jst": "2033-09-07T16:20:00+09:00",
+      "start_solar_term": {
+        "name": "立秋",
+        "solar_longitude_deg": 135
+      },
+      "end_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "庚申",
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "twelve_stage_internal": "死",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "半会:水局"
+            ],
+            "half_combination_groups": [
+              "水局"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-09",
+      "period_start_jst": "2033-09-07T16:20:00+09:00",
+      "period_end_jst": "2033-10-08T08:14:00+09:00",
+      "start_solar_term": {
+        "name": "白露",
+        "solar_longitude_deg": 165
+      },
+      "end_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "辛酉",
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "twelve_stage_internal": "病",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": true
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-10",
+      "period_start_jst": "2033-10-08T08:14:00+09:00",
+      "period_end_jst": "2033-11-07T11:41:00+09:00",
+      "start_solar_term": {
+        "name": "寒露",
+        "solar_longitude_deg": 195
+      },
+      "end_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "壬戌",
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "twelve_stage_internal": "衰",
+        "natal_triggers": [
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "半会:火局"
+            ],
+            "half_combination_groups": [
+              "火局"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "庫気刑",
+              "破"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-11",
+      "period_start_jst": "2033-11-07T11:41:00+09:00",
+      "period_end_jst": "2033-12-07T04:45:00+09:00",
+      "start_solar_term": {
+        "name": "立冬",
+        "solar_longitude_deg": 225
+      },
+      "end_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "癸亥",
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "twelve_stage_internal": "帝旺",
+        "natal_triggers": [
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "半会:木局",
+              "大半会"
+            ],
+            "half_combination_groups": [
+              "木局"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    },
+    {
+      "period": "2033-12",
+      "period_start_jst": "2033-12-07T04:45:00+09:00",
+      "period_end_jst": "2034-01-05T16:05:00+09:00",
+      "start_solar_term": {
+        "name": "大雪",
+        "solar_longitude_deg": 255
+      },
+      "end_solar_term": {
+        "name": "小寒",
+        "solar_longitude_deg": 285
+      },
+      "calendar_source": "ORBIT FourPillars Engine v1 period/ganzhi layer",
+      "annual": {
+        "ganzhi": "癸丑",
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "twelve_stage_internal": "冠帯",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "支合"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "害"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "冲",
+              "庫気刑",
+              "納音"
+            ]
+          }
+        ]
+      },
+      "month": {
+        "ganzhi": "甲子",
+        "main_star": "調舒星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "twelve_stage_internal": "建禄",
+        "natal_triggers": [
+          {
+            "target": "year",
+            "target_ganzhi": "丙子",
+            "relations": [
+              "洩天地比"
+            ]
+          },
+          {
+            "target": "month",
+            "target_ganzhi": "甲午",
+            "relations": [
+              "冲",
+              "納音"
+            ]
+          },
+          {
+            "target": "day",
+            "target_ganzhi": "癸未",
+            "relations": [
+              "害"
+            ]
+          }
+        ],
+        "tenchusatsu": false
+      },
+      "interpretation": null
+    }
+  ],
+  "interpretation_embedded": false
+}

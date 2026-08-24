@@ -1,0 +1,2538 @@
+{
+  "schema_version": "0.3-test",
+  "engine": "ORBIT Sanmeigaku Pair v0.3-test",
+  "static_natal_relations": [
+    {
+      "a_target": "year",
+      "a_ganzhi": "癸亥",
+      "b_target": "day",
+      "b_ganzhi": "癸未",
+      "relations": [
+        "半会:木局",
+        "大半会"
+      ]
+    },
+    {
+      "a_target": "month",
+      "a_ganzhi": "乙卯",
+      "b_target": "year",
+      "b_ganzhi": "丙子",
+      "relations": [
+        "旺気刑"
+      ]
+    },
+    {
+      "a_target": "month",
+      "a_ganzhi": "乙卯",
+      "b_target": "month",
+      "b_ganzhi": "甲午",
+      "relations": [
+        "破"
+      ]
+    },
+    {
+      "a_target": "month",
+      "a_ganzhi": "乙卯",
+      "b_target": "day",
+      "b_ganzhi": "癸未",
+      "relations": [
+        "半会:木局"
+      ]
+    },
+    {
+      "a_target": "day",
+      "a_ganzhi": "壬子",
+      "b_target": "month",
+      "b_ganzhi": "甲午",
+      "relations": [
+        "冲"
+      ]
+    },
+    {
+      "a_target": "day",
+      "a_ganzhi": "壬子",
+      "b_target": "day",
+      "b_ganzhi": "癸未",
+      "relations": [
+        "害"
+      ]
+    }
+  ],
+  "range": {
+    "from": "2026-01",
+    "to": "2033-12",
+    "record_count": 96
+  },
+  "records": [
+    {
+      "period": "2026-01",
+      "month_ganzhi": "己丑",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-02",
+      "month_ganzhi": "庚寅",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-03",
+      "month_ganzhi": "辛卯",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-04",
+      "month_ganzhi": "壬辰",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-05",
+      "month_ganzhi": "癸巳",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "納音"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-06",
+      "month_ganzhi": "甲午",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "律音",
+          "支合",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-07",
+      "month_ganzhi": "乙未",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合",
+          "洩天地比"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-08",
+      "month_ganzhi": "丙申",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-09",
+      "month_ganzhi": "丁酉",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-10",
+      "month_ganzhi": "戊戌",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-11",
+      "month_ganzhi": "己亥",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2026-12",
+      "month_ganzhi": "庚子",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-01",
+      "month_ganzhi": "辛丑",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-02",
+      "month_ganzhi": "壬寅",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-03",
+      "month_ganzhi": "癸卯",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "大半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-04",
+      "month_ganzhi": "甲辰",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-05",
+      "month_ganzhi": "乙巳",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-06",
+      "month_ganzhi": "丙午",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "支合",
+          "洩天地比",
+          "納音",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-07",
+      "month_ganzhi": "丁未",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-08",
+      "month_ganzhi": "戊申",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-09",
+      "month_ganzhi": "己酉",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-10",
+      "month_ganzhi": "庚戌",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-11",
+      "month_ganzhi": "辛亥",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "洩天地比",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2027-12",
+      "month_ganzhi": "壬子",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "律音",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "害"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-01",
+      "month_ganzhi": "癸丑",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "害",
+          "庫気刑",
+          "支合",
+          "納音"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-02",
+      "month_ganzhi": "甲寅",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-03",
+      "month_ganzhi": "乙卯",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "律音",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-04",
+      "month_ganzhi": "丙辰",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-05",
+      "month_ganzhi": "丁巳",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "天剋地冲"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-06",
+      "month_ganzhi": "戊午",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "支合",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-07",
+      "month_ganzhi": "己未",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-08",
+      "month_ganzhi": "庚申",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-09",
+      "month_ganzhi": "辛酉",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-10",
+      "month_ganzhi": "壬戌",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-11",
+      "month_ganzhi": "癸亥",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "律音",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2028-12",
+      "month_ganzhi": "甲子",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "害",
+          "洩天地比",
+          "納音"
+        ]
+      },
+      "shared_trigger_types": [
+        "洩天地比"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-01",
+      "month_ganzhi": "乙丑",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-02",
+      "month_ganzhi": "丙寅",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-03",
+      "month_ganzhi": "丁卯",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-04",
+      "month_ganzhi": "戊辰",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-05",
+      "month_ganzhi": "己巳",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "天剋地冲"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-06",
+      "month_ganzhi": "庚午",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "支合",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-07",
+      "month_ganzhi": "辛未",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合",
+          "洩天地比"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-08",
+      "month_ganzhi": "壬申",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-09",
+      "month_ganzhi": "癸酉",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-10",
+      "month_ganzhi": "甲戌",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-11",
+      "month_ganzhi": "乙亥",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "洩天地比",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2029-12",
+      "month_ganzhi": "丙子",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "害",
+          "律音"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-01",
+      "month_ganzhi": "丁丑",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-02",
+      "month_ganzhi": "戊寅",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-03",
+      "month_ganzhi": "己卯",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-04",
+      "month_ganzhi": "庚辰",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-05",
+      "month_ganzhi": "辛巳",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-06",
+      "month_ganzhi": "壬午",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "破",
+          "納音"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "支合",
+          "洩天地比",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-07",
+      "month_ganzhi": "癸未",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "律音",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-08",
+      "month_ganzhi": "甲申",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-09",
+      "month_ganzhi": "乙酉",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "破",
+          "納音"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-10",
+      "month_ganzhi": "丙戌",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-11",
+      "month_ganzhi": "丁亥",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2030-12",
+      "month_ganzhi": "戊子",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害",
+          "洩天地比"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-01",
+      "month_ganzhi": "己丑",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-02",
+      "month_ganzhi": "庚寅",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-03",
+      "month_ganzhi": "辛卯",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-04",
+      "month_ganzhi": "壬辰",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-05",
+      "month_ganzhi": "癸巳",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "納音"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-06",
+      "month_ganzhi": "甲午",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "律音",
+          "支合",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-07",
+      "month_ganzhi": "乙未",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合",
+          "洩天地比"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-08",
+      "month_ganzhi": "丙申",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-09",
+      "month_ganzhi": "丁酉",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-10",
+      "month_ganzhi": "戊戌",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-11",
+      "month_ganzhi": "己亥",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2031-12",
+      "month_ganzhi": "庚子",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "害"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-01",
+      "month_ganzhi": "辛丑",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "害",
+          "庫気刑",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-02",
+      "month_ganzhi": "壬寅",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-03",
+      "month_ganzhi": "癸卯",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "大半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "大半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-04",
+      "month_ganzhi": "甲辰",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-05",
+      "month_ganzhi": "乙巳",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-06",
+      "month_ganzhi": "丙午",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "支合",
+          "洩天地比",
+          "納音",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-07",
+      "month_ganzhi": "丁未",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-08",
+      "month_ganzhi": "戊申",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-09",
+      "month_ganzhi": "己酉",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-10",
+      "month_ganzhi": "庚戌",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-11",
+      "month_ganzhi": "辛亥",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "洩天地比",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2032-12",
+      "month_ganzhi": "壬子",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "律音",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "害"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-01",
+      "month_ganzhi": "癸丑",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "冲",
+          "害",
+          "庫気刑",
+          "支合",
+          "納音"
+        ]
+      },
+      "shared_trigger_types": [
+        "支合"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-02",
+      "month_ganzhi": "甲寅",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "支合",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-03",
+      "month_ganzhi": "乙卯",
+      "A": {
+        "main_star": "調舒星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会",
+          "律音",
+          "旺気刑"
+        ]
+      },
+      "B": {
+        "main_star": "鳳閣星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "旺気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会",
+        "旺気刑"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-04",
+      "month_ganzhi": "丙辰",
+      "A": {
+        "main_star": "禄存星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "司禄星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-05",
+      "month_ganzhi": "丁巳",
+      "A": {
+        "main_star": "司禄星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "天剋地冲"
+        ]
+      },
+      "B": {
+        "main_star": "禄存星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": []
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-06",
+      "month_ganzhi": "戊午",
+      "A": {
+        "main_star": "車騎星",
+        "sub_star": "天報星",
+        "energy": 3,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "牽牛星",
+        "sub_star": "天馳星",
+        "energy": 1,
+        "trigger_types": [
+          "冲",
+          "支合",
+          "自刑"
+        ]
+      },
+      "shared_trigger_types": [
+        "冲"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-07",
+      "month_ganzhi": "己未",
+      "A": {
+        "main_star": "牽牛星",
+        "sub_star": "天印星",
+        "energy": 6,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "車騎星",
+        "sub_star": "天庫星",
+        "energy": 5,
+        "trigger_types": [
+          "害",
+          "支合"
+        ]
+      },
+      "shared_trigger_types": [
+        "害"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-08",
+      "month_ganzhi": "庚申",
+      "A": {
+        "main_star": "龍高星",
+        "sub_star": "天貴星",
+        "energy": 9,
+        "trigger_types": [
+          "半会",
+          "害"
+        ]
+      },
+      "B": {
+        "main_star": "玉堂星",
+        "sub_star": "天極星",
+        "energy": 2,
+        "trigger_types": [
+          "半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-09",
+      "month_ganzhi": "辛酉",
+      "A": {
+        "main_star": "玉堂星",
+        "sub_star": "天恍星",
+        "energy": 7,
+        "trigger_types": [
+          "冲",
+          "天剋地冲",
+          "破"
+        ]
+      },
+      "B": {
+        "main_star": "龍高星",
+        "sub_star": "天胡星",
+        "energy": 4,
+        "trigger_types": [
+          "破"
+        ]
+      },
+      "shared_trigger_types": [
+        "破"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-10",
+      "month_ganzhi": "壬戌",
+      "A": {
+        "main_star": "貫索星",
+        "sub_star": "天南星",
+        "energy": 10,
+        "trigger_types": [
+          "支合"
+        ]
+      },
+      "B": {
+        "main_star": "石門星",
+        "sub_star": "天堂星",
+        "energy": 8,
+        "trigger_types": [
+          "半会",
+          "庫気刑",
+          "破"
+        ]
+      },
+      "shared_trigger_types": [],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-11",
+      "month_ganzhi": "癸亥",
+      "A": {
+        "main_star": "石門星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "半会",
+          "律音",
+          "自刑"
+        ]
+      },
+      "B": {
+        "main_star": "貫索星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "半会",
+          "大半会"
+        ]
+      },
+      "shared_trigger_types": [
+        "半会"
+      ],
+      "pair_specific_interpretation": null
+    },
+    {
+      "period": "2033-12",
+      "month_ganzhi": "甲子",
+      "A": {
+        "main_star": "鳳閣星",
+        "sub_star": "天将星",
+        "energy": 12,
+        "trigger_types": [
+          "旺気刑",
+          "洩天地比"
+        ]
+      },
+      "B": {
+        "main_star": "調舒星",
+        "sub_star": "天禄星",
+        "energy": 11,
+        "trigger_types": [
+          "冲",
+          "害",
+          "洩天地比",
+          "納音"
+        ]
+      },
+      "shared_trigger_types": [
+        "洩天地比"
+      ],
+      "pair_specific_interpretation": null
+    }
+  ],
+  "interpretation_embedded": false,
+  "note": "shared_trigger_typesは同じ節月がA/Bそれぞれの出生三柱に作る位相種別の重なり。PAIR固有の未来事象を意味しない。"
+}
