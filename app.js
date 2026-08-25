@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.20.0';
+const APP_VERSION='0.21.0';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -72,6 +72,104 @@ const RELATIONSHIP_BASE={
     verdict:'特徴的な結合シグナルは複数ある。一方、安定性を自動的に保証する配置ではない。'
   }
 };
+
+
+const RELATIONSHIP_BASE_MODULES=[
+  {id:'synastry',group:'WESTERN',label:'NATAL SYNASTRY',source:'Astro-Seek',status:'READY',
+   desc:'二人の出生図同士。惹かれ方・会話・摩擦・持続性など、関係の基本的な噛み合いを見る。',
+   prompt:'Natal Synastry',hasBuiltIn:true},
+  {id:'composite',group:'WESTERN',label:'COMPOSITE',source:'Astro-Seek',status:'READY',
+   desc:'二人をひとつの関係として見た固定チャート。関係そのものの性質を観測する。',
+   prompt:'Composite',hasBuiltIn:true},
+  {id:'davison',group:'WESTERN',label:'DAVISON',source:'Astro-Seek',status:'TO OBSERVE',
+   desc:'二人の出生時空の中間点から作る関係チャート。固定BASEとして独立保存する。',
+   prompt:'Davison',hasBuiltIn:false},
+  {id:'fourpillars',group:'EASTERN',label:'FOUR PILLARS',source:'ORBIT FourPillars',status:'READY',
+   desc:'出生原局同士の固定関係。月運を混ぜず、生来の干支関係と構造だけを見る。',
+   prompt:'Four Pillars Compatibility',hasBuiltIn:true},
+  {id:'sanmeigaku',group:'EASTERN',label:'SANMEIGAKU',source:'ORBIT Sanmeigaku',status:'TO OBSERVE',
+   desc:'出生PAIRの位相法など、算命学側から見た固定の関係構造を保存する。',
+   prompt:'Sanmeigaku Compatibility',hasBuiltIn:false}
+];
+
+function baseModule(id){return RELATIONSHIP_BASE_MODULES.find(x=>x.id===id)}
+function baseStored(id){return data.relationshipBase?.modules?.[id]||{summary:'',detail:'',tags:[],updatedAt:''}}
+function baseModulePrompt(id){
+  const m=baseModule(id);if(!m)return'';
+  const common=`ORBIT RELATIONSHIP BASEの${m.label}を作成してください。
+
+【SCOPE】RELATIONSHIP · BASE
+これは月運ではなく、生まれ持った二人の固定的な関係構造の観測です。
+希望的観測にも悲観にも寄せず、「強い結合」と「安定性」を同一視しないでください。
+ツインレイ等の概念を結論として先取りしないでください。
+Nは出生時刻不明のため、NのASC/MC/ハウス等の時刻依存要素を確定根拠にしないでください。
+画像または以下のORBIT固定データだけを根拠にし、記載のない配置を補完しないでください。
+
+【OUTPUT】
+TITLE: 英語1〜4語
+MESSAGE: 日本語40〜80字
+THEME: 英語3〜5語。 · で区切る
+DETAIL: 日本語250〜500字。調和・緊張・特徴を分けて統合する。`;
+
+  if(id==='synastry')return `${common}
+
+【ORBIT FIXED DATA · NATAL SYNASTRY】
+${RELATIONSHIP_BASE.synastry.map(x=>`${x[0]} ${x[1]} ${x[2]} (${x[3]})${x[4]==='time'?' [TIME-DEPENDENT / REFERENCE ONLY]':''}`).join('\n')}`;
+  if(id==='composite')return `${common}
+
+【ORBIT FIXED DATA · COMPOSITE】
+${RELATIONSHIP_BASE.compositeHighlights.map(x=>`${x[0]} ${x[1]} ${x[2]} (${x[3]})`).join('\n')}
+※現在ORBITに保存されている確認済み主要角だけを使用してください。`;
+  if(id==='fourpillars')return `${common}
+
+【ORBIT FIXED DATA · FOUR PILLARS NATAL CROSS】
+${RELATIONSHIP_BASE.fourPillars.basis}
+${RELATIONSHIP_BASE.fourPillars.signals.map(x=>`- ${x.type} ${x.label}: ${x.note}`).join('\n')}`;
+  if(id==='davison')return `${common}
+
+【INPUT】
+Davisonの画像または配置をこのプロンプトと一緒に渡してください。
+画像にないアスペクト・ハウス・配置を補完しないでください。`;
+  if(id==='sanmeigaku'){
+    const stat=sanmeigakuMaster?.pair?.static_natal_relations||[];
+    return `${common}
+
+【ORBIT FIXED DATA · SANMEIGAKU NATAL PAIR】
+${stat.length?stat.map(x=>`- A ${String(x.a_target||'').toUpperCase()} ${x.a_ganzhi||''} × B ${String(x.b_target||'').toUpperCase()} ${x.b_ganzhi||''}: ${(x.relations||[]).map(sanmeiRelationLabel).join(' / ')}`).join('\n'):'PAIR固定位相はMASTER読込後に確認してください。'}
+※月運・shared monthly triggerはBASEに混ぜないでください。`;
+  }
+  return common;
+}
+function parseBaseModuleResult(text=''){
+  const get=(name)=>String(text).match(new RegExp(`(?:^|\\n)${name}\\s*[:：]\\s*([^\\n]+)`,'i'))?.[1]?.trim()||'';
+  const detail=String(text).match(/(?:^|\n)DETAIL\s*[:：]\s*([\s\S]*)/i)?.[1]?.trim()||'';
+  return {title:get('TITLE'),message:get('MESSAGE'),tags:get('THEME').split(/[·・,/]/).map(x=>x.trim()).filter(Boolean),detail};
+}
+function baseSynthesisPrompt(){
+  const rows=RELATIONSHIP_BASE_MODULES.map(m=>{
+    const x=baseStored(m.id);
+    return x.summary||x.detail?`■ ${m.label}\nTITLE: ${x.title||'—'}\nMESSAGE: ${x.summary||'—'}\nTHEME: ${(x.tags||[]).join(' / ')||'—'}\nDETAIL: ${x.detail||'—'}`:'';
+  }).filter(Boolean);
+  return `ORBIT RELATIONSHIP BASE SYNTHESISを作成してください。
+
+【SCOPE】RELATIONSHIP · BASE
+以下は月運ではなく、二人の生まれ持った固定的な関係構造について保存された観測です。
+複数体系で同じテーマが独立して重なる場合は重みを置いてください。
+矛盾・緊張は無理に丸めず、「相性が良い／悪い」の一軸へ潰さないでください。
+引力・親密性・安定性・摩擦・コミュニケーション・変容性など複数軸を保持してください。
+ツインレイ等の概念を結論として先取りせず、未来の出来事を予言しないでください。
+
+【OUTPUT】
+TITLE: 英語1〜4語
+SUBTITLE: 英語2〜4概念。 · で区切る
+MESSAGE: 日本語40〜80字
+THEME: 日本語3〜5語。・で区切る
+DETAIL: 日本語400〜700字。①重なる特徴 ②調和 ③緊張 ④安定性 ⑤この関係の特徴、の順で統合。
+
+【BASE OBSERVATIONS】
+
+${rows.join('\n\n')||'（保存済みBASE観測なし）'}`;
+}
 
 const MONTHLY_SCOPES={
   all:{label:'ALL',title:'ALL OBSERVATIONS'},
@@ -165,6 +263,11 @@ function migrate(d){
   d.month.focus=d.month.focus||'RELATIONSHIP';
   d.monthlyChecks=d.monthlyChecks||{};
   d.relationshipBase=d.relationshipBase||{reading:'',updatedAt:''};
+  d.relationshipBase.modules=d.relationshipBase.modules||{};
+  ['synastry','composite','davison','fourpillars','sanmeigaku'].forEach(id=>{
+    d.relationshipBase.modules[id]=d.relationshipBase.modules[id]||{summary:'',detail:'',tags:[],updatedAt:''};
+  });
+  d.relationshipBase.synthesis=d.relationshipBase.synthesis||{title:'',subtitle:'',message:'',themes:[],detail:'',updatedAt:''};
   d.monthlyMessages=d.monthlyMessages||{};d.personalMonthlyMessages=d.personalMonthlyMessages||{};d.relationshipMonthlyMessages=d.relationshipMonthlyMessages||{};
   d.fourPillars=d.fourPillars||{profiles:{},monthly:{}};
   d.fourPillars.profiles=d.fourPillars.profiles||{}; d.fourPillars.monthly=d.fourPillars.monthly||{};
@@ -923,109 +1026,64 @@ function relationshipAspectHTML(x){
   return `<div class="rb-aspect ${flag==='time'?'reference':''}"><span>${esc(a)}</span><b>${meta.symbol}</b><span>${esc(b)}</span><small>${esc(orb)}${flag==='time'?' · TIME DEP.':''}</small></div>`;
 }
 function renderRelationshipBase(){
-  const host=$('#relationshipBase');if(!host)return;const r=RELATIONSHIP_BASE;
-  host.innerHTML=`<button type="button" class="rb-open" data-relationship-base><div><span class="kicker">THE BOND · FIXED BASE</span><h2>${esc(r.title)}</h2><p>${esc(r.synthesis.headline)}</p><div class="chips">${r.synthesis.tags.slice(0,4).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></div><span class="rb-arrow">›</span></button>`;
+  const host=$('#relationshipBase');if(!host)return;
+  const syn=data.relationshipBase?.synthesis||{};
+  const savedCount=RELATIONSHIP_BASE_MODULES.filter(m=>{
+    const x=baseStored(m.id);return !!(x.summary||x.detail);
+  }).length;
+  host.innerHTML=`<button class="rb-open rb-lab-open" data-relationship-base>
+    <div>
+      <span class="kicker">RELATIONSHIP · BASE LAB</span>
+      <h2>${esc(syn.title||'THE FIXED ORBIT')}</h2>
+      <p>${esc(syn.message||'Natal Synastry · Composite · Davison · Four Pillars · Sanmeigaku。二人の変わらない設計図を常設展示。')}</p>
+      <div class="chips">${syn.themes?.length?syn.themes.map(x=>`<span class="chip">${esc(x)}</span>`).join(''):`<span class="chip">${savedCount}/5 OBSERVED</span><span class="chip">FIXED BASE</span>`}</div>
+    </div><span class="rb-arrow">›</span></button>`;
 }
-function relationshipBasePrompt(){const r=RELATIONSHIP_BASE;return `ORBIT RELATIONSHIP BASEを再評価してください。\n\n【原則】\n希望的観測にも悲観にも寄せず、強い結合と安定性を混同しない。ツインレイ等を前提にしない。出生時刻不明側のASC/MC/ハウスは判定根拠から除外する。\n\n【Synastry】\n${r.synastry.filter(x=>x[4]!=='time').map(x=>`${x[0]} ${x[1]} ${x[2]} (${x[3]})`).join('\n')}\n\n【Composite・確認済み主要角】\n${r.compositeHighlights.map(x=>`${x[0]} ${x[1]} ${x[2]} (${x[3]})`).join('\n')}\n\n【四柱推命・固定CROSS】\n${r.fourPillars.signals.map(x=>`${x.type} ${x.label}: ${x.note}`).join('\n')}\n\n次の順で出力：①一行結論 ②強い結合 ③安定性 ④摩擦・リスク ⑤東西で重なるテーマ ⑥宿縁的と表現されやすい特徴の有無（断定禁止） ⑦総合所見。`;}
-function viewRelationshipBase(){const r=RELATIONSHIP_BASE, saved=data.relationshipBase?.reading||'';openModal(`<span class="kicker">RELATIONSHIP BASE · FIXED</span><h2>${esc(r.title)}</h2><div class="rb-verdict"><strong>${esc(r.synthesis.headline)}</strong><p>${esc(r.synthesis.summary)}</p><small>${esc(r.synthesis.verdict)}</small></div><div class="rb-section"><span class="kicker">CORE THEMES</span><div class="chips">${r.synthesis.tags.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></div><div class="rb-section"><span class="kicker">WESTERN · SYNASTRY</span><p class="rb-note">36 aspects captured · 時刻依存のASC/MC接触はREFERENCE表示で総合判定から除外。</p><div class="rb-aspects">${r.synastry.map(relationshipAspectHTML).join('')}</div></div><div class="rb-section"><span class="kicker">WESTERN · COMPOSITE</span><p class="rb-note">今回確認できた主要角。固定Compositeの関係性テーマとして使用。</p><div class="rb-aspects">${r.compositeHighlights.map(relationshipAspectHTML).join('')}</div></div><div class="rb-section"><span class="kicker">FOUR PILLARS · NATAL CROSS</span><p class="rb-note">${esc(r.fourPillars.basis)}</p>${r.fourPillars.signals.map(x=>`<div class="rb-signal"><b>${esc(x.type)} · ${esc(x.label)}</b><p>${esc(x.note)}</p></div>`).join('')}</div><div class="ai-box"><div class="ai-head"><strong>忖度なし BASE READING</strong><button type="button" class="copy-btn" data-copy-base>COPY</button></div><p>固定データだけを使い、希望と現実を分けて再評価するためのプロンプト。</p></div><div class="rb-section"><span class="kicker">SAVED BASE READING</span><textarea id="rbReading" class="large-textarea" placeholder="ChatGPTで一度だけ総合解析した結果をここへ保存">${esc(saved)}</textarea></div><div class="form-actions"><button type="button" class="text-btn" data-close-modal>Close</button><button type="button" class="save-btn" data-save-base>SAVE BASE</button></div>`);}
-
-function renderHome(){
-  $('#monthTitle').textContent=data.month.title;
-  renderThisMonthV2();
-  renderRelationshipBase();
-  renderMonthlyChecks();
-  renderWesternSnapshot();
-  $('#cycleRows').innerHTML=cycleRowsHTML();
-  const recent=[...data.readings].sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||'')).slice(0,4);
-  $('#recentReadings').innerHTML=recent.length?recent.map(readingItem).join(''):empty();
-  const f=focus(); $('#focusName').textContent=f.name; $('#focusBirthTime').textContent=f.birthTimeStatus==='exact'?(f.birthTime||'—'):'UNKNOWN'; $('#focusHypothesis').textContent=f.birthTimeHypothesis||'—';
-  const fr=data.readings.find(r=>r.personId===f.id); $('#focusTheme').textContent=fr?.tags?.[0]||'OBSERVING';
-  const p=data.projects[0]; $('#featuredProject').innerHTML=p?`<button type="button" class="project-hero-hit" data-project="${esc(p.id)}" aria-label="${esc(p.title)}を開く"></button><span class="project-badge">✦ LONG RANGE</span><h2>${esc(p.title)} · ${esc(p.status)}</h2><p>${esc(p.summary)}</p><div class="chips">${p.systems.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div>`:'';
-  const timelineRows=derivedTimeline(); $('#timelinePreview').innerHTML=(timelineRows.length?timelineRows.slice(0,4).map(timelineItem).join(''):empty());
+function viewRelationshipBase(){
+  const syn=data.relationshipBase?.synthesis||{};
+  const cards=RELATIONSHIP_BASE_MODULES.map(m=>{
+    const x=baseStored(m.id),saved=!!(x.summary||x.detail);
+    return `<button type="button" class="base-exhibit ${saved?'saved':''}" data-base-module="${m.id}">
+      <div class="base-exhibit-top"><small>${esc(m.group)}</small><span>${saved?'SAVED':m.status}</span></div>
+      <strong>${esc(m.label)}</strong>
+      <p>${esc(x.summary||m.desc)}</p>
+      <div class="base-exhibit-foot">${x.tags?.length?x.tags.slice(0,3).map(t=>`<i>${esc(t)}</i>`).join(''):`<i>${esc(m.source)}</i>`}<b>›</b></div>
+    </button>`;
+  }).join('');
+  openModal(`<span class="kicker">RELATIONSHIP · BASE LAB</span>
+    <h2>THE FIXED ORBIT</h2>
+    <p class="modal-copy">月を送っても変わらない、二人の関係の常設展示。各体系を独立して保存し、最後にBASE SYNTHESISで横断します。</p>
+    ${syn.title?`<div class="rb-verdict"><strong>${esc(syn.title)}</strong>${syn.subtitle?`<em>${esc(syn.subtitle)}</em>`:''}<p>${esc(syn.message||'')}</p><div class="chips">${(syn.themes||[]).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></div>`:''}
+    <div class="base-exhibit-grid">${cards}</div>
+    <div class="base-synthesis-box">
+      <span class="kicker">BASE SYNTHESIS</span>
+      <h3>${syn.title?'UPDATE THE CORE':'SYNTHESIZE THE CORE'}</h3>
+      <p>保存済みのBASE観測だけを横断。良い／悪いの点数化ではなく、重なる構造と緊張を残します。</p>
+      <div class="base-synth-actions"><button type="button" class="copy-btn" data-copy-base-synthesis>COPY PROMPT</button><button type="button" class="secondary-btn" data-edit-base-synthesis>${syn.title?'VIEW / EDIT':'PASTE RESULT'}</button></div>
+    </div>
+    <div class="form-actions"><button type="button" class="text-btn" data-close-modal>Close</button></div>`);
 }
-
-function renderMonthlyChecks(){
-  if($('#guideMonthLabel')) $('#guideMonthLabel').textContent=data.month.title;
-  const state=data.monthlyChecks[currentCheckKey()]||{};
-  const visible=monthlyScope==='all'?MONTHLY_GUIDE:MONTHLY_GUIDE.filter(g=>guideScope(g)===monthlyScope);
-  const saved=visible.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
-  const touched=visible.filter(x=>['checked','saved'].includes(state[x.id]?.status)).length;
-  $('#monthlyProgress').textContent=`${saved} saved · ${touched}/${visible.length}`;
-
-  const tabs=`<div class="scope-tabs">${Object.entries(MONTHLY_SCOPES).map(([key,x])=>`<button type="button" class="scope-tab ${monthlyScope===key?'active':''}" data-scope-tab="${key}">${esc(x.label)}</button>`).join('')}</div>`;
-
-  const row=g=>{
-    const s=state[g.id]?.status||'unchecked';
-    const masterBadge=guideHasMaster(g)?'<b class="master-mini">MASTER</b>':'';
-    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}${masterBadge}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
-  };
-
-  let body='';
-  if(monthlyScope==='all'){
-    ['chiaki','naoya','relationship'].forEach(scope=>{
-      const gs=MONTHLY_GUIDE.filter(g=>guideScope(g)===scope);
-      const ss=gs.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
-      body+=`<section class="scope-group"><div class="scope-group-head"><span>${esc(MONTHLY_SCOPES[scope].title)}</span><small>${ss}/${gs.length} SAVED</small></div>${gs.map(row).join('')}</section>`;
-    });
-  }else{
-    body=`<section class="scope-group">${visible.map(row).join('')}</section>`;
-  }
-  $('#monthlyChecks').innerHTML=tabs+body;
+function viewBaseModule(id){
+  const m=baseModule(id);if(!m)return;const x=baseStored(id);
+  const formatted=[x.title?`TITLE: ${x.title}`:'',x.summary?`MESSAGE: ${x.summary}`:'',x.tags?.length?`THEME: ${x.tags.join(' · ')}`:'',x.detail?`DETAIL: ${x.detail}`:''].filter(Boolean).join('\n');
+  openModal(`<span class="kicker">RELATIONSHIP BASE · ${esc(m.group)}</span>
+    <h2>${esc(m.label)}</h2><p class="modal-copy">${esc(m.desc)}</p>
+    <div class="ai-box"><div class="ai-head"><strong>BASE READING</strong><button type="button" class="copy-btn" data-copy-base-module="${m.id}">COPY</button></div><p>${m.hasBuiltIn?'ORBIT固定データを含む専用プロンプト。':'画像または配置と一緒に使う専用プロンプト。'}</p></div>
+    <label>AI RESULT <small>TITLE / MESSAGE / THEME / DETAIL</small></label>
+    <textarea id="baseModulePaste" class="large-textarea" placeholder="ChatGPTの結果をそのまま貼り付け">${esc(formatted)}</textarea>
+    ${x.updatedAt?`<div class="monthly-saved-note">SAVED · ${esc(new Date(x.updatedAt).toLocaleDateString('ja-JP'))}</div>`:''}
+    <div class="form-actions"><button type="button" class="text-btn" data-relationship-base>Back</button><button type="button" class="save-btn" data-save-base-module="${m.id}">${x.updatedAt?'UPDATE':'SAVE'}</button></div>`);
 }
-function viewGuide(id){
-  const g=MONTHLY_GUIDE.find(x=>x.id===id); if(!g)return;
-  const entry=checkEntry(id), prompt=aiPrompt(g);
-  openModal(`<span class="kicker">MONTHLY CHECK · ${esc(data.month.title)}</span><div class="guide-modal-title"><div><div class="guide-scope">${esc(guideScopeLabel(g))}</div><h2>${esc(g.label)}</h2><p class="guide-source">${esc(g.source)}</p></div><span class="status-badge ${statusClass(entry.status)}">${statusLabel(entry.status)}</span></div>
-    <label>WHY</label><p class="modal-copy">${esc(g.why)}</p>
-    <label>HOW TO FIND</label><p class="modal-copy">${esc(g.how)}</p>
-    <div class="capture-guide"><div><span>📷 WHAT TO CAPTURE</span><p>${esc(g.capture)}</p></div><div><span>− DON'T NEED</span><p>${esc(g.dontNeed)}</p></div></div>
-    <div class="ai-box"><div class="ai-head"><strong>ChatGPTに相談するとき</strong><button type="button" class="copy-btn" data-copy-prompt="${g.id}">COPY</button></div><p>${esc(prompt).replace(/\n/g,'<br>')}</p></div>
-    ${entry.readingId?`<button type="button" class="linked-reading" data-reading="${entry.readingId}">✦ 保存したReadingを開く</button>`:''}
-    <div class="form-actions guide-actions"><button type="button" class="text-btn" data-close-modal>Close</button><button type="button" class="secondary-btn" data-mark-checked="${g.id}">${entry.status==='unchecked'?'MARK CHECKED':'CHECKED ✓'}</button><button type="button" class="save-btn" data-guide-reading="${g.id}">${entry.status==='saved'?'EDIT READING':'＋ SAVE READING'}</button></div>`);
+function editBaseSynthesis(){
+  const x=data.relationshipBase?.synthesis||{};
+  const formatted=[x.title?`TITLE: ${x.title}`:'',x.subtitle?`SUBTITLE: ${x.subtitle}`:'',x.message?`MESSAGE: ${x.message}`:'',x.themes?.length?`THEME: ${x.themes.join('・')}`:'',x.detail?`DETAIL: ${x.detail}`:''].filter(Boolean).join('\n');
+  openModal(`<span class="kicker">RELATIONSHIP · BASE SYNTHESIS</span><h2>THE CORE</h2>
+    <p class="modal-copy">保存済みBASEだけを横断した常設メッセージ。月次Synthesisとは完全に別です。</p>
+    <div class="ai-box"><div class="ai-head"><strong>CROSS-SYSTEM READ</strong><button type="button" class="copy-btn" data-copy-base-synthesis>COPY</button></div><p>複数体系の一致と緊張を、そのまま残して統合します。</p></div>
+    <label>AI RESULT</label><textarea id="baseSynthesisPaste" class="large-textarea" placeholder="TITLE / SUBTITLE / MESSAGE / THEME / DETAIL">${esc(formatted)}</textarea>
+    <div class="form-actions"><button type="button" class="text-btn" data-relationship-base>Back</button><button type="button" class="save-btn" data-save-base-synthesis>SAVE BASE</button></div>`);
 }
 
-function readingItem(r){return `<div class="list-item" data-reading="${r.id}"><div><h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p></div><div class="list-meta"><small>${esc(r.method||r.system)}</small><span>›</span></div></div>`}
-function monthSortKey(p){const m=/^(\d{4})-(\d{2})$/.exec(p||'');return m?Number(m[1])*100+Number(m[2]):999999}
-function topReadingTags(period){const tags=data.readings.filter(r=>r.targetPeriod===period).flatMap(r=>r.tags||[]).map(x=>String(x).replace(/（.*?）|\(.*?\)/g,'').split(/[｜|]/)[0].trim().toUpperCase()).filter(Boolean),c={};tags.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);}
-function derivedTimeline(){
-  const periods=new Set([...Object.keys(data.months||{}),...data.readings.map(r=>r.targetPeriod).filter(p=>/^\d{4}-\d{2}$/.test(p||''))]);
-  const ownerProfile=fpProfile('chiaki');
-  (ownerProfile?.daiun?.list||[]).slice(1).forEach(x=>{const at=daiunBounds('chiaki',x).start;if(at&&at.getFullYear()>=2026&&at.getFullYear()<=2035)periods.add(`${at.getFullYear()}-${String(at.getMonth()+1).padStart(2,'0')}`)});
-  const out=[];
-  [...periods].sort((a,b)=>monthSortKey(a)-monthSortKey(b)).forEach(period=>{
-    const rs=data.readings.filter(r=>r.targetPeriod===period),month=data.months?.[period],fp=fourPillarSummary('chiaki',period),tags=topReadingTags(period);
-    const monthlyMessage=monthlyMessageFor(period);
-    const engineModel=(masterReady()&&westernMaster.loaded)?orbitThisMonthModel(period):null;
-    if(!rs.length && !month?.summary && !fp?.shift && !monthlyMessage)return;
-    const theme=monthlyMessage?.title
-      ||(engineModel?.top?.length?engineModel.top.slice(0,2).map(x=>x.key).join(' / '):'')
-      ||((month?.theme&&month.theme!=='OBSERVING')?month.theme:(tags[0]||'OBSERVING'));
-    const summary=monthlyMessage?.message
-      ||(engineModel?.summary||'')
-      ||month?.summary||rs[0]?.summary||`${rs.length}件の観測を保存`;
-    out.push({id:`month-${period}`,period:periodLabel(period),periodKey:period,title:theme,summary,kind:'month',saved:rs.length,shift:fp?.shift||null,synthesized:!!monthlyMessage});
-  });
-  // Long-range projects are true hypothesis markers, not fake monthly predictions.
-  (data.projects||[]).forEach(p=>out.push({id:`project-${p.id}`,period:String(p.targetPeriod||''),title:p.title,summary:p.summary,kind:'project',projectId:p.id,status:p.status}));
-  return out.sort((a,b)=>{const ay=parseInt(a.period)||9999,by=parseInt(b.period)||9999;if(ay!==by)return ay-by;return (a.periodKey||'99').localeCompare(b.periodKey||'99')});
-}
-function timelineItem(t){return `<button type="button" class="timeline-item timeline-button ${t.shift?'timeline-shift':''}" ${t.kind==='month'?`data-timeline-month="${esc(t.periodKey)}"`:`data-project="${esc(t.projectId||'')}"`}><div class="timeline-period">${esc(t.period)}</div><div class="timeline-line"></div><div class="timeline-copy">${t.shift?'<span class="timeline-badge">✦ MAJOR SHIFT</span>':t.kind==='project'?'<span class="timeline-badge long">◎ LONG RANGE</span>':t.synthesized?'<span class="timeline-badge synthesized">✦ SYNTHESIZED</span>':''}<strong>${esc(t.title)}</strong><p>${esc(t.summary)}</p>${t.saved?`<small>${t.saved} SAVED OBSERVATION${t.saved>1?'S':''}</small>`:''}${t.shift?`<small>大運 ${esc(t.shift.from.ganzhi)} → ${esc(t.shift.to.ganzhi)} · ${esc(shiftLabel(t.shift))}</small>`:''}</div></button>`}
-function empty(){return $('#emptyTpl').innerHTML}
-function renderPeople(){
-  $('#peopleGrid').innerHTML=data.people.map(p=>`<article class="person-card" data-person="${p.id}"><div class="mini-planet"></div><h3>${esc(p.name)}</h3>${fpProfile(p.id)?'<span class="fp-badge">四柱 BASE ✓</span>':''}<p>${esc(p.birthDate||'Birth date unknown')}</p><p>${p.birthTimeStatus==='exact'?`Birth time ${esc(p.birthTime)}`:`Birth time UNKNOWN${p.birthTimeHypothesis?` · Hyp. ${esc(p.birthTimeHypothesis)}`:''}`}</p></article>`).join('')+`<article class="person-card" data-action="add-person"><div class="mini-planet" style="display:grid;place-items:center;font-size:36px">＋</div><h3>Add Person</h3><p>新しい観測対象を追加</p></article>`;
-}
-function renderReadings(){
-  const pf=$('#readingPersonFilter'),sf=$('#readingSystemFilter'); const currentP=pf.value,currentS=sf.value;
-  pf.innerHTML='<option value="">All people</option>'+data.people.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');
-  const systems=[...new Set(data.readings.map(r=>r.system))]; sf.innerHTML='<option value="">All systems</option>'+systems.map(s=>`<option>${esc(s)}</option>`).join(''); if([...pf.options].some(o=>o.value===currentP))pf.value=currentP;if([...sf.options].some(o=>o.value===currentS))sf.value=currentS;
-  const rows=data.readings.filter(r=>(!pf.value||r.personId===pf.value)&&(!sf.value||r.system===sf.value)); $('#readingsList').innerHTML=rows.length?rows.map(readingItem).join(''):empty();
-}
-function renderTimeline(){const rows=derivedTimeline();$('#timelineFull').innerHTML=rows.length?rows.map(timelineItem).join(''):empty()}
-function renderProjects(){
-  $('#projectsList').innerHTML=data.projects.length?data.projects.map(p=>`<article class="project-card" data-project="${p.id}"><span class="project-badge">✦ ${esc(p.status)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><div class="chips">${(p.systems||[]).map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div><p>${esc(p.note||'')}</p></article>`).join(''):empty();
-  const transfer=$('#dataTransferPanel');
-  if(transfer)transfer.innerHTML=`<div class="transfer-head"><div><span class="kicker">DATA TRANSFER</span><h3>iPhone ↔ iPad</h3></div><span class="transfer-version">v${APP_VERSION}</span></div><p>ORBITのPeople・Readings・MONTHLY CHECK・Reality Log・Projectsなどを、1つのバックアップファイルで移動できます。</p><div class="transfer-actions"><button type="button" class="save-btn" data-action="export-data">⇧ EXPORT</button><button type="button" class="secondary-btn" data-action="import-data">⇩ IMPORT</button></div><small>EXPORTした <b>.orbit.json</b> をAirDrop / Filesなどで別端末へ渡し、IMPORTしてください。これはライブ同期ではなく「その時点のスナップショット」です。</small>`;
-}
 function renderAll(){renderHome();renderPeople();renderReadings();renderTimeline();renderProjects()}
 function showView(name){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===name));$$('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.go===name));window.scrollTo({top:0,behavior:'smooth'})}
 function openModal(html){
@@ -1193,9 +1251,24 @@ document.addEventListener('click',async e=>{
     }
     save();$('#modal').close();toast(`${scope==='relationship'?'RELATIONSHIP':'PERSONAL'}メッセージを保存しました ✦`);return
   }
+  const bm=e.target.closest('[data-base-module]');if(bm){viewBaseModule(bm.dataset.baseModule);return}
+  const cbm=e.target.closest('[data-copy-base-module]');if(cbm){const ok=await copyText(baseModulePrompt(cbm.dataset.copyBaseModule));toast(ok?'BASEプロンプトをコピーしました ✦':'コピーできませんでした');return}
+  const sbm=e.target.closest('[data-save-base-module]');if(sbm){
+    const id=sbm.dataset.saveBaseModule,parsed=parseBaseModuleResult($('#baseModulePaste')?.value||'');
+    if(!parsed.title&&!parsed.message&&!parsed.detail){toast('保存するAI RESULTを確認してください');return}
+    data.relationshipBase.modules[id]={title:parsed.title,summary:parsed.message,tags:parsed.tags,detail:parsed.detail,updatedAt:new Date().toISOString()};
+    save();viewRelationshipBase();toast(`${baseModule(id)?.label||'BASE'}を保存しました ✦`);return
+  }
+  if(e.target.closest('[data-copy-base-synthesis]')){const ok=await copyText(baseSynthesisPrompt());toast(ok?'BASE SYNTHESISプロンプトをコピーしました ✦':'コピーできませんでした');return}
+  if(e.target.closest('[data-edit-base-synthesis]')){editBaseSynthesis();return}
+  if(e.target.closest('[data-save-base-synthesis]')){
+    const raw=$('#baseSynthesisPaste')?.value||'',get=n=>raw.match(new RegExp(`(?:^|\\n)${n}\\s*[:：]\\s*([^\\n]+)`,'i'))?.[1]?.trim()||'';
+    const detail=raw.match(/(?:^|\n)DETAIL\s*[:：]\s*([\s\S]*)/i)?.[1]?.trim()||'';
+    const title=get('TITLE'),message=get('MESSAGE');if(!title||!message){toast('TITLEとMESSAGEを確認してください');return}
+    data.relationshipBase.synthesis={title,subtitle:get('SUBTITLE'),message,themes:get('THEME').split(/[・·,/]/).map(x=>x.trim()).filter(Boolean),detail,updatedAt:new Date().toISOString()};
+    save();viewRelationshipBase();toast('RELATIONSHIP BASE SYNTHESISを保存しました ✦');return
+  }
   if(e.target.closest('[data-relationship-base]')){viewRelationshipBase();return}
-  if(e.target.closest('[data-copy-base]')){const ok=await copyText(relationshipBasePrompt());toast(ok?'BASEプロンプトをコピーしました ✦':'コピーできませんでした');return}
-  if(e.target.closest('[data-save-base]')){data.relationshipBase=data.relationshipBase||{};data.relationshipBase.reading=$('#rbReading')?.value||'';data.relationshipBase.updatedAt=new Date().toISOString();save();$('#modal').close();toast('RELATIONSHIP BASEを保存しました ✦');return}
   const a=e.target.closest('[data-action]'); if(a){({"add-person":addPerson,"add-reading":()=>addReading(),"add-timeline":addTimeline,"add-project":addProject,"edit-month":editMonth, "choose-month":chooseMonth,"current-month":()=>{const now=new Date();ensureMonth(`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`);save()},"export-data":exportData,"import-data":openImportPicker,"restore-import":restoreImportRollback}[a.dataset.action]||(()=>{}))();return}
   const shift=e.target.closest('[data-month-shift]');if(shift){shiftMonth(Number(shift.dataset.monthShift));return}
   const ar=e.target.closest('[data-add-reality]');if(ar){addReality(ar.dataset.addReality);return}

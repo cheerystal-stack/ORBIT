@@ -1,14 +1,25 @@
 {
-  "version": "0.19.2",
+  "version": "0.21.0",
   "changed_or_added": [
     "app.js",
     "index.html",
+    "style.css",
     "sw.js"
   ],
-  "fix": "Sanmeigaku RAW prompt now reads natal/year/month/day/tenchusatsu from the top-level natal object in each person monthly JSON.",
-  "expected": {
-    "Chiaki": "年柱 癸亥｜月柱 乙卯｜日柱 壬子｜天中殺 寅卯",
-    "N": "年柱 丙子｜月柱 甲午｜日柱 癸未｜天中殺 申酉"
-  },
-  "data_json_changed": false
+  "feature": "RELATIONSHIP BASE LAB permanent exhibition",
+  "modules": [
+    "Natal Synastry",
+    "Composite",
+    "Davison",
+    "Four Pillars Compatibility",
+    "Sanmeigaku Compatibility"
+  ],
+  "notes": [
+    "各BASE観測を独立保存",
+    "BASE SYNTHESISを月次とは別保存",
+    "既存の固定Synastry/Composite/Four Pillarsデータを活用",
+    "Davisonは未入力の配置を補完せず、画像/配置と専用promptで観測",
+    "Sanmeigaku BASEはmonthly shared triggerを混ぜず出生PAIR固定位相のみ使用",
+    "既存PERSONAL/MONTHLY/N/2033データは維持"
+  ]
 }

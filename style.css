@@ -583,3 +583,24 @@ body::after {
   .home-month-nav{grid-template-columns:38px 1fr 38px auto;gap:5px}
   .home-month-nav .home-month-today{padding:0 7px}
 }
+
+/* ===== v0.21 — RELATIONSHIP BASE LAB / permanent exhibition ===== */
+.relationship-base-card{overflow:hidden}
+.rb-lab-open h2{letter-spacing:.06em}
+.base-exhibit-grid{display:grid;grid-template-columns:1fr;gap:9px;margin:18px 0}
+.base-exhibit{width:100%;padding:14px;border:1px solid rgba(255,255,255,.075);border-radius:15px;background:rgba(7,12,30,.42);color:inherit;text-align:left}
+.base-exhibit.saved{border-color:rgba(232,201,140,.24);background:linear-gradient(145deg,rgba(232,201,140,.055),rgba(118,87,218,.045))}
+.base-exhibit-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.base-exhibit-top small{color:#8f899d;font-size:7px;letter-spacing:.16em}
+.base-exhibit-top span{color:#9b8d70;font-size:7px;letter-spacing:.12em}
+.base-exhibit strong{display:block;color:#e7d7b2;font-family:Georgia,serif;font-size:15px;font-weight:400;letter-spacing:.06em}
+.base-exhibit p{margin:7px 0 10px;color:#9f99aa;font-size:.69rem;line-height:1.55}
+.base-exhibit-foot{display:flex;align-items:center;gap:6px}
+.base-exhibit-foot i{font-style:normal;color:#777184;font-size:7px;border:1px solid rgba(255,255,255,.07);border-radius:999px;padding:3px 6px}
+.base-exhibit-foot b{margin-left:auto;color:#cbb98e;font-size:18px;font-weight:400}
+.base-synthesis-box{margin:18px 0 4px;padding:16px;border:1px solid rgba(232,201,140,.23);border-radius:17px;background:linear-gradient(145deg,rgba(232,201,140,.06),rgba(118,87,218,.06))}
+.base-synthesis-box h3{margin:6px 0;font-family:Georgia,serif;font-weight:400;color:#e8d7b0;letter-spacing:.08em}
+.base-synthesis-box p{color:#9992a4;font-size:.7rem;line-height:1.6}
+.base-synth-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.rb-verdict em{display:block;margin:5px 0;color:#a59bad;font-family:Georgia,serif;font-size:10px;letter-spacing:.08em}
+@media(min-width:700px){.base-exhibit-grid{grid-template-columns:1fr 1fr}}
