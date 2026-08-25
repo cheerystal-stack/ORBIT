@@ -1,5 +1,5 @@
 const KEY='orbit_v01'; // keep the same key so existing ORBIT data survives
-const APP_VERSION='0.21.0';
+const APP_VERSION='0.21.1';
 const BUNDLED_PROFILE_VERSION='0.8.0';
 const IMPORT_ROLLBACK_KEY='orbit_v01_import_rollback';
 
@@ -1084,6 +1084,103 @@ function editBaseSynthesis(){
     <div class="form-actions"><button type="button" class="text-btn" data-relationship-base>Back</button><button type="button" class="save-btn" data-save-base-synthesis>SAVE BASE</button></div>`);
 }
 
+function renderHome(){
+  $('#monthTitle').textContent=data.month.title;
+  renderThisMonthV2();
+  renderRelationshipBase();
+  renderMonthlyChecks();
+  renderWesternSnapshot();
+  $('#cycleRows').innerHTML=cycleRowsHTML();
+  const recent=[...data.readings].sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||'')).slice(0,4);
+  $('#recentReadings').innerHTML=recent.length?recent.map(readingItem).join(''):empty();
+  const f=focus(); $('#focusName').textContent=f.name; $('#focusBirthTime').textContent=f.birthTimeStatus==='exact'?(f.birthTime||'—'):'UNKNOWN'; $('#focusHypothesis').textContent=f.birthTimeHypothesis||'—';
+  const fr=data.readings.find(r=>r.personId===f.id); $('#focusTheme').textContent=fr?.tags?.[0]||'OBSERVING';
+  const p=data.projects[0]; $('#featuredProject').innerHTML=p?`<button type="button" class="project-hero-hit" data-project="${esc(p.id)}" aria-label="${esc(p.title)}を開く"></button><span class="project-badge">✦ LONG RANGE</span><h2>${esc(p.title)} · ${esc(p.status)}</h2><p>${esc(p.summary)}</p><div class="chips">${p.systems.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div>`:'';
+  const timelineRows=derivedTimeline(); $('#timelinePreview').innerHTML=(timelineRows.length?timelineRows.slice(0,4).map(timelineItem).join(''):empty());
+}
+
+function renderMonthlyChecks(){
+  if($('#guideMonthLabel')) $('#guideMonthLabel').textContent=data.month.title;
+  const state=data.monthlyChecks[currentCheckKey()]||{};
+  const visible=monthlyScope==='all'?MONTHLY_GUIDE:MONTHLY_GUIDE.filter(g=>guideScope(g)===monthlyScope);
+  const saved=visible.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
+  const touched=visible.filter(x=>['checked','saved'].includes(state[x.id]?.status)).length;
+  $('#monthlyProgress').textContent=`${saved} saved · ${touched}/${visible.length}`;
+
+  const tabs=`<div class="scope-tabs">${Object.entries(MONTHLY_SCOPES).map(([key,x])=>`<button type="button" class="scope-tab ${monthlyScope===key?'active':''}" data-scope-tab="${key}">${esc(x.label)}</button>`).join('')}</div>`;
+
+  const row=g=>{
+    const s=state[g.id]?.status||'unchecked';
+    const masterBadge=guideHasMaster(g)?'<b class="master-mini">MASTER</b>':'';
+    return `<button class="check-row ${statusClass(s)}" data-guide="${g.id}"><span class="check-dot">${statusIcon(s)}</span><span><strong>${esc(g.label)}${masterBadge}</strong><small>${esc(g.source)} · ${statusLabel(s)}</small></span><span class="check-arrow">›</span></button>`;
+  };
+
+  let body='';
+  if(monthlyScope==='all'){
+    ['chiaki','naoya','relationship'].forEach(scope=>{
+      const gs=MONTHLY_GUIDE.filter(g=>guideScope(g)===scope);
+      const ss=gs.filter(x=>(state[x.id]?.status||'unchecked')==='saved').length;
+      body+=`<section class="scope-group"><div class="scope-group-head"><span>${esc(MONTHLY_SCOPES[scope].title)}</span><small>${ss}/${gs.length} SAVED</small></div>${gs.map(row).join('')}</section>`;
+    });
+  }else{
+    body=`<section class="scope-group">${visible.map(row).join('')}</section>`;
+  }
+  $('#monthlyChecks').innerHTML=tabs+body;
+}
+function viewGuide(id){
+  const g=MONTHLY_GUIDE.find(x=>x.id===id); if(!g)return;
+  const entry=checkEntry(id), prompt=aiPrompt(g);
+  openModal(`<span class="kicker">MONTHLY CHECK · ${esc(data.month.title)}</span><div class="guide-modal-title"><div><div class="guide-scope">${esc(guideScopeLabel(g))}</div><h2>${esc(g.label)}</h2><p class="guide-source">${esc(g.source)}</p></div><span class="status-badge ${statusClass(entry.status)}">${statusLabel(entry.status)}</span></div>
+    <label>WHY</label><p class="modal-copy">${esc(g.why)}</p>
+    <label>HOW TO FIND</label><p class="modal-copy">${esc(g.how)}</p>
+    <div class="capture-guide"><div><span>📷 WHAT TO CAPTURE</span><p>${esc(g.capture)}</p></div><div><span>− DON'T NEED</span><p>${esc(g.dontNeed)}</p></div></div>
+    <div class="ai-box"><div class="ai-head"><strong>ChatGPTに相談するとき</strong><button type="button" class="copy-btn" data-copy-prompt="${g.id}">COPY</button></div><p>${esc(prompt).replace(/\n/g,'<br>')}</p></div>
+    ${entry.readingId?`<button type="button" class="linked-reading" data-reading="${entry.readingId}">✦ 保存したReadingを開く</button>`:''}
+    <div class="form-actions guide-actions"><button type="button" class="text-btn" data-close-modal>Close</button><button type="button" class="secondary-btn" data-mark-checked="${g.id}">${entry.status==='unchecked'?'MARK CHECKED':'CHECKED ✓'}</button><button type="button" class="save-btn" data-guide-reading="${g.id}">${entry.status==='saved'?'EDIT READING':'＋ SAVE READING'}</button></div>`);
+}
+
+function readingItem(r){return `<div class="list-item" data-reading="${r.id}"><div><h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p></div><div class="list-meta"><small>${esc(r.method||r.system)}</small><span>›</span></div></div>`}
+function monthSortKey(p){const m=/^(\d{4})-(\d{2})$/.exec(p||'');return m?Number(m[1])*100+Number(m[2]):999999}
+function topReadingTags(period){const tags=data.readings.filter(r=>r.targetPeriod===period).flatMap(r=>r.tags||[]).map(x=>String(x).replace(/（.*?）|\(.*?\)/g,'').split(/[｜|]/)[0].trim().toUpperCase()).filter(Boolean),c={};tags.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);}
+function derivedTimeline(){
+  const periods=new Set([...Object.keys(data.months||{}),...data.readings.map(r=>r.targetPeriod).filter(p=>/^\d{4}-\d{2}$/.test(p||''))]);
+  const ownerProfile=fpProfile('chiaki');
+  (ownerProfile?.daiun?.list||[]).slice(1).forEach(x=>{const at=daiunBounds('chiaki',x).start;if(at&&at.getFullYear()>=2026&&at.getFullYear()<=2035)periods.add(`${at.getFullYear()}-${String(at.getMonth()+1).padStart(2,'0')}`)});
+  const out=[];
+  [...periods].sort((a,b)=>monthSortKey(a)-monthSortKey(b)).forEach(period=>{
+    const rs=data.readings.filter(r=>r.targetPeriod===period),month=data.months?.[period],fp=fourPillarSummary('chiaki',period),tags=topReadingTags(period);
+    const monthlyMessage=monthlyMessageFor(period);
+    const engineModel=(masterReady()&&westernMaster.loaded)?orbitThisMonthModel(period):null;
+    if(!rs.length && !month?.summary && !fp?.shift && !monthlyMessage)return;
+    const theme=monthlyMessage?.title
+      ||(engineModel?.top?.length?engineModel.top.slice(0,2).map(x=>x.key).join(' / '):'')
+      ||((month?.theme&&month.theme!=='OBSERVING')?month.theme:(tags[0]||'OBSERVING'));
+    const summary=monthlyMessage?.message
+      ||(engineModel?.summary||'')
+      ||month?.summary||rs[0]?.summary||`${rs.length}件の観測を保存`;
+    out.push({id:`month-${period}`,period:periodLabel(period),periodKey:period,title:theme,summary,kind:'month',saved:rs.length,shift:fp?.shift||null,synthesized:!!monthlyMessage});
+  });
+  // Long-range projects are true hypothesis markers, not fake monthly predictions.
+  (data.projects||[]).forEach(p=>out.push({id:`project-${p.id}`,period:String(p.targetPeriod||''),title:p.title,summary:p.summary,kind:'project',projectId:p.id,status:p.status}));
+  return out.sort((a,b)=>{const ay=parseInt(a.period)||9999,by=parseInt(b.period)||9999;if(ay!==by)return ay-by;return (a.periodKey||'99').localeCompare(b.periodKey||'99')});
+}
+function timelineItem(t){return `<button type="button" class="timeline-item timeline-button ${t.shift?'timeline-shift':''}" ${t.kind==='month'?`data-timeline-month="${esc(t.periodKey)}"`:`data-project="${esc(t.projectId||'')}"`}><div class="timeline-period">${esc(t.period)}</div><div class="timeline-line"></div><div class="timeline-copy">${t.shift?'<span class="timeline-badge">✦ MAJOR SHIFT</span>':t.kind==='project'?'<span class="timeline-badge long">◎ LONG RANGE</span>':t.synthesized?'<span class="timeline-badge synthesized">✦ SYNTHESIZED</span>':''}<strong>${esc(t.title)}</strong><p>${esc(t.summary)}</p>${t.saved?`<small>${t.saved} SAVED OBSERVATION${t.saved>1?'S':''}</small>`:''}${t.shift?`<small>大運 ${esc(t.shift.from.ganzhi)} → ${esc(t.shift.to.ganzhi)} · ${esc(shiftLabel(t.shift))}</small>`:''}</div></button>`}
+function empty(){return $('#emptyTpl').innerHTML}
+function renderPeople(){
+  $('#peopleGrid').innerHTML=data.people.map(p=>`<article class="person-card" data-person="${p.id}"><div class="mini-planet"></div><h3>${esc(p.name)}</h3>${fpProfile(p.id)?'<span class="fp-badge">四柱 BASE ✓</span>':''}<p>${esc(p.birthDate||'Birth date unknown')}</p><p>${p.birthTimeStatus==='exact'?`Birth time ${esc(p.birthTime)}`:`Birth time UNKNOWN${p.birthTimeHypothesis?` · Hyp. ${esc(p.birthTimeHypothesis)}`:''}`}</p></article>`).join('')+`<article class="person-card" data-action="add-person"><div class="mini-planet" style="display:grid;place-items:center;font-size:36px">＋</div><h3>Add Person</h3><p>新しい観測対象を追加</p></article>`;
+}
+function renderReadings(){
+  const pf=$('#readingPersonFilter'),sf=$('#readingSystemFilter'); const currentP=pf.value,currentS=sf.value;
+  pf.innerHTML='<option value="">All people</option>'+data.people.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  const systems=[...new Set(data.readings.map(r=>r.system))]; sf.innerHTML='<option value="">All systems</option>'+systems.map(s=>`<option>${esc(s)}</option>`).join(''); if([...pf.options].some(o=>o.value===currentP))pf.value=currentP;if([...sf.options].some(o=>o.value===currentS))sf.value=currentS;
+  const rows=data.readings.filter(r=>(!pf.value||r.personId===pf.value)&&(!sf.value||r.system===sf.value)); $('#readingsList').innerHTML=rows.length?rows.map(readingItem).join(''):empty();
+}
+function renderTimeline(){const rows=derivedTimeline();$('#timelineFull').innerHTML=rows.length?rows.map(timelineItem).join(''):empty()}
+function renderProjects(){
+  $('#projectsList').innerHTML=data.projects.length?data.projects.map(p=>`<article class="project-card" data-project="${p.id}"><span class="project-badge">✦ ${esc(p.status)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><div class="chips">${(p.systems||[]).map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div><p>${esc(p.note||'')}</p></article>`).join(''):empty();
+  const transfer=$('#dataTransferPanel');
+  if(transfer)transfer.innerHTML=`<div class="transfer-head"><div><span class="kicker">DATA TRANSFER</span><h3>iPhone ↔ iPad</h3></div><span class="transfer-version">v${APP_VERSION}</span></div><p>ORBITのPeople・Readings・MONTHLY CHECK・Reality Log・Projectsなどを、1つのバックアップファイルで移動できます。</p><div class="transfer-actions"><button type="button" class="save-btn" data-action="export-data">⇧ EXPORT</button><button type="button" class="secondary-btn" data-action="import-data">⇩ IMPORT</button></div><small>EXPORTした <b>.orbit.json</b> をAirDrop / Filesなどで別端末へ渡し、IMPORTしてください。これはライブ同期ではなく「その時点のスナップショット」です。</small>`;
+}
 function renderAll(){renderHome();renderPeople();renderReadings();renderTimeline();renderProjects()}
 function showView(name){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===name));$$('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.go===name));window.scrollTo({top:0,behavior:'smooth'})}
 function openModal(html){

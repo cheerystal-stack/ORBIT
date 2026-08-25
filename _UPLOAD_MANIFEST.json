@@ -1,25 +1,6 @@
 {
-  "version": "0.21.0",
-  "changed_or_added": [
-    "app.js",
-    "index.html",
-    "style.css",
-    "sw.js"
-  ],
-  "feature": "RELATIONSHIP BASE LAB permanent exhibition",
-  "modules": [
-    "Natal Synastry",
-    "Composite",
-    "Davison",
-    "Four Pillars Compatibility",
-    "Sanmeigaku Compatibility"
-  ],
-  "notes": [
-    "各BASE観測を独立保存",
-    "BASE SYNTHESISを月次とは別保存",
-    "既存の固定Synastry/Composite/Four Pillarsデータを活用",
-    "Davisonは未入力の配置を補完せず、画像/配置と専用promptで観測",
-    "Sanmeigaku BASEはmonthly shared triggerを混ぜず出生PAIR固定位相のみ使用",
-    "既存PERSONAL/MONTHLY/N/2033データは維持"
-  ]
+  "version": "0.21.1",
+  "repair": "Restored renderHome + Monthly Check + guide + People/Readings/Timeline/Projects render functions accidentally removed in v0.21.0.",
+  "base_lab": "preserved",
+  "data": "No JSON/master data changed."
 }
